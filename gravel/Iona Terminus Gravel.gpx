@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Iona Terminus Gravel</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-01-20T00:09:48.000Z</time>
+  </metadata>
+  <trk>
+    <name>Iona Terminus Gravel</name>
+    <trkseg>
+      <trkpt lat="49.21707630157471" lon="-123.21203470230103">
+        <ele>3.484938383102417</ele>
+        <time>2022-01-20T00:09:48.000Z</time>
+      </trkpt>
+      <trkpt lat="49.21707638539374" lon="-123.21203470230103">
+        <ele>3.48433518409729</ele>
+        <time>2022-01-20T00:09:48.000Z</time>
+      </trkpt>
+      <trkpt lat="49.21705484390259" lon="-123.21192741394043">
+        <ele>3.639390707015991</ele>
+        <time>2022-01-20T00:09:48.001Z</time>
+      </trkpt>
+      <trkpt lat="49.21608924865723" lon="-123.21317195892334">
+        <ele>3.205127000808716</ele>
+        <time>2022-01-20T00:09:48.022Z</time>
+      </trkpt>
+      <trkpt lat="49.2131067160517" lon="-123.22757005691528">
+        <ele>6.470991611480713</ele>
+        <time>2022-01-20T00:09:48.202Z</time>
+      </trkpt>
+      <trkpt lat="49.213106632232666" lon="-123.22757005691528">
+        <ele>6.47068977355957</ele>
+        <time>2022-01-20T00:09:48.382Z</time>
+      </trkpt>
+      <trkpt lat="49.20583248138428" lon="-123.26233148574829">
+        <ele>3.8359248638153076</ele>
+        <time>2022-01-20T00:09:48.945Z</time>
+      </trkpt>
+      <trkpt lat="49.20572519302368" lon="-123.2627820968628">
+        <ele>5.842411518096924</ele>
+        <time>2022-01-20T00:09:49.513Z</time>
+      </trkpt>
+      <trkpt lat="49.2057466506958" lon="-123.26299667358398">
+        <ele>4.985846996307373</ele>
+        <time>2022-01-20T00:09:50.083Z</time>
+      </trkpt>
+      <trkpt lat="49.20557498931885" lon="-123.26389789581299">
+        <ele>3.542780876159668</ele>
+        <time>2022-01-20T00:09:50.663Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="leaflet-gpx.js"></script>
+
+
+</head>
+<body>
+
+<style>
+     .leaflet-marker-icon .leaflet-zoom-animated .leaflet-interactive {
+        width: 10px;
+        height: 10px;
+    }
+</style>
+<div id="map" style="height: 100vh;"></div>
+<script>
+
+
+
+    function loadGPXConnector() {
+            var xhttp = new XMLHttpRequest();
+			const gpxList = []
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
+                    thing = this.responseText
+                    searchFor = /gpx</g
+                    a=0;
+                    b=0;
+                    var str = "";
+            
+                    // greps file for .html and then backs up leter by letter till you hot the file name and all
+                    while ((dothtmls = searchFor.exec(thing)) != null ){
+
+                        str = "";
+                        //console.log(dothtmls.index);
+                        
+                        a = dothtmls.index;
+
+                        while (thing[a]  != '>' ){
+                            a--;
+                        }
+                        a++;
+                        while(thing[a] != '<'){
+                            str = str + thing[a];
+                            a++;
+                        }
+                        gpxList.push("/connector/" + str);
+                    } 
+                }
+                plotGPX(gpxList, 'orange');
+            };
+            xhttp.open("GET", "/connector/", true);
+            xhttp.send();
+			
+	}
+
+	function loadGPXRoad() {
+            var xhttp = new XMLHttpRequest();
+			const gpxList = []
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
+                    thing = this.responseText
+                    searchFor = /gpx</g
+                    a=0;
+                    b=0;
+                    var str = "";
+            
+                    // greps file for .html and then backs up leter by letter till you hot the file name and all
+                    while ((dothtmls = searchFor.exec(thing)) != null ){
+
+                        str = "";
+                        //console.log(dothtmls.index);
+                        
+                        a = dothtmls.index;
+
+                        while (thing[a]  != '>' ){
+                            a--;
+                        }
+                        a++;
+                        while(thing[a] != '<'){
+                            str = str + thing[a];
+                            a++;
+                        }
+                        gpxList.push("/road/" + str);
+                    } 
+                }
+                plotGPX(gpxList, 'green');
+            };
+            xhttp.open("GET", "/road/", true);
+            xhttp.send();
+			
+	}
+
+    function loadGPXGravel() {
+            var xhttp = new XMLHttpRequest();
+			const gpxList = []
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
+                    thing = this.responseText
+                    searchFor = /gpx</g
+                    a=0;
+                    b=0;
+                    var str = "";
+            
+                    // greps file for .html and then backs up leter by letter till you hot the file name and all
+                    while ((dothtmls = searchFor.exec(thing)) != null ){
+
+                        str = "";
+                        //console.log(dothtmls.index);
+                        
+                        a = dothtmls.index;
+
+                        while (thing[a]  != '>' ){
+                            a--;
+                        }
+                        a++;
+                        while(thing[a] != '<'){
+                            str = str + thing[a];
+                            a++;
+                        }
+                        gpxList.push("/gravel/" + str);
+                    } 
+                }
+                plotGPX(gpxList, 'blue');
+            };
+            xhttp.open("GET", "/gravel/", true);
+            xhttp.send();
+			
+	}
+
+    function loadGPXCaution() {
+            var xhttp = new XMLHttpRequest();
+			const gpxList = []
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
+                    thing = this.responseText
+                    searchFor = /gpx</g
+                    a=0;
+                    b=0;
+                    var str = "";
+            
+                    // greps file for .html and then backs up leter by letter till you hot the file name and all
+                    while ((dothtmls = searchFor.exec(thing)) != null ){
+
+                        str = "";
+                        //console.log(dothtmls.index);
+                        
+                        a = dothtmls.index;
+
+                        while (thing[a]  != '>' ){
+                            a--;
+                        }
+                        a++;
+                        while(thing[a] != '<'){
+                            str = str + thing[a];
+                            a++;
+                        }
+                        gpxList.push("/caution/" + str);
+                    } 
+                }
+                plotGPX(gpxList, 'red');
+            };
+            xhttp.open("GET", "/caution/", true);
+            xhttp.send();
+			
+	}
+
+    function loadGPXRecon() {
+            var xhttp = new XMLHttpRequest();
+			const gpxList = []
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
+                    thing = this.responseText
+                    searchFor = /gpx</g
+                    a=0;
+                    b=0;
+                    var str = "";
+            
+                    // greps file for .html and then backs up leter by letter till you hot the file name and all
+                    while ((dothtmls = searchFor.exec(thing)) != null ){
+
+                        str = "";
+                        //console.log(dothtmls.index);
+                        
+                        a = dothtmls.index;
+
+                        while (thing[a]  != '>' ){
+                            a--;
+                        }
+                        a++;
+                        while(thing[a] != '<'){
+                            str = str + thing[a];
+                            a++;
+                        }
+                        gpxList.push("/recon/" + str);
+                    } 
+                }
+                plotGPX(gpxList, 'purple');
+            };
+            xhttp.open("GET", "/recon/", true);
+            xhttp.send();
+			
+	}
+
+    function plotGPX(gpxList, color) {
+        console.log(gpxList);
+        for (i in gpxList) {
+            console.log(gpxList[i])
+            var gpx = new L.GPX(gpxList[i], {
+		    polyline_options: {
+		    color: color,
+		    opacity: 0.75,
+		    weight: 3,
+		    lineCap: 'round'}}
+	        ,{async: true}).on('loaded', function(e) {
+			    map.fitBounds(e.target.getBounds());
+		    }).addTo(map);
+
+            gpx.on('mouseover', function(e) {
+            var gpx2 = e.target,
+                
+                name = gpx2.get_name(),
+                distM = gpx2.get_distance(),
+                distKm = distM / 1000,
+                distKmRnd = distKm.toFixed(1),
+                eleGain = gpx2.get_elevation_gain().toFixed(0),
+                eleLoss = gpx2.get_elevation_loss().toFixed(0);
+                gpx2.setStyle({
+                    weight: 5
+                });
+            var info = "Name: " + name + "</br>" +
+                "Distance: " + distKmRnd + " km </br>" +
+                "Elevation Gain: " + eleGain + " m </br>"
+            var popLocation = e.latlng;
+            var popup = L.popup()
+                .setLatLng(popLocation)
+                .setContent(info)
+                .openOn(map);
+            });
+
+            function loadGPXConnector() {
+            var xhttp = new XMLHttpRequest();
+			const gpxList = []
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
+                    thing = this.responseText
+                    searchFor = /gpx</g
+                    a=0;
+                    b=0;
+                    var str = "";
+            
+                    // greps file for .html and then backs up leter by letter till you hot the file name and all
+                    while ((dothtmls = searchFor.exec(thing)) != null ){
+
+                        str = "";
+                        //console.log(dothtmls.index);
+                        
+                        a = dothtmls.index;
+
+                        while (thing[a]  != '>' ){
+                            a--;
+                        }
+                        a++;
+                        while(thing[a] != '<'){
+                            str = str + thing[a];
+                            a++;
+                        }
+                        gpxList.push("/connector/" + str);
+                    } 
+                }
+                plotGPX(gpxList, 'orange');
+            };
+            xhttp.open("GET", "/connector/", true);
+            xhttp.send();
+			
+	}
+
+	gpx.on('mouseout', function(e) {
+      map.closePopup();
+      var gpx2 = e.target
+      gpx2.setStyle({
+                    weight: 3
+                });
+    });
+
+        }
+
+    }
+
+    function loadGPXList() {
+        loadGPXRoad()
+        loadGPXConnector()
+        loadGPXGravel()
+        loadGPXCaution()
+        loadGPXRecon()
+    }
+
+	loadGPXList();
+
+	var map = L.map('map').setView([49.252752, -123.161156], 13);
+
+	var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/dark-v10',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(map);
+
+	
+	
+	
+
+/*
+    var gpx1 = 'test.gpx'; // URL to your GPX file or the GPX itself
+    new L.GPX(gpx1, {
+  polyline_options: {
+    color: 'green',
+    opacity: 0.75,
+    weight: 3,
+    lineCap: 'round'}}
+  , {async: true}).on('loaded', function(e) {
+        map.fitBounds(e.target.getBounds());
+    }).addTo(map);
+/*
+	var gpx2 = 'test2.gpx'; // URL to your GPX file or the GPX itself
+    var g = new L.GPX(gpx2, {async: true}).on('loaded', function(e) {
+        map.fitBounds(e.target.getBounds());
+    }).bindPopup("I am a circle.").addTo(map);
+
+    g.on('mouseover', function(e) {
+      var gpx2 = e.target,
+        name = gpx2.get_name(),
+        distM = gpx2.get_distance(),
+        distKm = distM / 1000,
+        distKmRnd = distKm.toFixed(1),
+        eleGain = gpx2.get_elevation_gain().toFixed(0),
+        eleLoss = gpx2.get_elevation_loss().toFixed(0);
+      var info = "Name: " + name + "</br>" +
+        "Distance: " + distKmRnd + " km </br>" +
+        "Elevation Gain: " + eleGain + " m </br>"
+      var popLocation = e.latlng;
+      var popup = L.popup()
+        .setLatLng(popLocation)
+        .setContent(info)
+        .openOn(map);
+    });
+
+	g.on('mouseout', function(e) {
+      map.closePopup();
+    });
+*/
+</script>
+</body>
+</html>

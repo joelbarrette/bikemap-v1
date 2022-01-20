@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Very Steep Gravel</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-01-20T01:04:42.000Z</time>
+  </metadata>
+  <trk>
+    <name>Very Steep Gravel</name>
+    <trkseg>
+      <trkpt lat="49.20359317213297" lon="-122.96057224273682">
+        <ele>60.139894764832206</ele>
+        <time>2022-01-20T01:04:42.000Z</time>
+      </trkpt>
+      <trkpt lat="49.20359367504716" lon="-122.9605732485652">
+        <ele>60.533024173486666</ele>
+        <time>2022-01-20T01:04:42.000Z</time>
+      </trkpt>
+      <trkpt lat="49.203858375549316" lon="-122.96014308929443">
+        <ele>61.97294434886652</ele>
+        <time>2022-01-20T01:04:42.006Z</time>
+      </trkpt>
+      <trkpt lat="49.20417412184179" lon="-122.96029035933316">
+        <ele>62.31290652643817</ele>
+        <time>2022-01-20T01:04:42.017Z</time>
+      </trkpt>
+      <trkpt lat="49.204173954203725" lon="-122.96029035933316">
+        <ele>63.2818362830905</ele>
+        <time>2022-01-20T01:04:42.028Z</time>
+      </trkpt>
+      <trkpt lat="49.2041802406311" lon="-122.96029329299927">
+        <ele>63.81967588741862</ele>
+        <time>2022-01-20T01:04:42.040Z</time>
+      </trkpt>
+      <trkpt lat="49.20396566390991" lon="-122.95994997024536">
+        <ele>64.79872121297547</ele>
+        <time>2022-01-20T01:04:42.057Z</time>
+      </trkpt>
+      <trkpt lat="49.20396566390991" lon="-122.95984268188477">
+        <ele>65.58266123205274</ele>
+        <time>2022-01-20T01:04:42.075Z</time>
+      </trkpt>
+      <trkpt lat="49.2040095012635" lon="-122.95978333801031">
+        <ele>66.30242847306229</ele>
+        <time>2022-01-20T01:04:42.094Z</time>
+      </trkpt>
+      <trkpt lat="49.204009333625436" lon="-122.95978342182934">
+        <ele>67.07121999661494</ele>
+        <time>2022-01-20T01:04:42.113Z</time>
+      </trkpt>
+      <trkpt lat="49.20426607131958" lon="-122.9594349861145">
+        <ele>68.26642718580274</ele>
+        <time>2022-01-20T01:04:42.137Z</time>
+      </trkpt>
+      <trkpt lat="49.20430898666382" lon="-122.95930624008179">
+        <ele>69.15057956637708</ele>
+        <time>2022-01-20T01:04:42.163Z</time>
+      </trkpt>
+      <trkpt lat="49.20428761281073" lon="-122.95913457870483">
+        <ele>69.82273520406198</ele>
+        <time>2022-01-20T01:04:42.190Z</time>
+      </trkpt>
+      <trkpt lat="49.2042875289917" lon="-122.95913457870483">
+        <ele>70.24831375679207</ele>
+        <time>2022-01-20T01:04:42.217Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
