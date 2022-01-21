@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Royal Roads Gravel Detour</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-01-21T10:33:19.000Z</time>
+  </metadata>
+  <trk>
+    <name>Royal Roads Gravel Detour</name>
+    <trkseg>
+      <trkpt lat="48.43131160363555" lon="-123.4764731861651">
+        <ele>45.07068362729041</ele>
+        <time>2022-01-21T10:33:19.000Z</time>
+      </trkpt>
+      <trkpt lat="48.430631160736084" lon="-123.47738027572632">
+        <ele>45.48876296444202</ele>
+        <time>2022-01-21T10:33:19.015Z</time>
+      </trkpt>
+      <trkpt lat="48.42964486218989" lon="-123.47873194143176">
+        <ele>46.09596941233801</ele>
+        <time>2022-01-21T10:33:19.051Z</time>
+      </trkpt>
+      <trkpt lat="48.42965" lon="-123.47873000000001">
+        <ele>46.45106283165184</ele>
+        <time>2022-01-21T10:33:19.087Z</time>
+      </trkpt>
+      <trkpt lat="48.42934" lon="-123.47919000000002">
+        <ele>46.848955064377115</ele>
+        <time>2022-01-21T10:33:19.130Z</time>
+      </trkpt>
+      <trkpt lat="48.429190000000006" lon="-123.47934000000001">
+        <ele>47.19443396180782</ele>
+        <time>2022-01-21T10:33:19.176Z</time>
+      </trkpt>
+      <trkpt lat="48.42904" lon="-123.47948000000001">
+        <ele>47.4349797194306</ele>
+        <time>2022-01-21T10:33:19.225Z</time>
+      </trkpt>
+      <trkpt lat="48.42877000000001" lon="-123.47985000000001">
+        <ele>47.717263510647655</ele>
+        <time>2022-01-21T10:33:19.280Z</time>
+      </trkpt>
+      <trkpt lat="48.42848" lon="-123.48024000000001">
+        <ele>48.028052564006686</ele>
+        <time>2022-01-21T10:33:19.341Z</time>
+      </trkpt>
+      <trkpt lat="48.4281" lon="-123.47994000000001">
+        <ele>47.91228907911059</ele>
+        <time>2022-01-21T10:33:19.409Z</time>
+      </trkpt>
+      <trkpt lat="48.42705" lon="-123.48029000000001">
+        <ele>47.94328144656173</ele>
+        <time>2022-01-21T10:33:19.494Z</time>
+      </trkpt>
+      <trkpt lat="48.42423" lon="-123.48124000000001">
+        <ele>49.285784072799586</ele>
+        <time>2022-01-21T10:33:19.625Z</time>
+      </trkpt>
+      <trkpt lat="48.424244318157434" lon="-123.48132094368339">
+        <ele>50.84849625415107</ele>
+        <time>2022-01-21T10:33:19.757Z</time>
+      </trkpt>
+      <trkpt lat="48.42417240142822" lon="-123.48134994506836">
+        <ele>51.383616509607386</ele>
+        <time>2022-01-21T10:33:19.890Z</time>
+      </trkpt>
+      <trkpt lat="48.42359312810004" lon="-123.48201513290405">
+        <ele>52.26221228304465</ele>
+        <time>2022-01-21T10:33:20.035Z</time>
+      </trkpt>
+      <trkpt lat="48.42294939793646" lon="-123.48186492919922">
+        <ele>52.612907411252095</ele>
+        <time>2022-01-21T10:33:20.190Z</time>
+      </trkpt>
+      <trkpt lat="48.42252016067505" lon="-123.4815001487732">
+        <ele>52.744871151167075</ele>
+        <time>2022-01-21T10:33:20.353Z</time>
+      </trkpt>
+      <trkpt lat="48.42232435941696" lon="-123.4812509547919">
+        <ele>52.87230846433326</ele>
+        <time>2022-01-21T10:33:20.520Z</time>
+      </trkpt>
+      <trkpt lat="48.42232427559793" lon="-123.48125078715384">
+        <ele>53.077960464730495</ele>
+        <time>2022-01-21T10:33:20.687Z</time>
+      </trkpt>
+      <trkpt lat="48.42204809188843" lon="-123.48089933395386">
+        <ele>53.20578766563621</ele>
+        <time>2022-01-21T10:33:20.860Z</time>
+      </trkpt>
+      <trkpt lat="48.42153310775757" lon="-123.48044872283936">
+        <ele>53.60159249139909</ele>
+        <time>2022-01-21T10:33:21.043Z</time>
+      </trkpt>
+      <trkpt lat="48.42121124267578" lon="-123.48042726516724">
+        <ele>54.314361009820615</ele>
+        <time>2022-01-21T10:33:21.231Z</time>
+      </trkpt>
+      <trkpt lat="48.42097520828247" lon="-123.48059892654419">
+        <ele>55.046425994763226</ele>
+        <time>2022-01-21T10:33:21.423Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
