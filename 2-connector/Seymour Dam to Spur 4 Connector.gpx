@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Seymour Dam to Spur 4 Connector</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-01-20T00:03:41.000Z</time>
+  </metadata>
+  <trk>
+    <name>Seymour Dam to Spur 4 Connector</name>
+    <trkseg>
+      <trkpt lat="49.437799556180835" lon="-122.97102321870625">
+        <ele>211.21936091497813</ele>
+        <time>2022-01-20T00:03:41.000Z</time>
+      </trkpt>
+      <trkpt lat="49.43845467153455" lon="-122.97065734863281">
+        <ele>210.3922682105247</ele>
+        <time>2022-01-20T00:03:41.011Z</time>
+      </trkpt>
+      <trkpt lat="49.43858024983136" lon="-122.9703140258789">
+        <ele>207.53272226581709</ele>
+        <time>2022-01-20T00:03:41.026Z</time>
+      </trkpt>
+      <trkpt lat="49.43856629670314" lon="-122.97001361846924">
+        <ele>203.9378979679337</ele>
+        <time>2022-01-20T00:03:41.044Z</time>
+      </trkpt>
+      <trkpt lat="49.438405835443405" lon="-122.96942353248596">
+        <ele>200.23936901663495</ele>
+        <time>2022-01-20T00:03:41.069Z</time>
+      </trkpt>
+      <trkpt lat="49.438140724385704" lon="-122.96842575073242">
+        <ele>196.8142366834211</ele>
+        <time>2022-01-20T00:03:41.105Z</time>
+      </trkpt>
+      <trkpt lat="49.437917471857126" lon="-122.96776056289673">
+        <ele>194.05483441440504</ele>
+        <time>2022-01-20T00:03:41.149Z</time>
+      </trkpt>
+      <trkpt lat="49.4379186630249" lon="-122.96778202056885">
+        <ele>193.37200278378876</ele>
+        <time>2022-01-20T00:03:41.193Z</time>
+      </trkpt>
+      <trkpt lat="49.43817615509033" lon="-122.96703100204468">
+        <ele>194.52115240611738</ele>
+        <time>2022-01-20T00:03:41.246Z</time>
+      </trkpt>
+      <trkpt lat="49.43843364715576" lon="-122.96632289886475">
+        <ele>196.30534638718018</ele>
+        <time>2022-01-20T00:03:41.308Z</time>
+      </trkpt>
+      <trkpt lat="49.43864822387695" lon="-122.96567916870117">
+        <ele>199.00384075475193</ele>
+        <time>2022-01-20T00:03:41.377Z</time>
+      </trkpt>
+      <trkpt lat="49.438862800598145" lon="-122.9651427268982">
+        <ele>202.68224801540748</ele>
+        <time>2022-01-20T00:03:41.453Z</time>
+      </trkpt>
+      <trkpt lat="49.43915415555239" lon="-122.96447921544313">
+        <ele>207.30297416577162</ele>
+        <time>2022-01-20T00:03:41.537Z</time>
+      </trkpt>
+      <trkpt lat="49.43915423937142" lon="-122.96447896398604">
+        <ele>215.37201685469344</ele>
+        <time>2022-01-20T00:03:41.621Z</time>
+      </trkpt>
+      <trkpt lat="49.439635276794434" lon="-122.96338319778442">
+        <ele>221.4649701090638</ele>
+        <time>2022-01-20T00:03:41.719Z</time>
+      </trkpt>
+      <trkpt lat="49.43967819213867" lon="-122.96288967132568">
+        <ele>226.08964349320578</ele>
+        <time>2022-01-20T00:03:41.822Z</time>
+      </trkpt>
+      <trkpt lat="49.43974256515503" lon="-122.96278238296509">
+        <ele>229.85286456743046</ele>
+        <time>2022-01-20T00:03:41.927Z</time>
+      </trkpt>
+      <trkpt lat="49.43997859954834" lon="-122.96271800994873">
+        <ele>233.3291142102223</ele>
+        <time>2022-01-20T00:03:42.036Z</time>
+      </trkpt>
+      <trkpt lat="49.44002151489258" lon="-122.96261072158813">
+        <ele>236.26235823134243</ele>
+        <time>2022-01-20T00:03:42.146Z</time>
+      </trkpt>
+      <trkpt lat="49.44000776857138" lon="-122.9625916108489">
+        <ele>238.57531223087477</ele>
+        <time>2022-01-20T00:03:42.256Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

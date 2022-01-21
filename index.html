@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Bikempap</title>
+	<title>Bikemap</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,59 +15,149 @@
     <script src="leaflet-gpx.js"></script>
 
 
+    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
+    <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
-<body>
 
 <style>
-     .leaflet-marker-icon .leaflet-zoom-animated .leaflet-interactive {
-        width: 10px;
-        height: 10px;
+    .demo-card-wide.mdl-card {
+      width: 95%;
+      position: fixed;
+      margin-left: 2.5%;
+      bottom: 2.25%;
+      z-index: 900;
+      padding: 10px;
+      background-color: #2b2a27;
     }
-</style>
+    .demo-card-wide > .mdl-card__title {
+      color: #fff;
+      height: 70px;
+    }
+    .demo-card-wide > .mdl-card__menu {
+      color: #fff;
+    }
+
+    .demo-card-wide > .mdl-card__supporting-text {
+      color: #fff;
+    }
+   
+    #elevation-div {
+      height: 20vh;
+      width: 65%;
+      background-color:;
+      color:#fff;
+      font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+
+
+    #elevation-div > div > svg{
+        background-color:rgba(255,255,255,0.0);
+        color:#fff;
+    }
+    .elevation-control.elevation .grid .tick line {
+        stroke: rgba(255,255,255,0.5);
+    }
+
+    .custom-theme.elevation-control.elevation .area {
+      fill: rgba(255, 255, 255, 0.85);
+      stroke: rgba(231, 7, 7, 0.85);
+      stroke-width: 2.8;
+    }
+
+    .custom-theme.height-focus.circle-lower {
+      fill: #FF0;
+    }
+
+    .elevation-content.elevation-detached {
+      height: 3%;
+      font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+
+    .elevation-control.elevation .axis text, .elevation-control.elevation .point text{
+        fill:#fff;
+        stroke-width:0px;
+    }
+    .custom-theme.elevation-polyline {
+      stroke: #F00;
+      stroke-opacity: 1;
+      stroke-width: 2;
+    }
+
+    .custom-theme.elevation-polyline-segments {
+      stroke: #FF0;
+      stroke-width: 2;
+      stroke-dasharray: 4;
+    }
+
+    .custom-theme.data-summary {
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      padding: 4px 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background-color: rgb(0, 0, 0);
+      color: #fff;
+    }
+
+    .data-summary .summaryvalue {
+      font-weight: bold;
+    }
+
+    #disqus_thread{
+      position:absolute;
+      left:67%;
+      width:30%;
+      top:70px;
+    }
+
+    </style>
+    
 <div id="map" style="height: 100vh;"></div>
+<div class="demo-card-wide mdl-card mdl-shadow--2dp" id="info-card" style="visibility: hidden;">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text" id="item-title" >Welcome</h2>
+    </div>
+    <div class="mdl-card__supporting-text" id="item-content">
+        hello
+    </div>
+    <div class="elevation" id="elevation-div"></div>
+    <div id="disqus_thread"></div>
+    
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="gpx-download">
+        Download GPX
+      </a>
+    </div>
+    <div class="mdl-card__menu">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">link</i>
+      </button>
+    </div>
+  </div>
+  
 <script>
+  //Load Folder List and Launch GPX Load
+    $(document).ready(function(e) {
+    $.getJSON( "folder.json" , function( result ){
+        loadGPX(result);
+    });
+});    
+
+var controlElevation
 
 
-
-    function loadGPXConnector() {
-            var xhttp = new XMLHttpRequest();
-			const gpxList = []
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
-                    thing = this.responseText
-                    searchFor = /gpx</g
-                    a=0;
-                    b=0;
-                    var str = "";
-            
-                    // greps file for .html and then backs up leter by letter till you hot the file name and all
-                    while ((dothtmls = searchFor.exec(thing)) != null ){
-
-                        str = "";
-                        //console.log(dothtmls.index);
-                        
-                        a = dothtmls.index;
-
-                        while (thing[a]  != '>' ){
-                            a--;
-                        }
-                        a++;
-                        while(thing[a] != '<'){
-                            str = str + thing[a];
-                            a++;
-                        }
-                        gpxList.push("/connector/" + str);
-                    } 
-                }
-                plotGPX(gpxList, 'orange');
-            };
-            xhttp.open("GET", "/connector/", true);
-            xhttp.send();
-			
-	}
-
+   
+/*
 	function loadGPXRoad() {
             var xhttp = new XMLHttpRequest();
 			const gpxList = []
@@ -100,148 +190,76 @@
                         gpxList.push("/road/" + str);
                     } 
                 }
-                plotGPX(gpxList, 'green');
+                plotGPX(gpxList, '#4AA96C');
             };
             xhttp.open("GET", "/road/", true);
             xhttp.send();
 			
 	}
+*/
 
-    function loadGPXGravel() {
-            var xhttp = new XMLHttpRequest();
-			const gpxList = []
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
-                    thing = this.responseText
-                    searchFor = /gpx</g
-                    a=0;
-                    b=0;
-                    var str = "";
-            
-                    // greps file for .html and then backs up leter by letter till you hot the file name and all
-                    while ((dothtmls = searchFor.exec(thing)) != null ){
 
-                        str = "";
-                        //console.log(dothtmls.index);
-                        
-                        a = dothtmls.index;
 
-                        while (thing[a]  != '>' ){
-                            a--;
-                        }
-                        a++;
-                        while(thing[a] != '<'){
-                            str = str + thing[a];
-                            a++;
-                        }
-                        gpxList.push("/gravel/" + str);
-                    } 
-                }
-                plotGPX(gpxList, 'blue');
-            };
-            xhttp.open("GET", "/gravel/", true);
-            xhttp.send();
-			
-	}
+    function loadGPX(fileList) {
+      console.log("---- Loading GPX via JSON ----")
+      for (i in fileList){
+        console.log(encodeURI(fileList[i].path))
+        switch (fileList[i].type){
+          case "1-road":
+            plotGPX(encodeURI(fileList[i].path), '#4AA96C');
+            break;
+          case "2-connector":
+            plotGPX(encodeURI(fileList[i].path), '#FFE162');
+            break;
+          case "3-gravel":
+            plotGPX(encodeURI(fileList[i].path), '#009DAE');
+            break;
+          case "4-recon":
+            plotGPX(encodeURI(fileList[i].path), '#9D84B7', "10 5");
+            break;
+          case "5-caution":
+            plotGPX(encodeURI(fileList[i].path), '#D9534F');
+            break;
+          } 
 
-    function loadGPXCaution() {
-            var xhttp = new XMLHttpRequest();
-			const gpxList = []
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
-                    thing = this.responseText
-                    searchFor = /gpx</g
-                    a=0;
-                    b=0;
-                    var str = "";
-            
-                    // greps file for .html and then backs up leter by letter till you hot the file name and all
-                    while ((dothtmls = searchFor.exec(thing)) != null ){
+      
+      }
 
-                        str = "";
-                        //console.log(dothtmls.index);
-                        
-                        a = dothtmls.index;
+  }
+ 
 
-                        while (thing[a]  != '>' ){
-                            a--;
-                        }
-                        a++;
-                        while(thing[a] != '<'){
-                            str = str + thing[a];
-                            a++;
-                        }
-                        gpxList.push("/caution/" + str);
-                    } 
-                }
-                plotGPX(gpxList, 'red');
-            };
-            xhttp.open("GET", "/caution/", true);
-            xhttp.send();
-			
-	}
-
-    function loadGPXRecon() {
-            var xhttp = new XMLHttpRequest();
-			const gpxList = []
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
-                    thing = this.responseText
-                    searchFor = /gpx</g
-                    a=0;
-                    b=0;
-                    var str = "";
-            
-                    // greps file for .html and then backs up leter by letter till you hot the file name and all
-                    while ((dothtmls = searchFor.exec(thing)) != null ){
-
-                        str = "";
-                        //console.log(dothtmls.index);
-                        
-                        a = dothtmls.index;
-
-                        while (thing[a]  != '>' ){
-                            a--;
-                        }
-                        a++;
-                        while(thing[a] != '<'){
-                            str = str + thing[a];
-                            a++;
-                        }
-                        gpxList.push("/recon/" + str);
-                    } 
-                }
-                plotGPX(gpxList, 'purple');
-            };
-            xhttp.open("GET", "/recon/", true);
-            xhttp.send();
-			
-	}
-
-    function plotGPX(gpxList, color) {
-        console.log(gpxList);
-        for (i in gpxList) {
-            console.log(gpxList[i])
-            var gpx = new L.GPX(gpxList[i], {
-		    polyline_options: {
-		    color: color,
-		    opacity: 0.75,
-		    weight: 3,
-		    lineCap: 'round'}}
-	        ,{async: true}).on('loaded', function(e) {
+    function plotGPX(path, color, style) {
+        
+            //console.log(gpxList[i])
+            var gpx = new L.GPX(path, {
+                polyline_options: {
+                    color: color,
+                    opacity: 1,
+                    weight: 2,
+                    dashArray: style,
+                    lineCap: 'round'}
+            },{async: true}).on('loaded', function(e) {
 			    map.fitBounds(e.target.getBounds());
 		    }).addTo(map);
 
             gpx.on('mouseover', function(e) {
-            var gpx2 = e.target,
-                
-                name = gpx2.get_name(),
+                var gpx2 = e.target,   
+                name = gpx2.get_name()
+                gpx2.setStyle({
+                    weight: 6
+                });
+               
+                var popLocation = e.latlng;
+                var popup = L.popup()
+                .setLatLng(popLocation)
+                .setContent(name)
+                .openOn(map);
+            });
+
+            gpx.on('click', function(e) {
+                L.DomEvent.stopPropagation(e);
+                //console.log(e.target._gpx);
+                var gpx2 = e.target;
                 distM = gpx2.get_distance(),
                 distKm = distM / 1000,
                 distKmRnd = distKm.toFixed(1),
@@ -250,78 +268,96 @@
                 gpx2.setStyle({
                     weight: 5
                 });
-            var info = "Name: " + name + "</br>" +
-                "Distance: " + distKmRnd + " km </br>" +
-                "Elevation Gain: " + eleGain + " m </br>"
-            var popLocation = e.latlng;
-            var popup = L.popup()
-                .setLatLng(popLocation)
-                .setContent(info)
-                .openOn(map);
+                var info = "Distance: " + distKmRnd + " km </br>" 
+                console.log(encodeURIComponent(gpx2.get_name()))
+                DISQUS.reset({
+                reload: true,
+                config: function () {  
+                  this.page.identifier = gpx2.get_name();  
+                  this.page.url = ("http://example.com/#" + encodeURIComponent(gpx2.get_name()));
+                }});
+                document.getElementById("info-card").style.visibility = "visible";
+                document.getElementById("item-title").innerHTML = gpx2.get_name();
+                document.getElementById("item-content").innerHTML = info;
+                document.getElementById("gpx-download").href = e.target._gpx;
+                el.clear();
+                
+                var g=new L.GPX(e.target._gpx, {async: true});
+              g.on("addline",function(e){
+	el.addData(e.line);
+});
+
+
+
+g.addTo(map);
+                
+                
+                //controlElevation.load(e.target._gpx);
+
+                gpx2.setStyle({
+                    weight: 3
+                });
             });
-
-            function loadGPXConnector() {
-            var xhttp = new XMLHttpRequest();
-			const gpxList = []
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
-                    thing = this.responseText
-                    searchFor = /gpx</g
-                    a=0;
-                    b=0;
-                    var str = "";
-            
-                    // greps file for .html and then backs up leter by letter till you hot the file name and all
-                    while ((dothtmls = searchFor.exec(thing)) != null ){
-
-                        str = "";
-                        //console.log(dothtmls.index);
-                        
-                        a = dothtmls.index;
-
-                        while (thing[a]  != '>' ){
-                            a--;
-                        }
-                        a++;
-                        while(thing[a] != '<'){
-                            str = str + thing[a];
-                            a++;
-                        }
-                        gpxList.push("/connector/" + str);
-                    } 
-                }
-                plotGPX(gpxList, 'orange');
-            };
-            xhttp.open("GET", "/connector/", true);
-            xhttp.send();
-			
-	}
 
 	gpx.on('mouseout', function(e) {
       map.closePopup();
       var gpx2 = e.target
       gpx2.setStyle({
-                    weight: 3
+                    weight: 2
                 });
     });
 
-        }
+        
 
     }
 
-    function loadGPXList() {
-        loadGPXRoad()
-        loadGPXConnector()
-        loadGPXGravel()
-        loadGPXCaution()
-        loadGPXRecon()
-    }
 
-	loadGPXList();
 
-	var map = L.map('map').setView([49.252752, -123.161156], 13);
+    var opts = {
+      map: {
+        center: [49.252752, -123.161156],
+        zoom: 10,
+        mapTypeId: 'topo',
+        fullscreenControl: false,
+        zoomControl: false,
+        searchControl: false,
+        loadingControl: false,
+        disableDefaultUI: true,
+        pegmanControl: false,
+        
+      },
+      points: {
+        icon: {
+          iconUrl: 'https://unpkg.com/@raruto/leaflet-elevation@1.3.5/images/elevation-poi.png',
+          iconSize: [12, 12],
+        },
+      },
+      elevation: {
+        theme: "custom-theme",
+        detachedView: true,
+        elevationDiv: '#elevation-div',
+        followPositionMarker: true,
+        zFollow: 15,
+        legend: false,
+      },
+    };
+
+	var map = L.map('map', opts.map);
+
+
+
+    map.on('click', function(e){
+        document.getElementById("info-card").style.visibility = "hidden";
+        el.clear();
+        DISQUS.reset({
+                reload: true,
+                config: function () {  
+                  this.page.identifier = "clear";  
+                  this.page.url = ("http://example.com/#!" + encodeURIComponent(gpx2.get_name()));
+                }});
+        //controlElevation = L.control.elevation(elevation_options).remove(map);
+ 
+    })
 
 	var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -336,45 +372,54 @@
 	
 	
 
-/*
-    var gpx1 = 'test.gpx'; // URL to your GPX file or the GPX itself
-    new L.GPX(gpx1, {
-  polyline_options: {
-    color: 'green',
-    opacity: 0.75,
-    weight: 3,
-    lineCap: 'round'}}
-  , {async: true}).on('loaded', function(e) {
-        map.fitBounds(e.target.getBounds());
-    }).addTo(map);
-/*
-	var gpx2 = 'test2.gpx'; // URL to your GPX file or the GPX itself
-    var g = new L.GPX(gpx2, {async: true}).on('loaded', function(e) {
-        map.fitBounds(e.target.getBounds());
-    }).bindPopup("I am a circle.").addTo(map);
 
-    g.on('mouseover', function(e) {
-      var gpx2 = e.target,
-        name = gpx2.get_name(),
-        distM = gpx2.get_distance(),
-        distKm = distM / 1000,
-        distKmRnd = distKm.toFixed(1),
-        eleGain = gpx2.get_elevation_gain().toFixed(0),
-        eleLoss = gpx2.get_elevation_loss().toFixed(0);
-      var info = "Name: " + name + "</br>" +
-        "Distance: " + distKmRnd + " km </br>" +
-        "Elevation Gain: " + eleGain + " m </br>"
-      var popLocation = e.latlng;
-      var popup = L.popup()
-        .setLatLng(popLocation)
-        .setContent(info)
-        .openOn(map);
-    });
 
-	g.on('mouseout', function(e) {
-      map.closePopup();
-    });
-*/
+
+var el = L.control.elevation({
+  	position: "topright",
+	theme: "steelblue-theme", //default: lime-theme
+	width: 600,
+	height: 105,
+	margins: {
+		top: 10,
+		right: 20,
+		bottom: 30,
+		left: 50
+	},
+	useHeightIndicator: true, //if false a marker is drawn at map position
+	interpolation: d3.curveLinear, //see https://github.com/d3/d3-shape/blob/master/README.md#area_curve
+	hoverNumber: {
+		decimalsX: 3, //decimals on distance (always in km)
+		decimalsY: 0, //deciamls on hehttps://www.npmjs.com/package/leaflet.coordinatesight (always in m)
+		formatter: undefined //custom formatter function may be injected
+	},
+	xTicks: 4, //number of ticks in x axis, calculated by default according to width
+	yTicks: 4, //number of ticks on y axis, calculated by default according to height
+	collapsed: false,  //collapsed mode, show chart on click or mouseover
+	imperial: false    //display imperial units instead of metric
+});
+el.addTo(map);
+
+
 </script>
+
+<script>
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://bikemap-v1.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<script id="dsq-count-scr" src="//bikemap-v1.disqus.com/count.js" async></script>
 </body>
 </html>
