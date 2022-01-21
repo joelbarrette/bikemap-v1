@@ -214,6 +214,12 @@ var controlElevation
             });
 
             gpx.on('click', function(e) {
+                DISQUS.reset({
+                reload: true,
+                config: function () {  
+                  this.page.identifier = "clear";  
+                  this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
+                }});
                 L.DomEvent.stopPropagation(e);
                 //console.log(e.target._gpx);
                 var gpx2 = e.target;
@@ -227,12 +233,7 @@ var controlElevation
                 });
                 var info = "Distance: " + distKmRnd + " km </br>" 
                 console.log(encodeURIComponent(gpx2.get_name()))
-                DISQUS.reset({
-                reload: true,
-                config: function () {  
-                  this.page.identifier = gpx2.get_name();  
-                  this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
-                }});
+                loadDisqus(document.getElementById("disqus_thread"),gpx2.get_name(),(encodeURIComponent(gpx2.get_name())))
                 window.location.hash = ('!' + encodeURIComponent(gpx2.get_name()));
                 document.getElementById("info-card").style.visibility = "visible";
                 document.getElementById("item-title").innerHTML = gpx2.get_name();
@@ -269,6 +270,41 @@ g.addTo(map);
 
     }
 
+
+function loadDisqus(element, postTitle, postUrlTag) {
+  var identifier = postTitle;
+
+  // Including the hashbang ('/#!') is important.
+  var url = window.location.origin + '/#!' + postUrlTag;
+
+  var disqus_identifier = identifier;
+  var disqus_url = url;
+
+  if (window.DISQUS) {
+    // Horrible, but jQuery wasn't removing the div elements fully
+    $( ".comments-load" ).each(function() {
+      var len = this.childNodes.length;
+      for(var i = 0; i < len; i++)
+      {  
+        if (this.childNodes[i].tagName == "DIV") {
+          this.removeChild(this.childNodes[i]);
+        } 
+      }
+    });
+
+    $(element).append('<div class="disqus-thread" id="disqus_thread"></div>');
+
+    /** if Disqus exists, call it's reset method with new parameters **/
+    DISQUS.reset({
+      reload: true,
+      config: function () { 
+        //important to convert it to string
+        this.page.identifier = identifier.toString();    
+        this.page.url = url;
+      }
+    });
+  }
+};
 
 
     var opts = {
