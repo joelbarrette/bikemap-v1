@@ -156,49 +156,6 @@
 var controlElevation
 
 
-   
-/*
-	function loadGPXRoad() {
-            var xhttp = new XMLHttpRequest();
-			const gpxList = []
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    // gets the entire html file of the folder 'logpost' in this case and labels it thing
-                    thing = this.responseText
-                    searchFor = /gpx</g
-                    a=0;
-                    b=0;
-                    var str = "";
-            
-                    // greps file for .html and then backs up leter by letter till you hot the file name and all
-                    while ((dothtmls = searchFor.exec(thing)) != null ){
-
-                        str = "";
-                        //console.log(dothtmls.index);
-                        
-                        a = dothtmls.index;
-
-                        while (thing[a]  != '>' ){
-                            a--;
-                        }
-                        a++;
-                        while(thing[a] != '<'){
-                            str = str + thing[a];
-                            a++;
-                        }
-                        gpxList.push("/road/" + str);
-                    } 
-                }
-                plotGPX(gpxList, '#4AA96C');
-            };
-            xhttp.open("GET", "/road/", true);
-            xhttp.send();
-			
-	}
-*/
-
-
 
     function loadGPX(fileList) {
       console.log("---- Loading GPX via JSON ----")
@@ -274,8 +231,9 @@ var controlElevation
                 reload: true,
                 config: function () {  
                   this.page.identifier = gpx2.get_name();  
-                  this.page.url = ("http://example.com/#" + encodeURIComponent(gpx2.get_name()));
+                  this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
                 }});
+                window.location.hash = ('!' + encodeURIComponent(gpx2.get_name()));
                 document.getElementById("info-card").style.visibility = "visible";
                 document.getElementById("item-title").innerHTML = gpx2.get_name();
                 document.getElementById("item-content").innerHTML = info;
@@ -349,11 +307,14 @@ g.addTo(map);
     map.on('click', function(e){
         document.getElementById("info-card").style.visibility = "hidden";
         el.clear();
+        console.log(window.location.hash);
+        window.location.hash = '';
+
         DISQUS.reset({
                 reload: true,
                 config: function () {  
                   this.page.identifier = "clear";  
-                  this.page.url = ("http://example.com/#!" + encodeURIComponent(gpx2.get_name()));
+                  this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
                 }});
         //controlElevation = L.control.elevation(elevation_options).remove(map);
  
