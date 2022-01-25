@@ -221,7 +221,7 @@
 
         _buildContainer: function () {
             this._container = L.DomUtil.create("div", "leaflet-legend leaflet-bar leaflet-control");
-            this._container.style.backgroundColor = "rgba(255,255,255, " + this.options.opacity + ")";
+            this._container.style.backgroundColor = "" + this.options.opacity + ")";
 
             this._contents = L.DomUtil.create("section", "leaflet-legend-contents", this._container);
             this._link = L.DomUtil.create("a", "leaflet-legend-toggle", this._container);

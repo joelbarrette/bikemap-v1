@@ -150,11 +150,36 @@
   
 <script>
   //Load Folder List and Launch GPX Load
-    $(document).ready(function(e) {
-    $.getJSON( "folder.json" , function( result ){
-        loadGPX(result);
-    });
-});    
+  var opts = {
+      map: {
+        center: [49.252752, -123.161156],
+        zoom: 10,
+        mapTypeId: 'topo',
+        fullscreenControl: false,
+        zoomControl: false,
+        searchControl: false,
+        loadingControl: true,
+        disableDefaultUI: true,
+        pegmanControl: false,
+        
+      },
+      points: {
+        icon: {
+          iconUrl: 'https://unpkg.com/@raruto/leaflet-elevation@1.3.5/images/elevation-poi.png',
+          iconSize: [12, 12],
+        },
+      },
+      elevation: {
+        theme: "custom-theme",
+        detachedView: true,
+        elevationDiv: '#elevation-div',
+        followPositionMarker: true,
+        zFollow: 15,
+        legend: false,
+      },
+    };
+
+	var map = L.map('map', opts.map);
 
 var roadColor = '#4AA96C'
 var connectorColor = '#FFE162'
@@ -314,36 +339,7 @@ function loadDisqus(element, postTitle, postUrlTag) {
 };
 
 
-    var opts = {
-      map: {
-        center: [49.252752, -123.161156],
-        zoom: 10,
-        mapTypeId: 'topo',
-        fullscreenControl: false,
-        zoomControl: false,
-        searchControl: false,
-        loadingControl: false,
-        disableDefaultUI: true,
-        pegmanControl: false,
-        
-      },
-      points: {
-        icon: {
-          iconUrl: 'https://unpkg.com/@raruto/leaflet-elevation@1.3.5/images/elevation-poi.png',
-          iconSize: [12, 12],
-        },
-      },
-      elevation: {
-        theme: "custom-theme",
-        detachedView: true,
-        elevationDiv: '#elevation-div',
-        followPositionMarker: true,
-        zFollow: 15,
-        legend: false,
-      },
-    };
-
-	var map = L.map('map', opts.map);
+   
 
 
 
@@ -404,27 +400,7 @@ var el = L.control.elevation({
 });
 el.addTo(map);
 
-
-</script>
-
-<script>
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = 'https://bikemap-v1.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
-
-  L.control.Legend({
+L.control.Legend({
     position: "topleft",
     legends: [{
                 label: "Road",
@@ -465,6 +441,33 @@ el.addTo(map);
             }
           ]
 }).addTo(map);
+
+</script>
+
+<script>
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://bikemap-v1.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+
+  
+
+$(document).ready(function(e) {
+    $.getJSON( "folder.json" , function( result ){
+        loadGPX(result);
+    });
+}); 
 
 </script>
 <script id="dsq-count-scr" src="//bikemap-v1.disqus.com/count.js" async></script>
