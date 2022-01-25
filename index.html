@@ -24,6 +24,9 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="/src/leaflet.legend.css" />
+    <script type="text/javascript" src="/src/leaflet.legend.js"></script>
+
 </head>
 
 <style>
@@ -153,9 +156,13 @@
     });
 });    
 
+var roadColor = '#4AA96C'
+var connectorColor = '#FFE162'
+var gravelColor = '#009DAE'
+var reconColor = '#9D84B7'
+var cautionColor = '#D9534F'
+
 var controlElevation
-
-
 
     function loadGPX(fileList) {
       console.log("---- Loading GPX via JSON ----")
@@ -163,19 +170,19 @@ var controlElevation
         console.log(encodeURI(fileList[i].path))
         switch (fileList[i].type){
           case "1-road":
-            plotGPX(encodeURI(fileList[i].path), '#4AA96C');
+            plotGPX(encodeURI(fileList[i].path), roadColor);
             break;
           case "2-connector":
-            plotGPX(encodeURI(fileList[i].path), '#FFE162');
+            plotGPX(encodeURI(fileList[i].path), connectorColor);
             break;
           case "3-gravel":
-            plotGPX(encodeURI(fileList[i].path), '#009DAE');
+            plotGPX(encodeURI(fileList[i].path), gravelColor);
             break;
           case "4-recon":
-            plotGPX(encodeURI(fileList[i].path), '#9D84B7', "10 5");
+            plotGPX(encodeURI(fileList[i].path), reconColor, "10 5");
             break;
           case "5-caution":
-            plotGPX(encodeURI(fileList[i].path), '#D9534F');
+            plotGPX(encodeURI(fileList[i].path), cautionColor);
             break;
           } 
 
@@ -416,6 +423,49 @@ el.addTo(map);
   s.setAttribute('data-timestamp', +new Date());
   (d.head || d.body).appendChild(s);
   })();
+
+  L.control.Legend({
+    position: "topleft",
+    legends: [{
+                label: "Road",
+                type: "polyline",
+                color: roadColor,
+                fillColor: roadColor,
+                weight: 2,
+                
+            },{
+                label: "Connector",
+                type: "polyline",
+                color: connectorColor,
+                fillColor: connectorColor,
+                weight: 2,
+                
+            },{
+                label: "Gravel",
+                type: "polyline",
+                color: gravelColor,
+                fillColor: gravelColor,
+                weight: 2,
+                
+            },{
+                label: "Caution",
+                type: "polyline",
+                color: cautionColor,
+                fillColor: cautionColor,
+                weight: 2,
+                
+            },
+            {
+                label: "Recon Route",
+                type: "polyline",
+                color: reconColor,
+                fillColor: reconColor,
+                dashArray: [10, 5],
+                weight: 2
+            }
+          ]
+}).addTo(map);
+
 </script>
 <script id="dsq-count-scr" src="//bikemap-v1.disqus.com/count.js" async></script>
 </body>
