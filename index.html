@@ -8,13 +8,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
+  <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="leaflet-gpx.js"></script>
 
-
+    <!--LOADING ELEVATION PLUGIN-->
     <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
     <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
 
@@ -24,106 +24,11 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="/src/leaflet.legend.css" />
-    <script type="text/javascript" src="/src/leaflet.legend.js"></script>
+    <link rel="stylesheet" href="src/leaflet.legend.css" />
+    <script type="text/javascript" src="src/leaflet.legend.js"></script>
 
 </head>
 
-<style>
-    .demo-card-wide.mdl-card {
-      width: 95%;
-      position: fixed;
-      margin-left: 2.5%;
-      bottom: 2.25%;
-      z-index: 900;
-      padding: 10px;
-      background-color: #2b2a27;
-    }
-    .demo-card-wide > .mdl-card__title {
-      color: #fff;
-      height: 70px;
-    }
-    .demo-card-wide > .mdl-card__menu {
-      color: #fff;
-    }
-
-    .demo-card-wide > .mdl-card__supporting-text {
-      color: #fff;
-    }
-   
-    #elevation-div {
-      height: 20vh;
-      width: 65%;
-      background-color:;
-      color:#fff;
-      font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
-    }
-
-
-    #elevation-div > div > svg{
-        background-color:rgba(255,255,255,0.0);
-        color:#fff;
-    }
-    .elevation-control.elevation .grid .tick line {
-        stroke: rgba(255,255,255,0.5);
-    }
-
-    .custom-theme.elevation-control.elevation .area {
-      fill: rgba(255, 255, 255, 0.85);
-      stroke: rgba(231, 7, 7, 0.85);
-      stroke-width: 2.8;
-    }
-
-    .custom-theme.height-focus.circle-lower {
-      fill: #FF0;
-    }
-
-    .elevation-content.elevation-detached {
-      height: 3%;
-      font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
-    }
-
-    .elevation-control.elevation .axis text, .elevation-control.elevation .point text{
-        fill:#fff;
-        stroke-width:0px;
-    }
-    .custom-theme.elevation-polyline {
-      stroke: #F00;
-      stroke-opacity: 1;
-      stroke-width: 2;
-    }
-
-    .custom-theme.elevation-polyline-segments {
-      stroke: #FF0;
-      stroke-width: 2;
-      stroke-dasharray: 4;
-    }
-
-    .custom-theme.data-summary {
-      font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      padding: 4px 0;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      background-color: rgb(0, 0, 0);
-      color: #fff;
-    }
-
-    .data-summary .summaryvalue {
-      font-weight: bold;
-    }
-
-    #disqus_thread{
-      position:absolute;
-      left:67%;
-      width:30%;
-      top:70px;
-    }
-
-    </style>
     
 <div id="map" style="height: 100vh;"></div>
 <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="info-card" style="visibility: hidden;">
@@ -149,7 +54,14 @@
   </div>
   
 <script>
-  //Load Folder List and Launch GPX Load
+  //Map Color Variables
+  var roadColor = '#4AA96C'
+  var connectorColor = '#FFE162'
+  var gravelColor = '#009DAE'
+  var reconColor = '#9D84B7'
+  var cautionColor = '#D9534F'
+
+  //Initializing the Map
   var opts = {
       map: {
         center: [49.252752, -123.161156],
@@ -181,102 +93,118 @@
 
 	var map = L.map('map', opts.map);
 
-var roadColor = '#4AA96C'
-var connectorColor = '#FFE162'
-var gravelColor = '#009DAE'
-var reconColor = '#9D84B7'
-var cautionColor = '#D9534F'
+  var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/dark-v10',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(map);
 
-var controlElevation
 
-    function loadGPX(fileList) {
-      console.log("---- Loading GPX via JSON ----")
-      for (i in fileList){
-        console.log(encodeURI(fileList[i].path))
-        switch (fileList[i].type){
-          case "1-road":
-            plotGPX(encodeURI(fileList[i].path), roadColor);
-            break;
-          case "2-connector":
-            plotGPX(encodeURI(fileList[i].path), connectorColor);
-            break;
-          case "3-gravel":
-            plotGPX(encodeURI(fileList[i].path), gravelColor);
-            break;
-          case "4-recon":
-            plotGPX(encodeURI(fileList[i].path), reconColor, "10 5");
-            break;
-          case "5-caution":
-            plotGPX(encodeURI(fileList[i].path), cautionColor);
-            break;
-          } 
 
-      
-      }
 
-  }
+  //Loading GPX from JSON
+
+  function loadGPX(fileList) {
+    console.log("---- Loading GPX via JSON ----")
+    for (i in fileList){
+      console.log(encodeURI(fileList[i].path))
+      switch (fileList[i].type){
+        case "1-road":
+          plotGPX(encodeURI(fileList[i].path), roadColor);
+          break;
+        case "2-connector":
+          plotGPX(encodeURI(fileList[i].path), connectorColor);
+          break;
+        case "3-gravel":
+          plotGPX(encodeURI(fileList[i].path), gravelColor);
+          break;
+        case "4-recon":
+          plotGPX(encodeURI(fileList[i].path), reconColor, "10 5");
+          break;
+        case "5-caution":
+          plotGPX(encodeURI(fileList[i].path), cautionColor);
+          break;
+        } 
+
+    
+    }
+
+}
  
 
-    function plotGPX(path, color, style) {
-        
-            //console.log(gpxList[i])
-            var gpx = new L.GPX(path, {
-                polyline_options: {
-                    color: color,
-                    opacity: 1,
-                    weight: 2,
-                    dashArray: style,
-                    lineCap: 'round'}
-            },{async: true}).on('loaded', function(e) {
-			    map.fitBounds(e.target.getBounds());
-		    }).addTo(map);
+  function plotGPX(path, color, style) {
 
-            gpx.on('mouseover', function(e) {
-                var gpx2 = e.target,   
-                name = gpx2.get_name()
-                gpx2.setStyle({
-                    weight: 6
-                });
-               
-                var popLocation = e.latlng;
-                var popup = L.popup()
-                .setLatLng(popLocation)
-                .setContent(name)
-                .openOn(map);
-            });
+  //console.log(gpxList[i])
+    var gpx = new L.GPX(path, {
+        polyline_options: {
+            color: color,
+            opacity: 1,
+            weight: 2,
+            dashArray: style,
+            lineCap: 'round'
+        }
+    }, {
+        async: true
+    }).on('loaded', function(e) {
+        map.fitBounds(e.target.getBounds());
+    }).addTo(map);
 
-            gpx.on('click', function(e) {
+    gpx.on('mouseover', function(e) {
+        var gpx2 = e.target,
+            name = gpx2.get_name()
+        gpx2.setStyle({
+            weight: 6
+        });
+
+        var popLocation = e.latlng;
+        var popup = L.popup()
+            .setLatLng(popLocation)
+            .setContent(name)
+            .openOn(map);
+    });
+
+    //Callback function for when plot lines are selected
+    gpx.on('click', function(e) {
+                //Disqus Reset 
                 DISQUS.reset({
-                reload: true,
-                config: function () {  
-                  this.page.identifier = "clear";  
-                  this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
-                }});
+                    reload: true,
+                    config: function() {
+                        this.page.identifier = "clear";
+                        this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
+                    }
+                });
+                
+                //Stops the map layer from also receiving a click request
                 L.DomEvent.stopPropagation(e);
-                //console.log(e.target._gpx);
+                
                 var gpx2 = e.target;
                 distM = gpx2.get_distance(),
-                distKm = distM / 1000,
-                distKmRnd = distKm.toFixed(1),
-                eleGain = gpx2.get_elevation_gain().toFixed(0),
-                eleLoss = gpx2.get_elevation_loss().toFixed(0);
+                    distKm = distM / 1000,
+                    distKmRnd = distKm.toFixed(1),
+                    eleGain = gpx2.get_elevation_gain().toFixed(0),
+                    eleLoss = gpx2.get_elevation_loss().toFixed(0);
                 gpx2.setStyle({
                     weight: 5
                 });
-                var info = "Distance: " + distKmRnd + " km </br>" 
+                var info = "Distance: " + distKmRnd + " km </br>"
                 console.log(encodeURIComponent(gpx2.get_name()))
-                loadDisqus(document.getElementById("disqus_thread"),gpx2.get_name(),(encodeURIComponent(gpx2.get_name())))
+                loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
                 window.location.hash = ('!' + encodeURIComponent(gpx2.get_name()));
                 document.getElementById("info-card").style.visibility = "visible";
                 document.getElementById("item-title").innerHTML = gpx2.get_name();
                 document.getElementById("item-content").innerHTML = info;
                 document.getElementById("gpx-download").href = e.target._gpx;
                 el.clear();
-                
-                var g=new L.GPX(e.target._gpx, {async: true});
-              g.on("addline",function(e){
-	el.addData(e.line);
-});
+
+                var g = new L.GPX(e.target._gpx, {
+                    async: true
+                });
+                g.on("addline", function(e) {
+                    el.addData(e.line);
+                });
 
 
 
@@ -359,14 +287,7 @@ function loadDisqus(element, postTitle, postUrlTag) {
  
     })
 
-	var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/dark-v10',
-		tileSize: 512,
-		zoomOffset: -1
-	}).addTo(map);
+
 
 	
 	
@@ -379,7 +300,7 @@ var el = L.control.elevation({
   	position: "topright",
 	theme: "steelblue-theme", //default: lime-theme
 	width: 600,
-	height: 105,
+	height: 200,
 	margins: {
 		top: 10,
 		right: 20,
@@ -400,7 +321,7 @@ var el = L.control.elevation({
 });
 el.addTo(map);
 
-L.control.Legend({
+L.control.legend({
     position: "topleft",
     legends: [{
                 label: "Road",
@@ -442,6 +363,12 @@ L.control.Legend({
           ]
 }).addTo(map);
 
+  //Loading Data Call
+  $.getJSON( "folder.json" , function( result ){
+      loadGPX(result);
+  });
+
+
 </script>
 
 <script>
@@ -457,19 +384,16 @@ L.control.Legend({
   (function() { // DON'T EDIT BELOW THIS LINE
   var d = document, s = d.createElement('script');
   s.src = 'https://bikemap-v1.disqus.com/embed.js';
+  s.async = "true";
   s.setAttribute('data-timestamp', +new Date());
   (d.head || d.body).appendChild(s);
   })();
 
   
 
-$(document).ready(function(e) {
-    $.getJSON( "folder.json" , function( result ){
-        loadGPX(result);
-    });
-}); 
+
 
 </script>
-<script id="dsq-count-scr" src="//bikemap-v1.disqus.com/count.js" async></script>
+<script id="dsq-count-scr" src="bikemap-v1.disqus.com/count.js" async></script>
 </body>
 </html>

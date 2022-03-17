@@ -42,7 +42,7 @@ def main():
     for elem in sorted(listOfFiles):
         if re.search('\.gpx', elem):   
             a = {
-            'path': elem[1:],
+            'path': elem[2:],
             'type': elem.split('/')[1].strip()
             }
             b.append(a)
