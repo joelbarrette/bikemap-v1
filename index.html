@@ -6,8 +6,6 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="dns-prefetch preconnect" href="https://unpkg.com">
-  <link rel="preload" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" as="script">
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
   <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin=""/>
@@ -327,15 +325,18 @@
                     }
                 });
                 var gpx2 = e.target;
-                var converter = new showdown.Converter()
+                var converter = new showdown.Converter() // Instantiate Showdown Markdown converter
                 
-                var mdFilePath = e.target._gpx.substring(0, e.target._gpx.length-3) + "md"
+                var mdFilePath = e.target._gpx.substring(0, e.target._gpx.length-3) + "md" // Generate markdown file name hack 
+
                 $.get( mdFilePath , function( result ){
+                  console.log("Markdown entry found for " + e.target.get_name());
                   el.clear();
                   sidebar.open('sidebar-info');
                   document.getElementById("sidebar-info").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
                   document.getElementById("sidebar-info").innerHTML += converter.makeHtml(result);
-                  //document.getElementById("sidebar-info").innerHTML += '<div class="elevation" id="elevation-div"></div><div id="disqus_thread"></div>'
+                  var g = new L.GPX(e.target._gpx, {async: true});
+                  g.addTo(map);
                   g.on("addline", function(e) {
                     el.addData(e.line);
                   });
@@ -346,20 +347,21 @@
                   
     
                 }).fail((function(){ 
+                  console.log("No Markdown entry found for " + e.target.get_name());
                   el.clear();
                   sidebar.open('sidebar-info');
                   document.getElementById("sidebar-info").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
                   document.getElementById("sidebar-info").innerHTML += "<p>No Info</p>"
-                  //document.getElementById("sidebar-info").innerHTML += '<div class="elevation" id="elevation-div"></div><div id="disqus_thread"></div>'
+                  var g = new L.GPX(e.target._gpx, {async: true});
+                  g.addTo(map);
                   g.on("addline", function(e) {
                     el.addData(e.line);
                   });
                   loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
-                  document.querySelector("#elevation-k69o9wtjh > svg")
                   })
                   
                 );
-
+                
                 //Stops the map layer from also receiving a click request
                 L.DomEvent.stopPropagation(e);
                 
@@ -377,10 +379,7 @@
                 
                 
                 
-                var g = new L.GPX(e.target._gpx, {
-                    async: true
-                });
-                g.addTo(map);
+
 
                 gpx2.setStyle({
                     weight: 3
@@ -443,7 +442,6 @@ function loadDisqus(element, postTitle, postUrlTag) {
 
     map.on('click', function(e){
         sidebar.close();
-        //document.getElementById("info-card").style.visibility = "hidden";
         el.clear();
         console.log(window.location.hash);
         window.location.hash = '';
@@ -454,7 +452,6 @@ function loadDisqus(element, postTitle, postUrlTag) {
                   this.page.identifier = "clear";  
                   this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
                 }});
-        //controlElevation = L.control.elevation(elevation_options).remove(map);
  
     })
 
@@ -495,7 +492,7 @@ var el = L.control.elevation({
 		formatter: undefined //custom formatter function may be injected
 	},
 	//xTicks: 4, //number of ticks in x axis, calculated by default according to width
-	//yTicks: 4, //number of ticks on y axis, calculated by default according to height
+	yTicks: 2, //number of ticks on y axis, calculated by default according to height
 	collapsed: false,  //collapsed mode, show chart on click or mouseover
 	imperial: false    //display imperial units instead of metric
 });
@@ -504,7 +501,7 @@ el.addTo(map);
 
 	// Custom Summary info
   el.on('eledata_added', ({layer, name, track_info}) => {
-      console.log("hello");
+
 			let q = document.querySelector.bind(document);
 			q('.totlen .summaryvalue').innerHTML = track_info.distance.toFixed(2) + " km";
 			q('.maxele .summaryvalue').innerHTML = track_info.elevation_max.toFixed(2) + " m";

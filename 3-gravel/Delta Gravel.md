@@ -1,0 +1,1 @@
+Nice and flat gravel route with few stops, some water damage done to the section right after the Alex Fraser bridge where it wraps around Burns Bog. It’s definitely worth waiting for several dry days in a row since the path is not much higher than the bog itself and very prone to being flooded over.

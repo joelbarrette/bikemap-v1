@@ -1,0 +1,1 @@
+Excellent mixed surface riding, it’s quite a popular pedestrian area so can be quite busy during specific hours. It’s great for a nice leisure ride, it goes in and out of the trees which is cool. Lots of park benches for picnics or breaks as well.
