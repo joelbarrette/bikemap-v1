@@ -287,6 +287,7 @@
 
   //console.log(gpxList[i])
     var gpx = new L.GPX(path, {
+        async: true,
         polyline_options: {
             color: color,
             opacity: 1,
@@ -294,11 +295,13 @@
             dashArray: style,
             lineCap: 'round'
         }
-    }, {
-        async: true
-    }).on('loaded', function(e) {
-        map.fitBounds(e.target.getBounds());
-    }).addTo(map);
+    } 
+        //async: true
+    
+    //).on('loaded', function(e) {
+    //    map.fitBounds(e.target.getBounds());
+    //}
+    ).addTo(map);
 
     gpx.on('mouseover', function(e) {
         var gpx2 = e.target,
