@@ -6,17 +6,20 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<link rel="dns-prefetch preconnect" href="https://unpkg.com">
+  <link rel="preload" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" as="script">
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
   <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="leaflet-gpx.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.css">
+
 
     <!--LOADING ELEVATION PLUGIN-->
-    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
-    <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation@2.1.0/dist/leaflet-elevation.min.css" />
+    <script src="src/leaflet-elevation.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -27,34 +30,178 @@
     <link rel="stylesheet" href="src/leaflet.legend.css" />
     <script type="text/javascript" src="src/leaflet.legend.js"></script>
 
+    <script type="text/javascript" src="src/leaflet-sidebar.js"></script>
+    <link rel="stylesheet" href="css/leaflet-sidebar.css" />
+
+    <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+
 </head>
 
     
 <div id="map" style="height: 100vh;"></div>
-<div class="demo-card-wide mdl-card mdl-shadow--2dp" id="info-card" style="visibility: hidden;">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text" id="item-title" >Welcome</h2>
-    </div>
-    <div class="mdl-card__supporting-text" id="item-content">
-        hello
-    </div>
-    <div class="elevation" id="elevation-div"></div>
-    <div id="disqus_thread"></div>
-    
-    <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="gpx-download">
-        Download GPX
-      </a>
-    </div>
-    <div class="mdl-card__menu">
-      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">link</i>
-      </button>
-    </div>
+
+
+<div id="sidebar" class="leaflet-sidebar collapsed">
+  <!-- Nav tabs -->
+  <div class="leaflet-sidebar-tabs">
+      <ul role="tablist"> <!-- top aligned tabs -->
+        <li><a href="#sidebar-info" role="tab"><i class="fa fa-bars"></i></a></li>
+      </ul>
+
+      <ul role="tablist"> <!-- bottom aligned tabs -->
+          <li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+      </ul>
   </div>
+
+  <!-- Tab panes -->
+  <div class="leaflet-sidebar-content">
+      <div class="leaflet-sidebar-pane" id="sidebar-info">
+        
+        
+ 
+          <p><test</p>
+
+          <div id="sidebar-info-description"></div>
+          
+
+      </div>
+      <br>
+      <hr style="width:92%;margin-left:4%;">
+      <br>
+      <div class="elevation" id="elevation-div"></div>
+      <div id="data-summary" class="data-summary">
+
+        <div class="data-row">
+    
+          <span class="totlen">
+            <span class="summarylabel">Length: </span>
+            <span class="summaryvalue">0</span>
+          </span>
+          <br>
+          <br>
+          
+          </span>
+          <span class="maxele">
+            <span class="summarylabel">Max Elevation: </span>
+            <span class="summaryvalue">0</span>
+          </span>
+          <br>
+          <span class="minele">
+            <span class="summarylabel">Min Elevation: </span>
+            <span class="summaryvalue">0</span>
+          </span>
+    
+        </div>
+
+        <div class="data-row">
+    
+          <span class="gain">
+            <span class="summarylabel">Gain: </span>
+            <span class="summaryvalue">0</span>
+          </span>
+          <br>
+          <span class="loss">
+            <span class="summarylabel">Loss: </span>
+            <span class="summaryvalue">0</span>
+          </span>
+    
+        </div>
+    
+      </div>
+      <br>
+      <hr style="width:92%;margin-left:4%;">
+      <br>
+      <div id="disqus_thread"></div>
+
+  </div>
+</div>
+
+
   
+<style>
+.data-summary {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size: 12px;
+      margin-left: 14px;
+      overflow-x: hidden;
+      white-space: nowrap; 
+		}
+
+
+
+		.data-summary .summarylabel,
+		.data-summary .summaryvalue {
+			display: inline-block;
+      overflow-x: hidden;
+  
+		
+		}
+
+		.data-row {
+			margin-bottom: 1.5em;
+      overflow-x: hidden;
+		}
+
+		.elevation-detached.elevation-collapsed .elevation-toggle-icon {
+			top: .5em;
+		}
+
+/*  ---------------    */
+
+.custom-theme.elevation-control .area path.altitude,
+		.custom-theme .legend-altitude rect.area {
+			fill: rgba(73, 73, 73, 0.95);  /* fallback color */
+			fill-opacity: 0.9;
+			stroke: rgba(255, 255, 255,.5);
+			stroke-width: 1.5;
+		}
+
+.custom-theme.elevation-control .grid .tick line  {
+  stroke: rgba(255, 255, 255,.0)!important;
+}
+
+		.custom-theme.elevation-control .area path.slope,
+		.custom-theme .legend-slope rect {
+			fill: url(#blob-pattern);
+			fill-opacity: 1;
+			stroke: #000;
+			stroke-width: 1.5;
+		}
+
+
+    .custom-theme.elevation-control .axis line, 
+    .custom-theme.elevation-control .axis path {
+      stroke: #fff;
+    }
+
+    .custom-theme.elevation-control .axis text {
+      stroke: none;
+      color: #fff;
+      fill: #fff;
+      font-weight: 400;
+    }
+
+		.custom-theme.height-focus.circle-lower {
+			fill: #FF0;
+		}
+
+		.custom-theme.elevation-polyline {
+			stroke: #F00;
+			stroke-opacity: 1;
+			stroke-width: 2;
+		}
+
+		.custom-theme.elevation-polyline-segments {
+			stroke: #FF0;
+			stroke-width: 2;
+			stroke-dasharray: 4;
+		}
+	
+</style>
+
 <script>
   //Map Color Variables
+  var routeColor = '#000000'
   var roadColor = '#4AA96C'
   var connectorColor = '#FFE162'
   var gravelColor = '#009DAE'
@@ -112,20 +259,23 @@
     for (i in fileList){
       console.log(encodeURI(fileList[i].path))
       switch (fileList[i].type){
+        case "0-route":
+          plotGPX(encodeURI(fileList[i].path), routeColor, " ", 5);
+          break;
         case "1-road":
-          plotGPX(encodeURI(fileList[i].path), roadColor);
+          plotGPX(encodeURI(fileList[i].path), roadColor, " ", 2);
           break;
         case "2-connector":
-          plotGPX(encodeURI(fileList[i].path), connectorColor);
+          plotGPX(encodeURI(fileList[i].path), connectorColor, " ", 2);
           break;
         case "3-gravel":
-          plotGPX(encodeURI(fileList[i].path), gravelColor);
+          plotGPX(encodeURI(fileList[i].path), gravelColor, " ", 2);
           break;
         case "4-recon":
-          plotGPX(encodeURI(fileList[i].path), reconColor, "10 5");
+          plotGPX(encodeURI(fileList[i].path), reconColor, "10 5", 2);
           break;
         case "5-caution":
-          plotGPX(encodeURI(fileList[i].path), cautionColor);
+          plotGPX(encodeURI(fileList[i].path), cautionColor, " ", 2);
           break;
         } 
 
@@ -135,14 +285,14 @@
 }
  
 
-  function plotGPX(path, color, style) {
+  function plotGPX(path, color, style, thickness) {
 
   //console.log(gpxList[i])
     var gpx = new L.GPX(path, {
         polyline_options: {
             color: color,
             opacity: 1,
-            weight: 2,
+            weight: thickness,
             dashArray: style,
             lineCap: 'round'
         }
@@ -176,55 +326,75 @@
                         this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
                     }
                 });
+                var gpx2 = e.target;
+                var converter = new showdown.Converter()
                 
+                var mdFilePath = e.target._gpx.substring(0, e.target._gpx.length-3) + "md"
+                $.get( mdFilePath , function( result ){
+                  el.clear();
+                  sidebar.open('sidebar-info');
+                  document.getElementById("sidebar-info").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
+                  document.getElementById("sidebar-info").innerHTML += converter.makeHtml(result);
+                  //document.getElementById("sidebar-info").innerHTML += '<div class="elevation" id="elevation-div"></div><div id="disqus_thread"></div>'
+                  g.on("addline", function(e) {
+                    el.addData(e.line);
+                  });
+                  loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
+                  
+              
+
+                  
+    
+                }).fail((function(){ 
+                  el.clear();
+                  sidebar.open('sidebar-info');
+                  document.getElementById("sidebar-info").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
+                  document.getElementById("sidebar-info").innerHTML += "<p>No Info</p>"
+                  //document.getElementById("sidebar-info").innerHTML += '<div class="elevation" id="elevation-div"></div><div id="disqus_thread"></div>'
+                  g.on("addline", function(e) {
+                    el.addData(e.line);
+                  });
+                  loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
+                  document.querySelector("#elevation-k69o9wtjh > svg")
+                  })
+                  
+                );
+
                 //Stops the map layer from also receiving a click request
                 L.DomEvent.stopPropagation(e);
                 
-                var gpx2 = e.target;
-                distM = gpx2.get_distance(),
-                    distKm = distM / 1000,
-                    distKmRnd = distKm.toFixed(1),
-                    eleGain = gpx2.get_elevation_gain().toFixed(0),
-                    eleLoss = gpx2.get_elevation_loss().toFixed(0);
+                
+                
                 gpx2.setStyle({
                     weight: 5
                 });
-                var info = "Distance: " + distKmRnd + " km </br>"
+                
                 console.log(encodeURIComponent(gpx2.get_name()))
-                loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
+                
                 window.location.hash = ('!' + encodeURIComponent(gpx2.get_name()));
-                document.getElementById("info-card").style.visibility = "visible";
-                document.getElementById("item-title").innerHTML = gpx2.get_name();
-                document.getElementById("item-content").innerHTML = info;
-                document.getElementById("gpx-download").href = e.target._gpx;
-                el.clear();
-
+                //document.getElementById("info-card").style.visibility = "visible";
+                
+                
+                
+                
                 var g = new L.GPX(e.target._gpx, {
                     async: true
                 });
-                g.on("addline", function(e) {
-                    el.addData(e.line);
-                });
-
-
-
-g.addTo(map);
-                
-                
-                //controlElevation.load(e.target._gpx);
+                g.addTo(map);
 
                 gpx2.setStyle({
                     weight: 3
                 });
             });
 
-	gpx.on('mouseout', function(e) {
-      map.closePopup();
-      var gpx2 = e.target
-      gpx2.setStyle({
-                    weight: 2
-                });
-    });
+	          gpx.on('mouseout', function(e) {
+              //el.clear();
+            map.closePopup();
+            var gpx2 = e.target
+            gpx2.setStyle({
+                          weight: thickness
+                      });
+          });
 
         
 
@@ -272,7 +442,8 @@ function loadDisqus(element, postTitle, postUrlTag) {
 
 
     map.on('click', function(e){
-        document.getElementById("info-card").style.visibility = "hidden";
+        sidebar.close();
+        //document.getElementById("info-card").style.visibility = "hidden";
         el.clear();
         console.log(window.location.hash);
         window.location.hash = '';
@@ -297,32 +468,54 @@ function loadDisqus(element, postTitle, postUrlTag) {
 
 
 var el = L.control.elevation({
-  	position: "topright",
-	theme: "steelblue-theme", //default: lime-theme
-	width: 600,
-	height: 200,
-	margins: {
+  	//position: "topright",
+	  theme: "custom-theme", //default: lime-theme
+    autofitBounds: false,
+    width: 400,
+    height: 200,
+	  margins: {
 		top: 10,
 		right: 20,
 		bottom: 30,
 		left: 50
 	},
+  xTicks:4,
+  followMarker: false,
+  almostOver: true,
+  slope: "summary",
+  summary: false,
+
+  closeBtn:false,
+
 	useHeightIndicator: true, //if false a marker is drawn at map position
 	interpolation: d3.curveLinear, //see https://github.com/d3/d3-shape/blob/master/README.md#area_curve
 	hoverNumber: {
-		decimalsX: 3, //decimals on distance (always in km)
+		decimalsX: 2, //decimals on distance (always in km)
 		decimalsY: 0, //deciamls on hehttps://www.npmjs.com/package/leaflet.coordinatesight (always in m)
 		formatter: undefined //custom formatter function may be injected
 	},
-	xTicks: 4, //number of ticks in x axis, calculated by default according to width
-	yTicks: 4, //number of ticks on y axis, calculated by default according to height
+	//xTicks: 4, //number of ticks in x axis, calculated by default according to width
+	//yTicks: 4, //number of ticks on y axis, calculated by default according to height
 	collapsed: false,  //collapsed mode, show chart on click or mouseover
 	imperial: false    //display imperial units instead of metric
 });
+
 el.addTo(map);
 
+	// Custom Summary info
+  el.on('eledata_added', ({layer, name, track_info}) => {
+      console.log("hello");
+			let q = document.querySelector.bind(document);
+			q('.totlen .summaryvalue').innerHTML = track_info.distance.toFixed(2) + " km";
+			q('.maxele .summaryvalue').innerHTML = track_info.elevation_max.toFixed(2) + " m";
+			q('.minele .summaryvalue').innerHTML = track_info.elevation_min.toFixed(2) + " m";
+			q('.gain .summaryvalue').innerHTML   = "+" + track_info.ascent.toFixed(0) + " m";
+			q('.loss .summaryvalue').innerHTML   = "-" + track_info.descent.toFixed(0) + " m";
+		});
+
+
 L.control.legend({
-    position: "topleft",
+    position: "topright",
     legends: [{
                 label: "Road",
                 type: "polyline",
@@ -367,6 +560,18 @@ L.control.legend({
   $.getJSON( "folder.json" , function( result ){
       loadGPX(result);
   });
+
+  //
+  // CONFIGURE SIDE PANEL
+  //
+
+  var sidebar = L.control.sidebar({
+    autopan: true,       // whether to maintain the centered map point when opening the sidebar
+    closeButton: true,    // whether t add a close button to the panes
+    container: 'sidebar', // the DOM container or #ID of a predefined sidebar container that should be used
+    position: 'left',     // left or right
+}).addTo(map);
+
 
 
 </script>

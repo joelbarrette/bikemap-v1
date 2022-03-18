@@ -1,13 +1,5 @@
 
-    .demo-card-wide.mdl-card {
-      width: 95%;
-      position: fixed;
-      margin-left: 2.5%;
-      bottom: 2.25%;
-      z-index: 900;
-      padding: 10px;
-      background-color: #2b2a27;
-    }
+  
     .demo-card-wide > .mdl-card__title {
       color: #fff;
       height: 70px;
@@ -21,17 +13,24 @@
     }
    
     #elevation-div {
-      height: 20vh;
-      width: 65%;
-      background-color:;
-      color:#fff;
+      overflow: hidden;
+      margin-left: -10px;
+      margin-right: 10px;
+      color:rgb(0, 0, 0);
       font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
     }
 
 
+  
+
+
     #elevation-div > div > svg{
         background-color:rgba(255,255,255,0.0);
-        color:#fff;
+        color:rgba(255, 255, 255, 0.0);
+    }
+
+    .elevation-control .axis text{
+        fill:rgba(255, 255, 255, 1.00)
     }
     .elevation-control.elevation .grid .tick line {
         stroke: rgba(255,255,255,0.5);
@@ -62,6 +61,12 @@
       stroke-width: 2;
     }
 
+    .custom-theme.elevation-control .legend text, .elevation-control .point text{
+        fill: #fff;
+        font-weight: 400;   
+        stroke:none;
+    }
+
     .custom-theme.elevation-polyline-segments {
       stroke: #FF0;
       stroke-width: 2;
@@ -86,8 +91,8 @@
     }
 
     #disqus_thread{
-      position:absolute;
-      left:67%;
-      width:30%;
-      top:70px;
+   
+        margin-left: 10px;
+        margin-right: 15px;
+      top:5px;
     }

@@ -1,5 +1,7 @@
 .leaflet-legend {
-  background-color:#2b2a27;
+  background-color:rgba(43, 42, 39,0.85);
+  position: relative;
+  left: 10px;
 }
 
 .leaflet-legend-title {

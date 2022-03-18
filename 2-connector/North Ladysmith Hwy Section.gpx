@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>North Ladysmith Hwy Section</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-03-17T23:42:17.000Z</time>
+  </metadata>
+  <trk>
+    <name>North Ladysmith Hwy Section</name>
+    <trkseg>
+      <trkpt lat="49.02633452787995" lon="-123.86203260160983">
+        <ele>26.943666457377944</ele>
+        <time>2022-03-17T23:42:17.000Z</time>
+      </trkpt>
+      <trkpt lat="49.02500867843628" lon="-123.86104345321655">
+        <ele>23.395488739328822</ele>
+        <time>2022-03-17T23:42:17.024Z</time>
+      </trkpt>
+      <trkpt lat="49.02430057525635" lon="-123.86082887649536">
+        <ele>21.334411621267847</ele>
+        <time>2022-03-17T23:42:17.059Z</time>
+      </trkpt>
+      <trkpt lat="49.0235710144043" lon="-123.86072158813477">
+        <ele>20.094852444997354</ele>
+        <time>2022-03-17T23:42:17.106Z</time>
+      </trkpt>
+      <trkpt lat="49.021618366241455" lon="-123.860764503479">
+        <ele>7.000000003267295</ele>
+        <time>2022-03-17T23:42:17.184Z</time>
+      </trkpt>
+      <trkpt lat="49.021146381273866" lon="-123.86063575744629">
+        <ele>9.322498322074377</ele>
+        <time>2022-03-17T23:42:17.270Z</time>
+      </trkpt>
+      <trkpt lat="49.020652770996094" lon="-123.86037826538086">
+        <ele>14.198626518301703</ele>
+        <time>2022-03-17T23:42:17.364Z</time>
+      </trkpt>
+      <trkpt lat="49.01717662811279" lon="-123.85730981826782">
+        <ele>19.3210334755124</ele>
+        <time>2022-03-17T23:42:17.523Z</time>
+      </trkpt>
+      <trkpt lat="49.016189659014344" lon="-123.85600090026855">
+        <ele>13.728229523890388</ele>
+        <time>2022-03-17T23:42:17.703Z</time>
+      </trkpt>
+      <trkpt lat="49.01618957519531" lon="-123.85600090026855">
+        <ele>13.72853088427545</ele>
+        <time>2022-03-17T23:42:17.883Z</time>
+      </trkpt>
+      <trkpt lat="49.0155029296875" lon="-123.8547134399414">
+        <ele>16.02395057583786</ele>
+        <time>2022-03-17T23:42:18.080Z</time>
+      </trkpt>
+      <trkpt lat="49.015181148424745" lon="-123.85398387908936">
+        <ele>13.863181114654758</ele>
+        <time>2022-03-17T23:42:18.286Z</time>
+      </trkpt>
+      <trkpt lat="49.01518106460571" lon="-123.85398387908936">
+        <ele>13.863483428955014</ele>
+        <time>2022-03-17T23:42:18.492Z</time>
+      </trkpt>
+      <trkpt lat="49.01445150375366" lon="-123.85160207748413">
+        <ele>16.48917198118172</ele>
+        <time>2022-03-17T23:42:18.726Z</time>
+      </trkpt>
+      <trkpt lat="49.014194095507264" lon="-123.85080814361572">
+        <ele>16.143020629619564</ele>
+        <time>2022-03-17T23:42:18.969Z</time>
+      </trkpt>
+      <trkpt lat="49.01410826481879" lon="-123.85052919387817">
+        <ele>14.554666521062183</ele>
+        <time>2022-03-17T23:42:19.216Z</time>
+      </trkpt>
+      <trkpt lat="49.01127585209906" lon="-123.84138822555542">
+        <ele>21.91834449612019</ele>
+        <time>2022-03-17T23:42:19.569Z</time>
+      </trkpt>
+      <trkpt lat="49.01127576828003" lon="-123.84138822555542">
+        <ele>21.9186458589491</ele>
+        <time>2022-03-17T23:42:19.922Z</time>
+      </trkpt>
+      <trkpt lat="49.01120929978788" lon="-123.84122100658715">
+        <ele>22.789329528624076</ele>
+        <time>2022-03-17T23:42:20.277Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
