@@ -1,0 +1,1 @@
+Landslide is about 100m long and is somewhat tricky to cross especially with a bike. Will be extra muddy whenever there is rain since several streams now run over what is left of the path. It is still passable.

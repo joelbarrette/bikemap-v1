@@ -1,0 +1,1 @@
+Absolute ripper of single and doubletrack, lots of winding tight corners. Common pedestrian area so watch out for people and dogs. Ground surface is fast and smooth for the first 2 KM but gets bumpy in the middle then smooths back out after you cross West 16th.
