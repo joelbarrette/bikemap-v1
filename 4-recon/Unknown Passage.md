@@ -1,0 +1,1 @@
+Looks dooable based on this [ride](https://www.strava.com/activities/5346373175).

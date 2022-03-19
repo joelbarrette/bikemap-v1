@@ -1,0 +1,1 @@
+Heard reports that this was damaged in the summer fires of 2021, there is an entry on [trailforks](https://www.trailforks.com/trails/kvr-tulameen-to-brookmere/reports/) but no updates since June 2021.
