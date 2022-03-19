@@ -47,27 +47,21 @@
       </ul>
 
       <ul role="tablist"> <!-- bottom aligned tabs -->
-          <li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+          <li><a href="#info" role="tab"><i class="fa fa-question-circle-o"></i></a></li>
       </ul>
   </div>
 
   <!-- Tab panes -->
   <div class="leaflet-sidebar-content">
       <div class="leaflet-sidebar-pane" id="sidebar-info">
-        
-        
- 
-          <p><test</p>
+        <div id="sidebar-content"><p><test</p></div>
 
-          <div id="sidebar-info-description"></div>
-          
-
-      </div>
-      <br>
-      <hr style="width:92%;margin-left:4%;">
-      <br>
-      <div class="elevation" id="elevation-div"></div>
-      <div id="data-summary" class="data-summary">
+        <div id="sidebar-info-description"></div>
+        <br>
+        <hr style="width:92%;margin-left:4%;">
+        <br>
+        <div class="elevation" id="elevation-div"></div>
+        <div id="data-summary" class="data-summary">
 
         <div class="data-row">
     
@@ -110,7 +104,20 @@
       <hr style="width:92%;margin-left:4%;">
       <br>
       <div id="disqus_thread"></div>
+      </div>
+      
+      
 
+
+      <div class="leaflet-sidebar-pane" id="info">
+        <h4>What is this site?</h4>
+        <p>This site is a personal project of Joel Barrette, designed to help with route planning for bikepacking/gravel biking adventures. In it's current state it's being manually maintained as a kind of blog for all past trips as well as planned future trips. Some routes from other riders trip reports have been included but links to their posts are in the description if you want a full GPX or to read more about the specifc trip.
+        </p>
+
+        
+        
+
+    </div>
   </div>
 </div>
 
@@ -339,8 +346,8 @@
                   console.log("Markdown entry found for " + e.target.get_name());
                   el.clear();
                   sidebar.open('sidebar-info');
-                  document.getElementById("sidebar-info").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
-                  document.getElementById("sidebar-info").innerHTML += converter.makeHtml(result);
+                  document.getElementById("sidebar-content").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
+                  document.getElementById("sidebar-content").innerHTML += converter.makeHtml(result);
                   var g = new L.GPX(e.target._gpx, {async: true});
                   g.addTo(map);
                   g.on("addline", function(e) {
@@ -356,8 +363,8 @@
                   console.log("No Markdown entry found for " + e.target.get_name());
                   el.clear();
                   sidebar.open('sidebar-info');
-                  document.getElementById("sidebar-info").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
-                  document.getElementById("sidebar-info").innerHTML += "<p>No Info</p>"
+                  document.getElementById("sidebar-content").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
+                  document.getElementById("sidebar-content").innerHTML += "<p>No Info</p>"
                   var g = new L.GPX(e.target._gpx, {async: true});
                   g.addTo(map);
                   g.on("addline", function(e) {
