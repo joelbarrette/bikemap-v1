@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Diversion Dam</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-03-21T23:35:11.000Z</time>
+  </metadata>
+  <trk>
+    <name>Diversion Dam</name>
+    <trkseg>
+      <trkpt lat="48.49665968678892" lon="-123.99069632403553">
+        <ele>420.1447090922399</ele>
+        <time>2022-03-21T23:35:11.000Z</time>
+      </trkpt>
+      <trkpt lat="48.496225018868365" lon="-123.99107158184053">
+        <ele>419.2017015645818</ele>
+        <time>2022-03-21T23:35:11.008Z</time>
+      </trkpt>
+      <trkpt lat="48.49655917231695" lon="-123.9929062128067">
+        <ele>418.0731216043682</ele>
+        <time>2022-03-21T23:35:11.036Z</time>
+      </trkpt>
+      <trkpt lat="48.49682933732473" lon="-123.99446189403534">
+        <ele>419.92421097255294</ele>
+        <time>2022-03-21T23:35:11.081Z</time>
+      </trkpt>
+      <trkpt lat="48.49673335781578" lon="-123.99503588676453">
+        <ele>421.06525329613623</ele>
+        <time>2022-03-21T23:35:11.133Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

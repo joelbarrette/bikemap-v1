@@ -1,0 +1,1 @@
+This is likely impossible past the wrap around of westmost summit of Mission Ridge, there's a trip report [here](https://xpedbc.com/mission-ridge-traverse/) that does say the first part is "passible" by vehicle I don't know what route they took for their exit. It's likely straight down the valley to Moha instead of following along the ridge.

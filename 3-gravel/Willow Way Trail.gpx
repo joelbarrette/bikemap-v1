@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Willow Way Trail</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-03-21T22:16:00.000Z</time>
+  </metadata>
+  <trk>
+    <name>Willow Way Trail</name>
+    <trkseg>
+      <trkpt lat="48.57611417770386" lon="-123.43079566955566">
+        <ele>62.0</ele>
+        <time>2022-03-21T22:16:00.000Z</time>
+      </trkpt>
+      <trkpt lat="48.57602834701538" lon="-123.43075275421143">
+        <ele>62.0</ele>
+        <time>2022-03-21T22:16:00.001Z</time>
+      </trkpt>
+      <trkpt lat="48.575599193573" lon="-123.43081712722778">
+        <ele>62.0</ele>
+        <time>2022-03-21T22:16:00.009Z</time>
+      </trkpt>
+      <trkpt lat="48.57250928878784" lon="-123.43081712722778">
+        <ele>62.0</ele>
+        <time>2022-03-21T22:16:00.067Z</time>
+      </trkpt>
+      <trkpt lat="48.57250928878784" lon="-123.43062400817871">
+        <ele>62.0</ele>
+        <time>2022-03-21T22:16:00.127Z</time>
+      </trkpt>
+      <trkpt lat="48.56765993870795" lon="-123.43062400817871">
+        <ele>62.0</ele>
+        <time>2022-03-21T22:16:00.265Z</time>
+      </trkpt>
+      <trkpt lat="48.56637239456177" lon="-123.43064546585083">
+        <ele>62.0</ele>
+        <time>2022-03-21T22:16:00.423Z</time>
+      </trkpt>
+      <trkpt lat="48.565192222595215" lon="-123.42995882034302">
+        <ele>62.44711685180663</ele>
+        <time>2022-03-21T22:16:00.601Z</time>
+      </trkpt>
+      <trkpt lat="48.565192222595215" lon="-123.4300393704325">
+        <ele>62.15729904174805</ele>
+        <time>2022-03-21T22:16:00.780Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
