@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Sloquet to Stave Bikewhack</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-03-22T18:18:33.000Z</time>
+  </metadata>
+  <trk>
+    <name>Sloquet to Stave Bikewhack</name>
+    <trkseg>
+      <trkpt lat="49.63826005400621" lon="-122.41842269897462">
+        <ele>752.3775377830725</ele>
+        <time>2022-03-22T18:18:33.000Z</time>
+      </trkpt>
+      <trkpt lat="49.63684261797811" lon="-122.41889476776123">
+        <ele>753.3376909519316</ele>
+        <time>2022-03-22T18:18:33.194Z</time>
+      </trkpt>
+      <trkpt lat="49.63588374079988" lon="-122.41850852966309">
+        <ele>752.8411348460013</ele>
+        <time>2022-03-22T18:18:33.520Z</time>
+      </trkpt>
+      <trkpt lat="49.63420218596153" lon="-122.41756439208984">
+        <ele>746.8705035120452</ele>
+        <time>2022-03-22T18:18:34.085Z</time>
+      </trkpt>
+      <trkpt lat="49.63247887944387" lon="-122.41638422012329">
+        <ele>711.0444897167222</ele>
+        <time>2022-03-22T18:18:34.901Z</time>
+      </trkpt>
+      <trkpt lat="49.6307138168208" lon="-122.41790771484375">
+        <ele>658.6997209108513</ele>
+        <time>2022-03-22T18:18:35.988Z</time>
+      </trkpt>
+      <trkpt lat="49.62933785749901" lon="-122.41865873336792">
+        <ele>597.3758820459454</ele>
+        <time>2022-03-22T18:18:37.269Z</time>
+      </trkpt>
+      <trkpt lat="49.62758658033046" lon="-122.42127656936646">
+        <ele>533.3429682894456</ele>
+        <time>2022-03-22T18:18:38.876Z</time>
+      </trkpt>
+      <trkpt lat="49.626168833652116" lon="-122.42254257202148">
+        <ele>485.8426061085119</ele>
+        <time>2022-03-22T18:18:40.702Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
