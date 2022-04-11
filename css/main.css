@@ -1,0 +1,87 @@
+.data-summary {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+margin-left: 14px;
+overflow-x: hidden;
+white-space: nowrap; 
+}
+
+.leaflet-right .leaflet-control {
+margin-right: 20px;
+}
+
+
+.data-summary .summarylabel,
+.data-summary .summaryvalue {
+    display: inline-block;
+overflow-x: hidden;
+
+
+}
+
+.data-row {
+    margin-bottom: 1.5em;
+overflow-x: hidden;
+}
+
+.elevation-detached.elevation-collapsed .elevation-toggle-icon {
+    top: .5em;
+}
+
+
+
+
+.leaflet-sidebar-content img {
+max-width: 95%;
+}
+
+/*  ---------------    */
+
+.custom-theme.elevation-control .area path.altitude,
+.custom-theme .legend-altitude rect.area {
+    fill: rgba(73, 73, 73, 0.95);  /* fallback color */
+    fill-opacity: 0.9;
+    stroke: rgba(255, 255, 255,.5);
+    stroke-width: 1.5;
+}
+
+.custom-theme.elevation-control .grid .tick line  {
+stroke: rgba(255, 255, 255,.0)!important;
+}
+
+.custom-theme.elevation-control .area path.slope,
+.custom-theme .legend-slope rect {
+    fill: url(#blob-pattern);
+    fill-opacity: 1;
+    stroke: #000;
+    stroke-width: 1.5;
+}
+
+
+.custom-theme.elevation-control .axis line, 
+.custom-theme.elevation-control .axis path {
+stroke: #fff;
+}
+
+.custom-theme.elevation-control .axis text {
+stroke: none;
+color: #fff;
+fill: #fff;
+font-weight: 400;
+}
+
+.custom-theme.height-focus.circle-lower {
+    fill: #FF0;
+}
+
+.custom-theme.elevation-polyline {
+    stroke: #F00;
+    stroke-opacity: 1;
+    stroke-width: 2;
+}
+
+.custom-theme.elevation-polyline-segments {
+    stroke: #FF0;
+    stroke-width: 2;
+    stroke-dasharray: 4;
+}

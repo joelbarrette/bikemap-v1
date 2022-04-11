@@ -1,1 +1,1 @@
-Almost 100% likely there will be bikewhacking on this route, see additional details [here](https://www.backroadsbiketouring.com/fav-ride-labour-day-lake-museum).
+Almost 100% guaranteed there will be extended bikewhacking on this route, see additional details [here](https://www.backroadsbiketouring.com/fav-ride-labour-day-lake-museum).

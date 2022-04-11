@@ -7,31 +7,31 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-  <link rel="stylesheet" href="style.css" />
+ 
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation@2.1.0/dist/leaflet-elevation.min.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="src/leaflet.legend.css" />
+    <link rel="stylesheet" href="css/leaflet-sidebar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- JS-->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="leaflet-gpx.js"></script>
-    <link rel="stylesheet" href="css/font-awesome.css">
-
-
-    <!--LOADING ELEVATION PLUGIN-->
-    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation@2.1.0/dist/leaflet-elevation.min.css" />
     <script src="src/leaflet-elevation.js"></script>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="src/leaflet.legend.css" />
     <script type="text/javascript" src="src/leaflet.legend.js"></script>
-
     <script type="text/javascript" src="src/leaflet-sidebar.js"></script>
-    <link rel="stylesheet" href="css/leaflet-sidebar.css" />
-
     <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+
+    <!-- Assets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
@@ -56,164 +56,52 @@
 
   <!-- Tab panes -->
   <div class="leaflet-sidebar-content">
-      <div class="leaflet-sidebar-pane" id="sidebar-info">
-        <div id="sidebar-content"><h4>Info Panel</h4><p>Please select a route to load details.</p></div>
-
-        <div id="sidebar-info-description"></div>
-        <br>
-        <hr style="width:92%;margin-left:4%;">
-        <br>
-        <div class="elevation" id="elevation-div"></div>
-        <div id="data-summary" class="data-summary">
-
+    <div class="leaflet-sidebar-pane" id="sidebar-info">
+      <div id="sidebar-content"><h4>Info Panel</h4><p>Please select a route to load details.</p></div>
+      <div id="sidebar-info-description"></div><br>
+      <hr style="width:92%;margin-left:4%;"><br>
+      <div class="elevation" id="elevation-div"></div>
+      <div id="data-summary" class="data-summary">
         <div class="data-row">
-    
           <span class="totlen">
             <span class="summarylabel">Length: </span>
             <span class="summaryvalue">0</span>
-          </span>
-          <br>
-          <br>
-          
-          </span>
+          </span><br><br>
           <span class="maxele">
             <span class="summarylabel">Max Elevation: </span>
             <span class="summaryvalue">0</span>
-          </span>
-          <br>
+          </span><br>
           <span class="minele">
             <span class="summarylabel">Min Elevation: </span>
             <span class="summaryvalue">0</span>
-          </span>
-    
+          </span>  
         </div>
-
         <div class="data-row">
-    
           <span class="gain">
             <span class="summarylabel">Gain: </span>
             <span class="summaryvalue">0</span>
-          </span>
-          <br>
+          </span><br>
           <span class="loss">
             <span class="summarylabel">Loss: </span>
             <span class="summaryvalue">0</span>
           </span>
-    
-        </div>
-    
-      </div>
-      <br>
-      <hr style="width:92%;margin-left:4%;">
-      <br>
+        </div> 
+      </div><br>
+      <hr style="width:92%;margin-left:4%;"><br>
       <div id="disqus_thread"></div>
       </div>
-      
-      
-
-
       <div class="leaflet-sidebar-pane" id="info">
         <h4>What is this site?</h4>
         <p>This site is a personal project of Joel Barrette, designed to help with route planning for bikepacking/gravel biking adventures. In it's current state it's being manually maintained as a kind of blog for all past trips as well as planned future trips. Some routes from other riders trip reports have been included but links to their posts are in the description if you want a full GPX or to read more about the specifc trip.
         </p>
-
-        
-        
-
+      </div>
     </div>
   </div>
-</div>
 
 
   
 <style>
-.data-summary {
-			font-family: Verdana, Arial, Helvetica, sans-serif;
-			font-size: 12px;
-      margin-left: 14px;
-      overflow-x: hidden;
-      white-space: nowrap; 
-		}
 
-    .leaflet-right .leaflet-control {
-    margin-right: 20px;
-}
-
-
-		.data-summary .summarylabel,
-		.data-summary .summaryvalue {
-			display: inline-block;
-      overflow-x: hidden;
-  
-		
-		}
-
-		.data-row {
-			margin-bottom: 1.5em;
-      overflow-x: hidden;
-		}
-
-		.elevation-detached.elevation-collapsed .elevation-toggle-icon {
-			top: .5em;
-		}
-
-
-    
-    
-    .leaflet-sidebar-content img {
-      max-width: 95%;
-    }
-
-/*  ---------------    */
-
-.custom-theme.elevation-control .area path.altitude,
-		.custom-theme .legend-altitude rect.area {
-			fill: rgba(73, 73, 73, 0.95);  /* fallback color */
-			fill-opacity: 0.9;
-			stroke: rgba(255, 255, 255,.5);
-			stroke-width: 1.5;
-		}
-
-.custom-theme.elevation-control .grid .tick line  {
-  stroke: rgba(255, 255, 255,.0)!important;
-}
-
-		.custom-theme.elevation-control .area path.slope,
-		.custom-theme .legend-slope rect {
-			fill: url(#blob-pattern);
-			fill-opacity: 1;
-			stroke: #000;
-			stroke-width: 1.5;
-		}
-
-
-    .custom-theme.elevation-control .axis line, 
-    .custom-theme.elevation-control .axis path {
-      stroke: #fff;
-    }
-
-    .custom-theme.elevation-control .axis text {
-      stroke: none;
-      color: #fff;
-      fill: #fff;
-      font-weight: 400;
-    }
-
-		.custom-theme.height-focus.circle-lower {
-			fill: #FF0;
-		}
-
-		.custom-theme.elevation-polyline {
-			stroke: #F00;
-			stroke-opacity: 1;
-			stroke-width: 2;
-		}
-
-		.custom-theme.elevation-polyline-segments {
-			stroke: #FF0;
-			stroke-width: 2;
-			stroke-dasharray: 4;
-		}
 	
 </style>
 
@@ -225,6 +113,21 @@
   var gravelColor = '#009DAE'
   var reconColor = '#9D84B7'
   var cautionColor = '#D9534F'
+
+
+  var campIcon = L.icon({
+    iconUrl: 'resources/camp.png',
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+    popupAnchor: [0, -15],
+});
+
+var recIcon = L.icon({
+    iconUrl: 'resources/rec-site.png',
+    iconSize: [20, 15],
+    iconAnchor: [10, 10],
+    popupAnchor: [0, -15],
+});
 
   //Initializing the Map
   var opts = {
@@ -242,8 +145,8 @@
       },
       points: {
         icon: {
-          iconUrl: 'https://unpkg.com/@raruto/leaflet-elevation@1.3.5/images/elevation-poi.png',
-          iconSize: [12, 12],
+          iconUrl: 'pin-icon-wpt.png',
+          iconSize: [120, 120],
         },
       },
       elevation: {
@@ -482,7 +385,7 @@ function loadDisqus(element, postTitle, postUrlTag) {
 
 	
 	
-	
+
 
 
 
@@ -615,8 +518,101 @@ L.control.legend({
   })();
 
   
+  var poiList = [["food", L.marker([49.292768, -123.159825]).bindPopup('This is Littleton, CO.')],
+                 ["camp", L.marker([49.467187, -122.880504]).bindPopup('Wigwam Creek Pull-out site')],
+                 ["rec", L.marker([49.392446, -122.991490]).bindPopup('Mid Vallet Viewpoint')],
+                 ["camp", L.marker([50.396345, -127.303647]).bindPopup('Devils Bath Campsite http://www.sitesandtrailsbc.ca/search/search-result.aspx?site=REC16044&type=Site')]
 
 
+                 
+  
+                  ]
+   
+  var recGroup = L.layerGroup().addTo(map);
+  var campGroup = L.layerGroup().addTo(map);
+  var foodGroup = L.layerGroup().addTo(map);
+
+  for (var i = 0; i < poiList.length; i += 1){
+    console.log(poiList[i])
+    switch (poiList[i][0]){
+      case "test":
+        break;
+      case "food":
+        console.log("adding poi");
+
+        foodGroup.addLayer(poiList[i][1])
+        break;
+      case "camp":
+        console.log("adding poi");
+        var marker = poiList[i][1]
+        marker.setIcon(campIcon);
+        campGroup.addLayer(marker)
+        break;
+      case "rec":
+        console.log("adding poi");
+        var marker = poiList[i][1]
+        marker.setIcon(recIcon);
+        recGroup.addLayer(marker)
+        break;
+  }
+}
+
+
+
+map.on('zoomend', function (e) {
+                console.log(map.getZoom());
+    if (map.getZoom()>9){
+      campGroup.addTo(map);
+      recGroup.addTo(map);
+      foodGroup.addTo(map);
+    }else{
+      campGroup.remove();
+      recGroup.remove();
+      foodGroup.remove();
+    }
+
+    }
+  );
+
+function csvJSON(csv){
+
+var lines=csv.split("\n");
+
+var result = [];
+
+var headers=lines[0].split(",");
+
+for(var i=1;i<lines.length;i++){
+
+  var obj = {};
+  var currentline=lines[i].split(",");
+
+  for(var j=0;j<headers.length;j++){
+    obj[headers[j]] = currentline[j];
+  }
+
+  result.push(obj);
+
+}
+
+//return result; //JavaScript object
+return JSON.stringify(result); //JSON
+}
+
+$.getJSON( "rec.geojson" , function( result ){
+
+  for(var i=0;i<result.features.length;i++){
+    console.log(result.features[i].properties)
+    if (result.features[i].properties.PROJECT_TYPE == "SIT - Recreation Site"){
+      
+      marker = L.marker([result.features[i].properties.LATITUDE, result.features[i].properties.LONGITUDE]).bindPopup(result.features[i].properties.PROJECT_NAME+ "<br>" + result.features[i].properties.SITE_DESCRIPTION)
+      marker.setIcon(campIcon);
+      recGroup.addLayer(marker);
+    }
+  }
+  
+  
+});
 
 </script>
 <script id="dsq-count-scr" src="bikemap-v1.disqus.com/count.js" async></script>
