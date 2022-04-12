@@ -28,6 +28,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="src/leaflet.legend.js"></script>
     <script type="text/javascript" src="src/leaflet-sidebar.js"></script>
+    <script type="text/javascript" src="theme.js"></script>
     <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
 
     <!-- Assets -->
@@ -124,47 +125,7 @@
 
 <script>
   //Map Color Variables
-  var routeColor = '#000000'
-  var roadColor = '#4AA96C'
-  var connectorColor = '#FFE162'
-  var gravelColor = '#009DAE'
-  var reconColor = '#9D84B7'
-  var cautionColor = '#D9534F'
 
-
-  var campIcon = L.icon({
-    iconUrl: 'resources/camp.png',
-    iconSize: [23, 32],
-    iconAnchor: [11, 32],
-    popupAnchor: [0,-32],
-});
-
-var recIcon = L.icon({
-    iconUrl: 'resources/rec-site.png',
-    iconSize: [23, 32],
-    iconAnchor: [11, 32],
-    popupAnchor: [0,-32],
-});
-
-var foodIcon = L.icon({
-    iconUrl: 'resources/food.png',
-    iconSize: [23, 32],
-    iconAnchor: [11, 32],
-    popupAnchor: [0,-32],
-});
-
-var groceryIcon = L.icon({
-    iconUrl: 'resources/grocery.png',
-    iconSize: [23, 32],
-    iconAnchor: [11, 32],
-    popupAnchor: [0,-32],
-});
-var bikeIcon = L.icon({
-    iconUrl: 'resources/bike.png',
-    iconSize: [23, 32],
-    iconAnchor: [11, 32],
-    popupAnchor: [0,-32],
-});
 
   //Initializing the Map
   var opts = {
@@ -554,145 +515,60 @@ L.control.legend({
   (d.head || d.body).appendChild(s);
   })();
 
+  ///////////////////////
+  // POI Layer Control
   
-  var poiList = [["food", L.marker([48.86448064132252, -123.64526442548436]).bindPopup("Cedric's Coffee House")],
-                 ["grocery", L.marker([50.42687716976458, -127.48675549543346]).bindPopup("Port Alice Family Foods")],
-                 ["food", L.marker([48.38914603708641, -123.90549198053711]).bindPopup("Shirley Delicious")],
-                 ["food", L.marker([48.42274798227218, -124.05959904481288]).bindPopup("Cold Shoulder Cafe")],
-                 ["grocery", L.marker([49.84240678644822, -124.51632411075978]).bindPopup("Save-On-Foods Powel River")],
-                 ["grocery", L.marker([50.72170696590668, -127.49711051819831]).bindPopup("Save-On-Foods Port Hardy")],
-                 ["food", L.marker([50.65398248336444, -128.00954416252847]).bindPopup("Scarlet Ibis Pub & Restaurant")],
-                 ["food", L.marker([48.87230780863131, -124.19655239660266]).bindPopup("Cassy's Coffee House")],
-                 ["food", L.marker([49.24763450770209, -121.78260428690463]).bindPopup("The Horn Of Plenty Café")],
-                 ["food", L.marker([49.2662924068064, -123.15269150645639]).bindPopup("Arbutus Coffee")],
-                 ["food", L.marker([49.31620834365921, -122.99839826955439]).bindPopup("United Strangers Coffee")],
-                 ["food", L.marker([48.64881272444889, -123.39633213462224]).bindPopup("Sidney Bakery Ltd <br> AMAZING baked goods.")],
-                 ["food", L.marker([48.37930177537225, -123.53194941204524]).bindPopup("My Chosen Café")],
-                 ["food", L.marker([48.77758218857706, -123.70751033703057]).bindPopup("Island Bagels Co.")],
-                 ["food", L.marker([48.46481565845404, -123.44715814104126]).bindPopup("The Nest Cafe")],
-                 ["food", L.marker([48.52928695326485, -123.37302983269792]).bindPopup("Red Barn Market Cordova Bay")],
-                 ["food", L.marker([48.571913407733085, -123.39623138648176]).bindPopup("Harvest Rd. - Farm to Table Grill")],
-                 ["grocery", L.marker([50.212889446607946, -126.59478279082553]).bindPopup("Woss General Store")],
-                 ["grocery", L.marker([50.31224514902081, -125.91870514958718]).bindPopup("Co-op Convenience Store Sayward")],
-                 ["grocery", L.marker([48.8731613476678, -124.2031763248017]).bindPopup("Youbou General Store")],
-                 ["grocery", L.marker([48.81684227031527, -124.17579660487074]).bindPopup("Honeymoon Bay General Store")],
-                 ["grocery", L.marker([48.555107383281715, -124.40498390701947]).bindPopup("Port Renfrew General Store")],
-                 ["camp", L.marker([49.467187, -122.880504]).bindPopup('Wigwam Creek Pull-out site')],
-                 ["camp", L.marker([49.58718168666571, -120.77393192565033]).bindPopup('Otter Lake Campsite')],
-                 ["rec", L.marker([49.392446, -122.991490]).bindPopup('Mid Vallet Viewpoint')],
-                 ["rec", L.marker([49.219266736112274, -123.21389790761665]).bindPopup('Iona Beach Rec Area')],
-                 ["bike", L.marker([48.77787852454598, -123.70617006452105]).bindPopup('Cycle Therapy Bicycles')],
-                 ["bike", L.marker([49.24375197166626, -123.10115257190405]).bindPopup('Kissing Crows Cyclery')],
-                 ["bike", L.marker([48.45587395264503, -123.37834294729541]).bindPopup('Recyclistas Bike Shop')],
-                 ["food", L.marker([49.24171710210915, -124.79478717767041]).bindPopup("Burde Beans Coffee & Things")],
-                 
-
-
-                  ]
   var bcrecGroup = L.layerGroup() 
   var recGroup = L.layerGroup().addTo(map);
   var campGroup = L.layerGroup().addTo(map);
   var foodGroup = L.layerGroup().addTo(map);
   var groceryGroup = L.layerGroup().addTo(map);
   var bikeGroup = L.layerGroup().addTo(map);
+  var layerGroups = {"rec": recGroup,
+                     "camp": campGroup,
+                     "food": foodGroup,
+                     "bikeshop": bikeGroup
+                    }
 
+// JSON Data Loads
 
-  for (var i = 0; i < poiList.length; i += 1){
-    console.log(poiList[i])
-    switch (poiList[i][0]){
-      case "test":
-        break;
-      case "food":
-        console.log("adding poi");
-        var marker = poiList[i][1]
-        marker.setIcon(foodIcon);
-        foodGroup.addLayer(marker)
-        break;
-      case "camp":
-        console.log("adding poi");
-        var marker = poiList[i][1]
-        marker.setIcon(campIcon);
-        campGroup.addLayer(marker)
-        break;
-      case "rec":
-        console.log("adding poi");
-        var marker = poiList[i][1]
-        marker.setIcon(recIcon);
-        recGroup.addLayer(marker)
-        break;
-      case "grocery":
-        console.log("adding poi");
-        var marker = poiList[i][1]
-        marker.setIcon(groceryIcon);
-        groceryGroup.addLayer(marker)
-        break;
-      case "bike":
-        console.log("adding poi");
-        var marker = poiList[i][1]
-        marker.setIcon(bikeIcon);
-        bikeGroup.addLayer(marker)
-        break;
-  }
-}
-
-
-
-map.on('zoomend', function (e) {
-                console.log(map.getZoom());
-    if (map.getZoom()>9){
-      campGroup.addTo(map);
-      recGroup.addTo(map);
-      foodGroup.addTo(map);
-      groceryGroup.addTo(map);
-    }else{
-      campGroup.remove();
-      recGroup.remove();
-      foodGroup.remove();
-      groceryGroup.remove();
-    }
-
-    }
-  );
-
-function csvJSON(csv){
-
-var lines=csv.split("\n");
-
-var result = [];
-
-var headers=lines[0].split(",");
-
-for(var i=1;i<lines.length;i++){
-
-  var obj = {};
-  var currentline=lines[i].split(",");
-
-  for(var j=0;j<headers.length;j++){
-    obj[headers[j]] = currentline[j];
-  }
-
-  result.push(obj);
-
-}
-
-//return result; //JavaScript object
-return JSON.stringify(result); //JSON
-}
-
-$.getJSON( "rec.geojson" , function( result ){
-
+$.getJSON( "poi.json" , function( result ){ // Loads custom poi.json and initializes all leaflet.js markers & themeing
   for(var i=0;i<result.features.length;i++){
-    console.log(result.features[i].properties)
-    if (result.features[i].properties.PROJECT_TYPE == "SIT - Recreation Site"){
-      
+      if (result.features[i].properties.URL != "") {
+        marker = L.marker([result.features[i].properties.LATITUDE, result.features[i].properties.LONGITUDE]).bindPopup("<a href='" + result.features[i].properties.URL + "'>" + result.features[i].properties.NAME + "</a>" + "<br>" + result.features[i].properties.DESCRIPTION) 
+
+      }else{
+        marker = L.marker([result.features[i].properties.LATITUDE, result.features[i].properties.LONGITUDE]).bindPopup(result.features[i].properties.NAME + "<br>" + result.features[i].properties.DESCRIPTION) 
+      }
+      themeMarker(result.features[i].properties.ICON_TYPE, marker); // Function from theme.js
+      layerGroups[result.features[i].properties.POI_CATEGORY].addLayer(marker);
+  }
+});
+
+$.getJSON( "rec.geojson" , function( result ){ // Loads BC Gov Rec site json data and initializes all leaflet.js markers & themeing
+  for(var i=0;i<result.features.length;i++){
+    if (result.features[i].properties.PROJECT_TYPE == "SIT - Recreation Site"){  
       marker = L.marker([result.features[i].properties.LATITUDE, result.features[i].properties.LONGITUDE]).bindPopup(result.features[i].properties.PROJECT_NAME+ "<br>" + result.features[i].properties.SITE_DESCRIPTION)
       marker.setIcon(campIcon);
       bcrecGroup.addLayer(marker);
     }
   }
-  
-  
 });
+
+map.on('zoomend', function (e) {
+                console.log(map.getZoom());
+    if (map.getZoom()>9){
+      for (var key in layerGroups){
+        layerGroups[key].addTo(map)
+      }
+    }else{
+      for (var key in layerGroups){
+        layerGroups[key].remove()
+      }
+    }
+
+    }
+  );
 
 function layerControl(layer){
   var checkBox = document.getElementById(layer);

@@ -1,0 +1,462 @@
+{
+	"name" : "PoiList",
+	"type" : "PoiCollection",
+	"features" : [
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Cedric's Coffee House",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.86448064132252,
+				"LONGITUDE" : -123.64526442548436,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Port Alice Family Foods",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.42687716976458,
+				"LONGITUDE" : -127.48675549543346,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Shirley Delicious",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.38914603708641,
+				"LONGITUDE" : -123.90549198053711,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},       
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Cold Shoulder Cafe",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.42274798227218,
+				"LONGITUDE" : -124.05959904481288,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Save-On-Foods Powel River",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.84240678644822,
+				"LONGITUDE" : -124.51632411075978,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Save-On-Foods Port Hardy",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.72170696590668,
+				"LONGITUDE" : -127.49711051819831,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Scarlet Ibis Pub & Restaurant",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.65398248336444,
+				"LONGITUDE" : -128.00954416252847,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "restaurant",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Cassy's Coffee House",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.87230780863131,
+				"LONGITUDE" : -124.19655239660266,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "The Horn Of Plenty Café",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.24763450770209,
+				"LONGITUDE" : -121.78260428690463,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Arbutus Coffee",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.2662924068064,
+				"LONGITUDE" : -123.15269150645639,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "United Strangers Coffee",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.31620834365921,
+				"LONGITUDE" : -122.99839826955439,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Sidney Bakery Ltd",
+                "DESCRIPTION" : "AMAZING baked goods.",
+                "LATITUDE" : 48.64881272444889,
+				"LONGITUDE" : -123.39633213462224,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "My Chosen Café",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.37930177537225,
+				"LONGITUDE" : -123.53194941204524,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "restaurant",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Island Bagels Co.",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.77758218857706,
+				"LONGITUDE" : -123.70751033703057,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "The Nest Cafe",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.46481565845404,
+				"LONGITUDE" : -123.44715814104126,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Red Barn Market Cordova Bay",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.52928695326485,
+				"LONGITUDE" : -123.37302983269792,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Harvest Rd. - Farm to Table Grill",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.571913407733085,
+				"LONGITUDE" : -123.39623138648176,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "restaurant",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Woss General Store",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.212889446607946,
+				"LONGITUDE" : -126.59478279082553,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Co-op Convenience Store Sayward",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.31224514902081,
+				"LONGITUDE" : -125.91870514958718,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Youbou General Store",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.8731613476678,
+				"LONGITUDE" : -124.2031763248017,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Honeymoon Bay General Store",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.81684227031527,
+				"LONGITUDE" : -124.17579660487074,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Port Renfrew General Store",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.555107383281715,
+				"LONGITUDE" : -124.40498390701947,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Wigwam Creek Pull-out site",
+                "DESCRIPTION" : "This is a quite remote pull-out site. No cell service but there is a firepit.",
+                "LATITUDE" : 49.467187,
+				"LONGITUDE" : -122.880504,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Otter Lake Campsite",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.58718168666571,
+				"LONGITUDE" : -120.77393192565033,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Mid Vallet Viewpoint",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.392446,
+				"LONGITUDE" : -122.991490,
+                "POI_CATEGORY" : "rec",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Iona Beach Rec Area",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.219266736112274,
+				"LONGITUDE" : -123.21389790761665,
+                "POI_CATEGORY" : "rec",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Cycle Therapy Bicycles",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.77787852454598,
+				"LONGITUDE" : -123.70617006452105,
+                "POI_CATEGORY" : "bikeshop",
+				"ICON_TYPE" : "bikeshop",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Kissing Crows Cyclery",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.24375197166626,
+				"LONGITUDE" : -123.10115257190405,
+                "POI_CATEGORY" : "bikeshop",
+				"ICON_TYPE" : "bikeshop",
+				"URL" : "https://www.kissingcrowscyclery.com/"
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Recyclistas Bike Shop",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.45587395264503,
+				"LONGITUDE" : -123.37834294729541,
+                "POI_CATEGORY" : "bikeshop",
+				"ICON_TYPE" : "bikeshop",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Kissenger Lake Campground",
+                "DESCRIPTION" : "Managed by Mosaic, pre-booking is required. Mainly for RVs. Tent only spots cost 29$ a night which is a bit steep.",
+                "LATITUDE" : 48.92190717504149,
+				"LONGITUDE" : -124.48170207288118,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : "https://mosaiccampsites.com/booksouthisland/kissingerlake"
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Pachena Bay Campground",
+                "DESCRIPTION" : "pre-booking is required. Mainly for RVs.",
+                "LATITUDE" : 48.79752893319501,
+				"LONGITUDE" : -125.11802871850271,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : "https://pachenabaycampground.ca/campground-rates-reservations-rules/"
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Pacheedaht Campground",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.57718490911528,
+				"LONGITUDE" : -124.41143393151381,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Sunny Daze Campground",
+                "DESCRIPTION" : "No website, might give them a call to get some info",
+                "LATITUDE" : 48.6317583895268,
+				"LONGITUDE" : -123.77308965336091,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Jordan River Regional Campground",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.42128504644822,
+				"LONGITUDE" : -124.05425769583836,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : "https://www.crd.bc.ca/parks-recreation-culture/parks-trails/find-park-trail/jordan-river"
+			}
+		},
+
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Burde Beans Coffee & Things",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.24171710210915,
+				"LONGITUDE" : -124.79478717767041,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "cafe",
+				"URL" : ""
+			}
+		}
+    ]
+}
