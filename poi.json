@@ -444,6 +444,19 @@
 				"URL" : "https://www.crd.bc.ca/parks-recreation-culture/parks-trails/find-park-trail/jordan-river"
 			}
 		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Dimple Lake Pullout",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.684291380096,
+				"LONGITUDE" : -124.12611858717864,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
 
         {
 			"type" : "poi",
