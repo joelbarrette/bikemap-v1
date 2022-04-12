@@ -30,6 +30,7 @@
     <script type="text/javascript" src="src/leaflet-sidebar.js"></script>
     <script type="text/javascript" src="theme.js"></script>
     <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <script src="src/leaflet.edgebuffer.js"></script>
 
     <!-- Assets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -44,10 +45,10 @@
   <!-- Nav tabs -->
   <div class="leaflet-sidebar-tabs">
       <ul role="tablist"> <!-- top aligned tabs -->
-        <li><a href="#sidebar-info" role="tab"><i class="fa fa-bars"></i></a></li>
-        <li><a href="#sidebar-poi" role="tab"><i class="fa fa-map-marker"></i></a></li>
+        <li><a href="#sidebar-info" role="tab"><i class="fa fa-info-circle"></i></a></li>
+        <li><a href="#sidebar-poi" role="tab"><i class="fa fa-th-list"></i></a></li>
         <li><a href="#routes" role="tab"><i class="fa fa-map"></i></a></li>
-        <li><a href="#info-layers" role="tab"><i class="fa fa-th-list"></i></a></li>
+ 
       </ul>
 
       <ul role="tablist"> <!-- bottom aligned tabs -->
@@ -92,7 +93,7 @@
       <div id="disqus_thread"></div>
       </div>
       <div class="leaflet-sidebar-pane" id="sidebar-poi">
-        <h4>Information Overlay Controls</h4>
+        <h4>Overlays</h4>
         <br>
         <div>        <label class="switch">
           <p>Recreation Sites BC</p>
@@ -112,6 +113,7 @@
         <h4>What is this site?</h4>
         <p>This site is a personal project of Joel Barrette, designed to help with route planning for bikepacking/gravel biking adventures. In it's current state it's being manually maintained as a kind of blog for all past trips as well as planned future trips. Some routes from other riders trip reports have been included but links to their posts are in the description if you want a full GPX or to read more about the specifc trip.
         </p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZM7uY1za4ZezMpsTQAfLDxXHZC8ewStKIBlW07lp4h-FCLw/viewform?embedded=true" width="100%" height="1000px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
     </div>
   </div>
@@ -165,6 +167,7 @@
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/dark-v10',
 		tileSize: 512,
+    edgeBufferTiles: 2,
 		zoomOffset: -1
 	}).addTo(map);
 
@@ -250,7 +253,6 @@
                 });
                 var gpx2 = e.target;
                 var converter = new showdown.Converter() // Instantiate Showdown Markdown converter
-                
                 var mdFilePath = e.target._gpx.substring(0, e.target._gpx.length-3) + "md" // Generate markdown file name hack 
 
                 $.get( mdFilePath , function( result ){
@@ -265,11 +267,7 @@
                     el.addData(e.line);
                   });
                   loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
-                  
-              
 
-                  
-    
                 }).fail((function(){ 
                   console.log("No Markdown entry found for " + e.target.get_name());
                   el.clear();
