@@ -175,7 +175,7 @@ font-weight: 400;
     top: 50%;
     left: 50%;
     font-size: 50px;
-    width: 70vh;
+    width: 35%;
     color: white;
     transform: translate(-50%,-50%);
     background-color: rgba(54, 54, 54, 1);
@@ -193,13 +193,15 @@ font-weight: 400;
     background-color: #4685d6;
     border: none;
     color: white;
-    padding: 2.45vh 32px;
+    width: 70%;
+    padding: 14px 0px;
     text-align: center;
     text-decoration: none;
     font-size: 14px;
-    margin: 4px 2px;
+    margin: 10px 15%;
     cursor: pointer;
     border-radius: 4px;
     text-align: center;
-    height: 7vh;
+ 
+    display: table;
   }
