@@ -48,7 +48,7 @@
     <p>By clicking "I Understand" you accept all of the information and resources available on this site "as is" and acknowledge the information may include errors and inaccuracies.</p><br>
     <div > 
 
-      <input type="button" class="button" value="I Understand" onclick="document.getElementById('disclaimer-overlay').style.display = 'none';">
+      <input type="button" class="button" value="I Understand" onclick="document.getElementById('disclaimer-overlay').style.display = 'none';localStorage.setItem('popState','shown')">
 
       
 
@@ -605,7 +605,7 @@ function layerControl(layer){
     if(localStorage.getItem('popState') != 'shown'){
       console.log("First time visit")
       document.getElementById("disclaimer-overlay").style.display = "block";
-        localStorage.setItem('popState','shown')
+        
     }
       
 
