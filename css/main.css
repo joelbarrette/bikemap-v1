@@ -155,3 +155,51 @@ font-weight: 400;
   .slider.round:before {
     border-radius: 50%;
   }
+
+  #disclaimer-overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2000; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+  #disclaimer-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    width: 70vh;
+    color: white;
+    transform: translate(-50%,-50%);
+    background-color: rgba(54, 54, 54, 1);
+    -ms-transform: translate(-50%,-50%);
+    padding: 3vh;
+    border-radius: 4px;
+    display: table;
+  }
+  #disclaimer-box h3, #disclaimer-box p {
+    display: table-row;
+    text-align: center;
+  }
+
+  #disclaimer-box .button, #disclaimer-box .a.button {
+    background-color: #4685d6;
+    border: none;
+    color: white;
+    padding: 2.45vh 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    height: 7vh;
+  }
