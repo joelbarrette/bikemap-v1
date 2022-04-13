@@ -457,7 +457,279 @@
 				"URL" : ""
 			}
 		},
-
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Bonanza South Rec Site",
+                "DESCRIPTION" : "Bonanza Lake is a fair sized lake southeast of Port McNeill. Stocked with rainbow trout, the lake offers two recreation sites. The 12 unit Bonanza Lake South sports sandy beaches and a better boat launch nestled in a grove of mature second growth cedar and hemlock. Access is from Highway 19. If coming from Port McNeill, make a left across from the Zeballos turnoff and keep left. Turn left again at the 14 km mark, which is marked by a camping sign.",
+                "LATITUDE" : 50.33999186426992,
+				"LONGITUDE" : -126.7432504771748,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Bonanza Lake North Rec Site",
+                "DESCRIPTION" : "This three unit, semi-open site was built on a former log sorting area. Secluded and quiet, this is a good place to watch birds in the spring. There is a cartop boat launch, but be aware of the strong winds gusting around the lake. Although they provide ideal conditions for windsurfers, they can make canoeing or kayaking a real challenge. On the northeastern side of the lake there is an old marble mine to explore. Access is from Highway 19. If coming from Port McNeill, make a left across from the Zeballos turnoff and keep left. Turn left again at the 14 km mark, which is marked by a camping sign.",
+                "LATITUDE" : 50.39985611832793,
+				"LONGITUDE" : -126.81265859472231,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Ida Lake Rec Site",
+                "DESCRIPTION" : "Located next to Ida Lake, this nice eight unit site has a boat launch for anglers and paddlers. Better suited for canoes, larger boats can launch off at Bonanza Lake to the south. From Port McNeill, drive 9 km southeast to the Telegraph Cove turnoff and turn left. Follow the road until you see the Bonanza Lake sign – turn right and continue 12 km to the campsite. Watch for high winds if out paddling.",
+                "LATITUDE" : 50.457828223820684,
+				"LONGITUDE" : -126.81129973048021,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Atluck Lake Rec",
+                "DESCRIPTION" : "Like most sites on the shores of North Island lakes, this five unit semi-open site with a gravel beach and boat launch is popular with trout anglers. Despite the good road access, it is a reasonably remote site. Access to this site is from the Atluck Main which branches west of the main road to Zeballos that leads south from Highway 19.",
+                "LATITUDE" : 50.227666717413825,
+				"LONGITUDE" : -126.92887923777067,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Cevallos Campsite",
+                "DESCRIPTION" : "Located on the banks of the Zeballos River, first come first serve, there are 10 campsites with pit toilets in this community campground, which is operated by the village of Zeballos. There is also a day-use picnic area with a covered shelter.",
+                "LATITUDE" : 49.98515926902192,
+				"LONGITUDE" : -126.84816530184469,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Iron Lake Rec Site",
+                "DESCRIPTION" : "Found east of Port Alice along the Keogh (Benson) Main, this small, undeveloped day-use site provides little more than boat launch to access Iron Lake. Canoeing and fishing are the two main attractions here.",
+                "LATITUDE" : 50.36943999999999,
+				"LONGITUDE" : -127.20857,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Maynard Lake Rec Site",
+                "DESCRIPTION" : "Nestled between Benson and Maynard Lakes off Keough (Benson) Main, this rustic site features two walk-in campsites, a boat launch, an open picnic area and toilet facilities. Be careful of fluctuating water levels as the lake is dammed, while the wildfire of 2018 may also affect this site. Check sitesandtrailsbc.ca before visiting.",
+                "LATITUDE" : 50.39372737621971,
+				"LONGITUDE" : -127.2092996075828,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Link River Regional Park Campground",
+                "DESCRIPTION" : "Online Booking",
+                "LATITUDE" : 50.43755292803107,
+				"LONGITUDE" : -127.39334628427889,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : "https://linkriver.letscamp.ca/"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Pinch Creek Rec Site",
+                "DESCRIPTION" : "No Services",
+                "LATITUDE" : 50.429440679909305,
+				"LONGITUDE" : -127.3699429662264,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Garrett Lake Rec Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.05906269125626,
+				"LONGITUDE" : -125.62417879614102,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Hayes Lake Rec Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.07063491011451,
+				"LONGITUDE" : -125.63636388541954,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Jessie Lake Rec Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.005892271129454,
+				"LONGITUDE" : -125.76182371734308,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Candlestick Cave Rec Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.06159588753272,
+				"LONGITUDE" : -125.86733071185218,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Stewart Lake Recreation Site",
+                "DESCRIPTION" : "Located 37 km from Sayward along the Stewart Main, this site features five lakefront campsites and one campsite located in the old-growth forest that surrounds the lake. A steep cartop boat launch is found here and a short hiking trail can be followed along the lakeshore. There is an electric motor only restriction on the lake.",
+                "LATITUDE" : 50.054109999999994,
+				"LONGITUDE" : -126.00062399999999,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Twaddle Lake Recreation Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.99519855908284,
+				"LONGITUDE" : -126.14470208326509,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Upana Caves Recreation Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.81950798365554,
+				"LONGITUDE" : -126.24388021348715,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Upana Caves Recreation Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.81950798365554,
+				"LONGITUDE" : -126.24388021348715,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Hisnit Inlet Marble Recreation Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.74668944211882,
+				"LONGITUDE" : -126.51462861486081,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Vernon Lake Recreation Site",
+                "DESCRIPTION" : "Found at the north end of windy Vernon Lake, there are 23 campsites in a large, open setting. There is a boat launch for easy access into the lake and good two-wheel drive access along Vernon Lake Road, which is off Back Road. This site is used as a staging area for hunters, but be warned that portions of the site will flood during the fall and winter months.",
+                "LATITUDE" : 50.05546932201132,
+				"LONGITUDE" : -126.44354338603829,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Upper Klaklakama Lake Recreation Site",
+                "DESCRIPTION" : "Accessed off the Nimpkish Main South, 6.7 km from Highway 19, the four unit Upper Klaklakama Lake site is also found on the northern or Lower Klaklakama Lake, on the southwest side of the lake. One of the nicer destinations in the area, the site offers a boat launch, a sandy beach, a trail leading down to the lake, and a nice old growth interpretive trail.",
+                "LATITUDE" : 50.146434231242736,
+				"LONGITUDE" : -126.46499909860738,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Woss Lake Campground",
+                "DESCRIPTION" : "Swimming is one of the most popular pursuits at this 24 unit treed site, which is located in a sandy cove on Woss Lake. Managed by Western Forest Products, there is a wharf and a boat launch for anglers. Travel southeast on Highway 19 from Port McNeill and turn right at Woss and left at the logging camp office. Cross the bridge and in another 1.5 kilometres you will see the Woss Lake turnoff.",
+                "LATITUDE" : 50.187074812226506,
+				"LONGITUDE" : -126.62422967475548,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
         {
 			"type" : "poi",
             "version" : "1.0",
