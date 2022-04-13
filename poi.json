@@ -695,6 +695,45 @@
 			"type" : "poi",
             "version" : "1.0",
 			"properties" : {
+				"NAME" : "Mayo Lake Park",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.80213223245789,
+				"LONGITUDE" : -123.9527543036152,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Sandy Pool Regional Park",
+                "DESCRIPTION" : "This 18 hectare (45 ac) park is best known for its sandy beach and swimming hole, but there are also trails and washroom facilities. There is a canoe launch facility here, as well as an interpretive trail through the huge cottonwood trees that grow on the floodplains.",
+                "LATITUDE" : 48.758737099999976,
+				"LONGITUDE" : -123.83527350000004,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "66-Mile Trestle Day-Use Area",
+                "DESCRIPTION" : "This day-use area offers parking, picnic tables, pit toilets and an information shelter. It is located near the picturesque 66-Mile Trestle on the Trans-Canada Trail.",
+                "LATITUDE" : 48.776440463862706,
+				"LONGITUDE" : -123.92931856297042,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
 				"NAME" : "Vernon Lake Recreation Site",
                 "DESCRIPTION" : "Found at the north end of windy Vernon Lake, there are 23 campsites in a large, open setting. There is a boat launch for easy access into the lake and good two-wheel drive access along Vernon Lake Road, which is off Back Road. This site is used as a staging area for hunters, but be warned that portions of the site will flood during the fall and winter months.",
                 "LATITUDE" : 50.05546932201132,

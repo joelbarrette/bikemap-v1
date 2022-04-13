@@ -66,7 +66,7 @@
       <ul role="tablist"> <!-- top aligned tabs -->
         <li><a href="#sidebar-info" role="tab"><i class="fa fa-info-circle"></i></a></li>
         <li><a href="#sidebar-poi" role="tab"><i class="fa fa-th-list"></i></a></li>
-        <li><a href="#routes" role="tab"><i class="fa fa-map"></i></a></li>
+        <li style="display:none;"><a href="#routes" role="tab"><i class="fa fa-map"></i></a></li>
  
       </ul>
 
@@ -119,10 +119,10 @@
           <input type="checkbox" id="bcrec" onclick="layerControl('bcrec')">
           <span class="slider round"></span>
         </label></div>
-      <div>
+      <div style="display:none;">
         <label class="switch">
         <p>Food & Supplies</p>
-        <input type="checkbox" id="food" onclick="layerControl('food')">
+        <input type="checkbox" id="food" onclick="layerControl('food')" ">
         <span class="slider round"></span>
         </label>
       </div>
@@ -484,7 +484,7 @@ L.control.legend({
                 
             },
             {
-                label: "Recon Route",
+                label: "Possible Route",
                 type: "polyline",
                 color: reconColor,
                 fillColor: reconColor,
