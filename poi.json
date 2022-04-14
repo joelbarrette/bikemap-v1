@@ -656,6 +656,19 @@
 			"type" : "poi",
             "version" : "1.0",
 			"properties" : {
+				"NAME" : "Wye Lake Campsite",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.53182060317201,
+				"LONGITUDE" : -124.03297671960605,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
 				"NAME" : "Upana Caves Recreation Site",
                 "DESCRIPTION" : "",
                 "LATITUDE" : 49.81950798365554,
