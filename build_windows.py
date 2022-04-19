@@ -18,6 +18,7 @@ def getListOfFiles(dirName):
         if os.path.isdir(fullPath):
             allFiles = allFiles + getListOfFiles(fullPath)
         else:
+            # allFiles.append('/')
             allFiles.append(fullPath)
                 
     return allFiles
