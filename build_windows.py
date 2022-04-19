@@ -18,7 +18,7 @@ def getListOfFiles(dirName):
         if os.path.isdir(fullPath):
             allFiles = allFiles + getListOfFiles(fullPath)
         else:
-            # allFiles.append('/')
+            allFiles.append('/')
             allFiles.append(fullPath)
                 
     return allFiles
@@ -41,14 +41,17 @@ def main():
     # Print the files    
     b = []
     for elem in sorted(listOfFiles):
-        if re.search('\.gpx', elem):   
+        if re.search('\.gpx', elem):
+
             a = {
-            'path': elem[2:],
+            'path': elem[2:].replace('\\','/'),
             'type': elem.split('\\')[1].strip()
             }
+            #print(a.get('path').replace('\\','/'))
+
             b.append(a)
          
-    print(json.dumps(b))
+
         
         
         
