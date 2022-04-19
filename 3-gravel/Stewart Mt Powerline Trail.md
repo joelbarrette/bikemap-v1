@@ -1,0 +1,1 @@
+Much more rideable than the Scafe Mt. section that follows the powerlines eastward but much more up and down than the elevation plot shows. 

@@ -1,0 +1,1 @@
+Looks rideable from the northbound direction at first but it's not. On a gravel bike It's probably 40% rideable plus or minus a bit depending on your confidence level and bike.
