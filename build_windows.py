@@ -51,7 +51,7 @@ def main():
 
             b.append(a)
          
-
+    print(json.dumps(b))
         
         
         
