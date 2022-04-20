@@ -1,0 +1,1 @@
+Very fast hardpacked gravel road in great condition. A few potholes but they are easy to dodge.

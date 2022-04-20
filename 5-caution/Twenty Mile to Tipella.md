@@ -1,0 +1,1 @@
+Per [Trip Report](https://lww.squarespace.com/british-columbia-bikepacking/harrison-loop-2021) this is a very tough section.

@@ -1,0 +1,1 @@
+Relatively smooth and fast section of this [trip report](https://lww.squarespace.com/british-columbia-bikepacking/harrison-loop-2021) from 2021.
