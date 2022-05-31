@@ -134,6 +134,7 @@
 
       </div>
       <div class="leaflet-sidebar-pane" id="sidebar-offline">
+        <p>Offline Caching coming soon!</p>
 
       </div>
 
@@ -157,6 +158,10 @@
 $(document).ready(function() {  
   $('#map').css('height', window.innerHeight);
   //Map Color Variables
+});
+
+$( window ).resize(function() {
+  $('#map').css('height', window.innerHeight);
 });
 
   //Initializing the Map
