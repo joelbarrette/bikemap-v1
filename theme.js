@@ -48,7 +48,7 @@ var cafeIcon = L.icon({
     popupAnchor: [0,-32],
 });
 var warningIcon = L.icon({
-  iconUrl: 'resources/Warning.png',
+  iconUrl: 'resources/warning.png',
   iconSize: [16, 16],
   iconAnchor: [8, 8],
   popupAnchor: [0,-8],
