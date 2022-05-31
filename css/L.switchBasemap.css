@@ -1,0 +1,59 @@
+.hidden {
+    display: none;
+}
+
+.leaflet-control-basemapsSwitcher{
+    height: auto;
+    width: auto;
+    display:flex;
+}
+
+.leaflet-control-basemapsSwitcher:hover{
+    cursor: pointer;
+}
+
+.basemapImg{
+
+    background-color: rgba(255, 255, 255, 0.0);
+
+ 
+
+}
+
+.basemapImg div{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 150px;
+    border-radius: 3px 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.basemapImg div .name{
+    width:auto;
+    color: white;
+    height:auto;
+    background-color: rgba(43, 42, 39, 1);
+    border-radius: 0;
+    font-size: large;
+    align-items: left;
+    display: flex;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+
+
+.activeMap::before{
+    color:white;
+    content: '✔';
+    width: 18px;
+    height: 18px;
+    background-color: #387B23;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
