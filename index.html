@@ -75,6 +75,7 @@
 
       <ul role="tablist"> <!-- bottom aligned tabs -->
           <li><a href="#info" role="tab"><i class="fa fa-question-circle-o"></i></a></li>
+          
       </ul>
   </div>
 
@@ -131,6 +132,7 @@
       </div>
 
       </div>
+
       <div class="leaflet-sidebar-pane" id="info">
         <h4>What is this site?</h4>
         <p>This site is a personal project of Joel Barrette, designed to help with route planning for bikepacking/gravel biking adventures. In it's current state it's being manually maintained as a kind of blog for all past trips as well as planned future trips. Some routes from other riders trip reports have been included but links to their posts are in the description if you want a full GPX or to read more about the specifc trip.
@@ -148,6 +150,8 @@
 </style>
 
 <script>
+
+  
   //Map Color Variables
 
 
@@ -158,8 +162,8 @@
         zoom: 10,
         mapTypeId: 'topo',
         fullscreenControl: false,
-        zoomControl: true,
-        searchControl: false,
+        zoomControl: false,
+        searchControl: true,
         loadingControl: true,
         disableDefaultUI: true,
         pegmanControl: false,
@@ -181,6 +185,7 @@
       },
       locate: {
         flyTo: true,
+        position: "bottomright",
         keepCurrentZoomLevel: true,
         setView: "always"
       }
@@ -199,9 +204,10 @@
 	}).addTo(map);
 
   var myRenderer = L.canvas({ padding: 0.5, tolerance: 15 });
-  L.control.locate(opts.locate).addTo(map);
+  var lc = L.control.locate(opts.locate).addTo(map);
 
   //Loading GPX from JSON
+
 
   function loadGPX(fileList) {
     console.log("---- Loading GPX via JSON ----")
@@ -520,6 +526,20 @@ L.control.legend({
 }).addTo(map);
 
 
+
+sidebar.addPanel({
+    id: 'zoomIn',
+    tab: '<i class="fa fa-plus"></i>',
+    position: 'bottom' ,
+    button: function (event) { map.zoomIn(); }
+});
+
+sidebar.addPanel({
+    id: 'zoomOut',
+    tab: '<i class="fa fa-minus"></i>',
+    position: 'bottom' ,
+    button: function (event) { map.zoomOut(); }
+});
 
 </script>
 
