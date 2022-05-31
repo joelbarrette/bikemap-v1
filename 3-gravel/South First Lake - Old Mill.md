@@ -1,0 +1,1 @@
+Got lost and took this route on my way tring to get to the Old Mill campsite. It does connect but is VERY overgrown in sections and there is a reasonably large washout that you'll need to carry your bike through/across but other than that not too bad.

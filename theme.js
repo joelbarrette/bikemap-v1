@@ -47,6 +47,12 @@ var cafeIcon = L.icon({
     iconAnchor: [11, 32],
     popupAnchor: [0,-32],
 });
+var warningIcon = L.icon({
+  iconUrl: 'resources/warning.png',
+  iconSize: [16, 16],
+  iconAnchor: [8, 8],
+  popupAnchor: [0,-8],
+});
 
 function themeMarker(icon, marker){
     switch (icon){
@@ -70,7 +76,10 @@ function themeMarker(icon, marker){
             break;
         case "bikeshop":
             marker.setIcon(bikeIcon)
-            break;       
+            break;
+        case "warning":
+            marker.setIcon(warningIcon)
+            break;         
     }
 
 }

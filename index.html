@@ -190,7 +190,7 @@
 		zoomOffset: -1
 	}).addTo(map);
 
-
+  var myRenderer = L.canvas({ padding: 0.5, tolerance: 15 });
 
 
   //Loading GPX from JSON
@@ -236,7 +236,8 @@
             opacity: 1,
             weight: thickness,
             dashArray: style,
-            lineCap: 'round'
+            lineCap: 'round',
+            renderer: myRenderer 
         }
     } 
         //async: true
@@ -541,10 +542,12 @@ L.control.legend({
   var foodGroup = L.layerGroup().addTo(map);
   var groceryGroup = L.layerGroup().addTo(map);
   var bikeGroup = L.layerGroup().addTo(map);
+  var warningGroup = L.layerGroup().addTo(map);
   var layerGroups = {"rec": recGroup,
                      "camp": campGroup,
                      "food": foodGroup,
-                     "bikeshop": bikeGroup
+                     "bikeshop": bikeGroup,
+                     "warning": warningGroup
                     }
 
 // JSON Data Loads
@@ -602,6 +605,7 @@ function layerControl(layer){
     bcrecGroup.remove();
   }
 }
+
 
 
 </script>

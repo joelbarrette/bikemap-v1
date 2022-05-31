@@ -803,12 +803,288 @@
                 "DESCRIPTION" : "",
                 "LATITUDE" : 48.58509523439071,
 				"LONGITUDE" : -124.01533600747955,
-                "POI_CATEGORY" : "camp",
-				"ICON_TYPE" : "tent",
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
 				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Butler Main Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Closed",
+                "LATITUDE" : 48.40165846178851,
+				"LONGITUDE" : -123.76012211793226,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Kapoor Main Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Closed",
+                "LATITUDE" : 48.63036128825859,
+				"LONGITUDE" : -123.81045130812636,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "K405 Renfrew Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Closed",
+                "LATITUDE" : 48.62305346532551,
+				"LONGITUDE" : -123.85730234447767,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Renfrew Main Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Closed",
+                "LATITUDE" : 48.6083769426302,
+				"LONGITUDE" : -123.92525966320042,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Holt Main Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Open on Weekends",
+                "LATITUDE" : 48.74784332400594,
+				"LONGITUDE" : -123.76474854716929,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Lens Main Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 48.73995791808636,
+				"LONGITUDE" : -124.12405970406304,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Shaw Creek Main Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 48.923840510896554,
+				"LONGITUDE" : -124.3831403638334,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Chemainus Main Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Open on Weekends",
+                "LATITUDE" : 48.91081815628735,
+				"LONGITUDE" : -123.7519041977237,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Jump Main Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Closed",
+                "LATITUDE" : 49.07926799230037,
+				"LONGITUDE" : -124.08961163361914,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Nanaimo Lakes Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Open on Weekends",
+                "LATITUDE" : 49.09823847354835,
+				"LONGITUDE" : -124.13240331839012,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Nanaimo Lakes at Second Lake Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Open on Weekends",
+                "LATITUDE" : 49.09836050391027,
+				"LONGITUDE" : -124.21003942035868,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Museum Main Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Open on Weekends",
+                "LATITUDE" : 49.11939078490079,
+				"LONGITUDE" : -124.77521070180502,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Nitnat Main Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 48.930829254306474,
+				"LONGITUDE" : -124.52647579680279,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Round Lake Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 49.186470445939676,
+				"LONGITUDE" : -124.15534490878431,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Comox Main 0.5KM Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Open on Weekends",
+                "LATITUDE" : 49.39052853426574,
+				"LONGITUDE" : -124.95989596161355,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Comox Main 9.1KM Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 49.43131918117436,
+				"LONGITUDE" : -125.03681210139416,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Comox Main 18KM Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 49.475479010231055,
+				"LONGITUDE" : -125.08950184597795,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Comox Main 20KM Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 49.490530222258826,
+				"LONGITUDE" : -125.1064766879195,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Comox Lake Main 31KM Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 49.51363890701472,
+				"LONGITUDE" : -125.12595039146896,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Comox Lake Main 7KM Gate (Mosaic)",
+                "DESCRIPTION" : "Usually Open on Weekends",
+                "LATITUDE" : 49.6423335376648,
+				"LONGITUDE" : -125.11332510408255,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Ash 494 0.1KM Gate (Mosaic)",
+                "DESCRIPTION" : "Closed",
+                "LATITUDE" : 49.45117231459261,
+				"LONGITUDE" : -125.20165266758539,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www.mosaicforests.com/access"
 			}
 		}
 
+		 
+		 
+		
 		
     ]
 }
