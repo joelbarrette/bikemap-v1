@@ -48,12 +48,12 @@ var cafeIcon = L.icon({
     popupAnchor: [0,-32],
 });
 var warningIcon = L.icon({
-  iconUrl: 'resources/warning.png',
+  iconUrl: 'resources/Warning.png',
   iconSize: [16, 16],
   iconAnchor: [8, 8],
   popupAnchor: [0,-8],
 });
-//s
+
 function themeMarker(icon, marker){
     switch (icon){
         case "tent":
