@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="src/leaflet.legend.css" />
     <link rel="stylesheet" href="css/leaflet-sidebar.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/L.Control.Locate.css" />
+    
 
     <!-- JS-->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
@@ -31,6 +33,7 @@
     <script type="text/javascript" src="theme.js"></script>
     <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="src/leaflet.edgebuffer.js"></script>
+    <script src="src/L.Control.Locate.js" charset="utf-8"></script>
 
     <!-- Assets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -155,7 +158,7 @@
         zoom: 10,
         mapTypeId: 'topo',
         fullscreenControl: false,
-        zoomControl: false,
+        zoomControl: true,
         searchControl: false,
         loadingControl: true,
         disableDefaultUI: true,
@@ -176,6 +179,10 @@
         zFollow: 15,
         legend: false,
       },
+      locate: {
+        flyTo: true,
+        keepCurrentZoomLevel: true,
+      }
     };
 
 	var map = L.map('map', opts.map);
@@ -191,7 +198,7 @@
 	}).addTo(map);
 
   var myRenderer = L.canvas({ padding: 0.5, tolerance: 15 });
-
+  L.control.locate(opts.locate).addTo(map);
 
   //Loading GPX from JSON
 
