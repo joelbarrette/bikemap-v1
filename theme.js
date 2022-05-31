@@ -53,7 +53,7 @@ var warningIcon = L.icon({
   iconAnchor: [8, 8],
   popupAnchor: [0,-8],
 });
-
+//s
 function themeMarker(icon, marker){
     switch (icon){
         case "tent":
