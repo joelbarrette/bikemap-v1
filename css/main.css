@@ -205,3 +205,8 @@ font-weight: 400;
  
     display: table;
   }
+
+  #leaflet-popup-tip-container {
+    display: none;
+
+  }
