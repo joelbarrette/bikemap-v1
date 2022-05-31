@@ -1,0 +1,1 @@
+Free shuttle that operates from 6AM to 6PM with a noon lunch break. [Additional details.](https://www2.gov.bc.ca/gov/content/transportation/driving-and-cycling/cycling/cycling-regulations-restrictions-rules/george-massey-shuttle)

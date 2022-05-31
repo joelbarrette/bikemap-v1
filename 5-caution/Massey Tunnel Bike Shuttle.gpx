@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Massey Tunnel Bike Shuttle</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-05-31T00:21:41.000Z</time>
+  </metadata>
+  <trk>
+    <name>Massey Tunnel Bike Shuttle</name>
+    <trkseg>
+      <trkpt lat="49.10987821407616" lon="-123.05354389362037">
+        <ele>3.0001017428197514</ele>
+        <time>2022-05-31T00:21:41.000Z</time>
+      </trkpt>
+      <trkpt lat="49.10983085632324" lon="-123.05359125137329">
+        <ele>3.0839474563871843</ele>
+        <time>2022-05-31T00:21:41.001Z</time>
+      </trkpt>
+      <trkpt lat="49.10935887135565" lon="-123.05414915084839">
+        <ele>3.2446610642868023</ele>
+        <time>2022-05-31T00:21:41.011Z</time>
+      </trkpt>
+      <trkpt lat="49.10918712615967" lon="-123.05432081222534">
+        <ele>3.496701543371257</ele>
+        <time>2022-05-31T00:21:41.025Z</time>
+      </trkpt>
+      <trkpt lat="49.10896819084883" lon="-123.05455391295254">
+        <ele>3.824275801980313</ele>
+        <time>2022-05-31T00:21:41.043Z</time>
+      </trkpt>
+      <trkpt lat="49.108968107029796" lon="-123.0545540805906">
+        <ele>4.006600683731811</ele>
+        <time>2022-05-31T00:21:41.061Z</time>
+      </trkpt>
+      <trkpt lat="49.10865085310263" lon="-123.05514692134837">
+        <ele>4.393111296605821</ele>
+        <time>2022-05-31T00:21:41.087Z</time>
+      </trkpt>
+      <trkpt lat="49.10854550225535" lon="-123.05554378506008">
+        <ele>4.188451114024498</ele>
+        <time>2022-05-31T00:21:41.118Z</time>
+      </trkpt>
+      <trkpt lat="49.10848931504532" lon="-123.05593002665069">
+        <ele>3.7027514894272073</ele>
+        <time>2022-05-31T00:21:41.153Z</time>
+      </trkpt>
+      <trkpt lat="49.10848229163962" lon="-123.05636991290669">
+        <ele>3.355824334777278</ele>
+        <time>2022-05-31T00:21:41.192Z</time>
+      </trkpt>
+      <trkpt lat="49.1085946660119" lon="-123.05689563062725">
+        <ele>2.8097226822127594</ele>
+        <time>2022-05-31T00:21:41.237Z</time>
+      </trkpt>
+      <trkpt lat="49.10909332421852" lon="-123.05814017696838">
+        <ele>1.8209740323620132</ele>
+        <time>2022-05-31T00:21:41.298Z</time>
+      </trkpt>
+      <trkpt lat="49.109676256331525" lon="-123.05976024586244">
+        <ele>0.6325348497912834</ele>
+        <time>2022-05-31T00:21:41.378Z</time>
+      </trkpt>
+      <trkpt lat="49.11029429735659" lon="-123.06100480209892">
+        <ele>0.8292130196336671</ele>
+        <time>2022-05-31T00:21:41.474Z</time>
+      </trkpt>
+      <trkpt lat="49.110792938481055" lon="-123.06178801421328">
+        <ele>1.9363819697113458</ele>
+        <time>2022-05-31T00:21:41.582Z</time>
+      </trkpt>
+      <trkpt lat="49.112323946108916" lon="-123.06367630643416">
+        <ele>3.392785693867469</ele>
+        <time>2022-05-31T00:21:41.721Z</time>
+      </trkpt>
+      <trkpt lat="49.11311050046278" lon="-123.06475992867456">
+        <ele>5.92073587183806</ele>
+        <time>2022-05-31T00:21:41.877Z</time>
+      </trkpt>
+      <trkpt lat="49.11496447209717" lon="-123.06706664928527">
+        <ele>4.319291554682511</ele>
+        <time>2022-05-31T00:21:42.072Z</time>
+      </trkpt>
+      <trkpt lat="49.11601081186253" lon="-123.06838630805328">
+        <ele>4.712865004981422</ele>
+        <time>2022-05-31T00:21:42.288Z</time>
+      </trkpt>
+      <trkpt lat="49.11849665809659" lon="-123.0714762407784">
+        <ele>2.778479694092681</ele>
+        <time>2022-05-31T00:21:42.556Z</time>
+      </trkpt>
+      <trkpt lat="49.12023105893992" lon="-123.0736327563261">
+        <ele>1.262171140544634</ele>
+        <time>2022-05-31T00:21:42.860Z</time>
+      </trkpt>
+      <trkpt lat="49.12434562964022" lon="-123.07865389700436">
+        <ele>1.6719119712922623</ele>
+        <time>2022-05-31T00:21:43.248Z</time>
+      </trkpt>
+      <trkpt lat="49.1269504117444" lon="-123.08188330585938">
+        <ele>3.611492205592104</ele>
+        <time>2022-05-31T00:21:43.690Z</time>
+      </trkpt>
+      <trkpt lat="49.128024581226164" lon="-123.08305263577498">
+        <ele>4.139701543700562</ele>
+        <time>2022-05-31T00:21:44.153Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

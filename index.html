@@ -572,6 +572,12 @@ $.getJSON( "rec.geojson" , function( result ){ // Loads BC Gov Rec site json dat
   }
 });
 
+var jsonStyle = {
+  color:"#ff0000"
+}
+
+
+
 map.on('zoomend', function (e) {
                 console.log(map.getZoom());
     if (map.getZoom()>9){

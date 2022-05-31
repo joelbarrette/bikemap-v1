@@ -794,6 +794,21 @@
 				"ICON_TYPE" : "cafe",
 				"URL" : ""
 			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Williams Creek Suspension Bridge (Collapsed)",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.58509523439071,
+				"LONGITUDE" : -124.01533600747955,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
 		}
+
+		
     ]
 }

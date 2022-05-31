@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Hwy 17 to Boundary Bay Connector</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-05-30T20:13:09.000Z</time>
+  </metadata>
+  <trk>
+    <name>Hwy 17 to Boundary Bay Connector</name>
+    <trkseg>
+      <trkpt lat="49.05389070510864" lon="-123.05711030960083">
+        <ele>3.0000000000004285</ele>
+        <time>2022-05-30T20:13:09.000Z</time>
+      </trkpt>
+      <trkpt lat="49.053804874420166" lon="-123.05668115615845">
+        <ele>3.504633709089575</ele>
+        <time>2022-05-30T20:13:09.005Z</time>
+      </trkpt>
+      <trkpt lat="49.05376195907593" lon="-123.05597305297852">
+        <ele>3.935913819331182</ele>
+        <time>2022-05-30T20:13:09.017Z</time>
+      </trkpt>
+      <trkpt lat="49.05374050140381" lon="-123.05571556091309">
+        <ele>3.067931285216601</ele>
+        <time>2022-05-30T20:13:09.032Z</time>
+      </trkpt>
+      <trkpt lat="49.05371904373169" lon="-123.04640293121338">
+        <ele>2.661308130014544</ele>
+        <time>2022-05-30T20:13:09.145Z</time>
+      </trkpt>
+      <trkpt lat="49.05371912755072" lon="-123.04640293121338">
+        <ele>2.661014693205665</ele>
+        <time>2022-05-30T20:13:09.258Z</time>
+      </trkpt>
+      <trkpt lat="49.050114154815674" lon="-123.04640293121338">
+        <ele>3.139354233476296</ele>
+        <time>2022-05-30T20:13:09.429Z</time>
+      </trkpt>
+      <trkpt lat="49.04966354370117" lon="-123.04640293121338">
+        <ele>4.256880891981091</ele>
+        <time>2022-05-30T20:13:09.607Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

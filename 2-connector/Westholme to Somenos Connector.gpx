@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Westholme to Somenos Connector</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-05-31T00:36:15.000Z</time>
+  </metadata>
+  <trk>
+    <name>Westholme to Somenos Connector</name>
+    <trkseg>
+      <trkpt lat="48.85086474940181" lon="-123.71348105370998">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.000Z</time>
+      </trkpt>
+      <trkpt lat="48.85094404220581" lon="-123.71347904205322">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.001Z</time>
+      </trkpt>
+      <trkpt lat="48.85019302368164" lon="-123.71817827224731">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.053Z</time>
+      </trkpt>
+      <trkpt lat="48.84993553161621" lon="-123.71877908706665">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.113Z</time>
+      </trkpt>
+      <trkpt lat="48.84922742843628" lon="-123.71987342834473">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.189Z</time>
+      </trkpt>
+      <trkpt lat="48.849002458155155" lon="-123.72016880661249">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.270Z</time>
+      </trkpt>
+      <trkpt lat="48.84900237433612" lon="-123.72016889043152">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.351Z</time>
+      </trkpt>
+      <trkpt lat="48.84854078292847" lon="-123.72077465057373">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.442Z</time>
+      </trkpt>
+      <trkpt lat="48.848401414876925" lon="-123.72102674300515">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.536Z</time>
+      </trkpt>
+      <trkpt lat="48.84836258404057" lon="-123.72129496633204">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.633Z</time>
+      </trkpt>
+      <trkpt lat="48.84836611411784" lon="-123.72149345159386">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.732Z</time>
+      </trkpt>
+      <trkpt lat="48.84849672680206" lon="-123.72176167492069">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.835Z</time>
+      </trkpt>
+      <trkpt lat="48.84869441021659" lon="-123.72199771144835">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:15.942Z</time>
+      </trkpt>
+      <trkpt lat="48.848980343774635" lon="-123.7222873926413">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:16.054Z</time>
+      </trkpt>
+      <trkpt lat="48.84903329425437" lon="-123.72240004643857">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:16.168Z</time>
+      </trkpt>
+      <trkpt lat="48.84894857345994" lon="-123.72274873676344">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:16.286Z</time>
+      </trkpt>
+      <trkpt lat="48.848832082133555" lon="-123.72294185755874">
+        <ele>62.0</ele>
+        <time>2022-05-31T00:36:16.406Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

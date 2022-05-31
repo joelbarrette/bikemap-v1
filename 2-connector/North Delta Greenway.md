@@ -1,0 +1,1 @@
+A dry(er) bypass for when the main Burns Bog gravel section is flooded. There are few sections near the beginning and you will have you walk your bike over the northern part but it's worth taking over the lower route when there's been rain recently. It's a 60/30 mix of gravel and road.

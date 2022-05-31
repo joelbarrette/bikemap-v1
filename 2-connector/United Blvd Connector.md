@@ -1,0 +1,1 @@
+Cuts through an industrial area so riding isn't great. Similar feel to Kent Ave. in South Vancouver. Still probably the easiest/fastest way to get east of Coquitlam since it bypasses much of hills and residental areas. 

@@ -1,0 +1,1 @@
+Mixed Surface, Gravel equestrian trail for the first few KM in the north then switches to road.
