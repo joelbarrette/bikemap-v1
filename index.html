@@ -60,7 +60,7 @@
   </div>
 
 </div>    
-<div id="map" style="height:100vh"></div>
+<div id="map"></div>
 
 
 <div id="sidebar" class="leaflet-sidebar collapsed">
@@ -154,10 +154,10 @@
 </style>
 
 <script>
-  document.getElementById("map").style.height = window.innerHeight;    
-  
+$(document).ready(function() {  
+  $('#map').css('height', window.innerHeight);
   //Map Color Variables
-
+});
 
   //Initializing the Map
   var opts = {
