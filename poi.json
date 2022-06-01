@@ -799,13 +799,13 @@
 			"type" : "poi",
             "version" : "1.0",
 			"properties" : {
-				"NAME" : "Williams Creek Suspension Bridge (Collapsed)",
-                "DESCRIPTION" : "",
+				"NAME" : "Williams Creek Suspension Bridge (Decomissioned)",
+                "DESCRIPTION" : "Used to be an old Bedspring Suspension bridge over a deep ravine. There is no other way through here now.",
                 "LATITUDE" : 48.58509523439071,
 				"LONGITUDE" : -124.01533600747955,
                 "POI_CATEGORY" : "warning",
 				"ICON_TYPE" : "warning",
-				"URL" : ""
+				"URL" : "https://www.sookenewsmirror.com/community/sooke-history-bedspring-bridge-was-unforgettable-experience/"
 			}
 		},
 		{
