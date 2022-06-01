@@ -174,7 +174,7 @@ font-weight: 400;
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 50px;
+    font-size: 20px;
     width: 35%;
     color: white;
     transform: translate(-50%,-50%);
@@ -206,7 +206,4 @@ font-weight: 400;
     display: table;
   }
 
-  #leaflet-popup-tip-container {
-    display: none;
-
-  }
+  
