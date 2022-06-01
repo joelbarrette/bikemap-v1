@@ -206,4 +206,8 @@ font-weight: 400;
     display: table;
   }
 
-  
+  @media (max-width: 768px) {
+    #disclaimer-box{
+      width: 80%;
+    }
+  }
