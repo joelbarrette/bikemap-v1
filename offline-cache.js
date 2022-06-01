@@ -31,9 +31,20 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
+self.addEventListener('fetch', (e) => {
+  e.respondWith((async () => {
+    const r = await caches.match(e.request);
+    console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
+    if (r) { return r; }
+    const response = await fetch(e.request);
+    const cache = await caches.open(cacheName);
+    console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
+    cache.put(e.request, response.clone());
+    return response;
+  })());
+});
 
-
-self.addEventListener("fetch", (event) => {
+/*self.addEventListener("fetch", (event) => {
   // We only want to call event.respondWith() if this is a navigation request
   // for an HTML page.
  
@@ -86,4 +97,4 @@ self.addEventListener("fetch", (event) => {
   // event.respondWith(), the request will be handled by the browser as if there
   // were no service worker involvement.
 
-});
+});*/
