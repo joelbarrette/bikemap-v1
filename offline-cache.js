@@ -10,7 +10,7 @@ Copyright 2015, 2019, 2020 Google LLC. All Rights Reserved.
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-console.log("hello");
+console.log("hello2");
 // Incrementing OFFLINE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 const OFFLINE_VERSION = 16;
@@ -95,6 +95,6 @@ self.addEventListener('fetch', (e) => {
   // request. If there are any other fetch handlers registered, they will get a
   // chance to call event.respondWith(). If no fetch handlers call
   // event.respondWith(), the request will be handled by the browser as if there
-  // were no service worker involvement.
+  // were no service worker involvement. sdfsdf
 
 });*/
