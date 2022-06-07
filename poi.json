@@ -223,6 +223,19 @@
 				"URL" : ""
 			}
 		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Moby's Pub",
+                "DESCRIPTION" : "Good food but not open for breakfast",
+                "LATITUDE" : 48.859638428617814,
+				"LONGITUDE" : -123.50111883219981,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "restaurant",
+				"URL" : ""
+			}
+		},
         {
 			"type" : "poi",
             "version" : "1.0",
@@ -236,6 +249,32 @@
 				"URL" : ""
 			}
 		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Country Grocer",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.86050551133559,
+				"LONGITUDE" : -123.51134464068173,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Salt Spring Mercantile",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.76919801772696,
+				"LONGITUDE" : -123.44910075054712,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		}, 
         {
 			"type" : "poi",
             "version" : "1.0",
@@ -322,6 +361,19 @@
                 "DESCRIPTION" : "",
                 "LATITUDE" : 49.392446,
 				"LONGITUDE" : -122.991490,
+                "POI_CATEGORY" : "rec",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Stowell Lake Beach",
+                "DESCRIPTION" : "Public lake access with sand beach and dock.",
+                "LATITUDE" : 48.782264398398404,
+				"LONGITUDE" : -123.44481058739628,
                 "POI_CATEGORY" : "rec",
 				"ICON_TYPE" : "bench",
 				"URL" : ""
