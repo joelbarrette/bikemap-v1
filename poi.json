@@ -1132,6 +1132,19 @@
 				"ICON_TYPE" : "warning",
 				"URL" : "https://www.mosaicforests.com/access"
 			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Bugaboo Main Gate",
+                "DESCRIPTION" : "Temporary Closure expires June 30 2022",
+                "LATITUDE" : 48.65668700838906,
+				"LONGITUDE" : -124.46630189413165,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://www2.gov.bc.ca/gov/content/industry/natural-resource-use/resource-roads/local-road-safety-information/south-island-natural-resource-district-road-safety-information"
+			}
 		}
 
 		 
