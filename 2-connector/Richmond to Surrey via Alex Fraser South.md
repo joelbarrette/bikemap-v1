@@ -1,0 +1,1 @@
+![Photo](resources/img/alex-fraser-north.jpg)
