@@ -133,8 +133,6 @@
         <span class="slider round"></span>
         </label>
       </div>
-      <h4>Routes</h4>
-      <a href="routes/t2s/index.html"> Tree to Sea 2022 </a>
       <h4>Basemaps</h4>
       <div id="basemap-control"></div>
       </div>
@@ -181,8 +179,8 @@ $( window ).resize(function() {
   //Initializing the Map
   var opts = {
       map: {
-        center: [49.252752, -123.161156],
-        zoom: 10,
+        center: [50.118941260418865, -126.3074483006197],
+        zoom: 9,
         mapTypeId: 'topo',
         fullscreenControl: false,
         zoomControl: false,
@@ -493,41 +491,19 @@ el.addTo(map);
 L.control.legend({
     position: "topright",
     legends: [{
-                label: "Road",
+                label: "Route",
                 type: "polyline",
                 color: roadColor,
                 fillColor: roadColor,
                 weight: 2,
                 
             },{
-                label: "Connector",
+                label: "Non-Riding",
                 type: "polyline",
                 color: connectorColor,
                 fillColor: connectorColor,
                 weight: 2,
                 
-            },{
-                label: "Gravel",
-                type: "polyline",
-                color: gravelColor,
-                fillColor: gravelColor,
-                weight: 2,
-                
-            },{
-                label: "Caution",
-                type: "polyline",
-                color: cautionColor,
-                fillColor: cautionColor,
-                weight: 2,
-                
-            },
-            {
-                label: "Possible Route",
-                type: "polyline",
-                color: reconColor,
-                fillColor: reconColor,
-                dashArray: [10, 5],
-                weight: 2
             }
           ]
 }).addTo(map);
@@ -634,7 +610,7 @@ var jsonStyle = {
 
 map.on('zoomend', function (e) {
                 console.log(map.getZoom());
-    if (map.getZoom()>9){
+    if (map.getZoom()>2){
       for (var key in layerGroups){
         layerGroups[key].addTo(map)
       }

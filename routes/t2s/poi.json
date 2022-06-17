@@ -1,0 +1,263 @@
+{
+	"name" : "PoiList",
+	"type" : "PoiCollection",
+	"features" : [
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Gold River Deli",
+                "DESCRIPTION" : "Has food and snacks and is open late",
+                "LATITUDE" : 49.77836384950791,
+				"LONGITUDE" : -126.05207176726475,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Tahsis Supermarket",
+                "DESCRIPTION" : "Has food and snacks and is open late",
+                "LATITUDE" : 49.92427899891562,
+				"LONGITUDE" : -126.65505345896372,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : "http://tahsissupermarket.bravesites.com/"
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Port Alice Family Foods",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.42687716976458,
+				"LONGITUDE" : -127.48675549543346,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Night 1 Camp",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.215312057094195,
+				"LONGITUDE" : -125.90767498697993,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Night 2 Camp",
+                "DESCRIPTION" : "Moutcha Bay Resort",
+                "LATITUDE" : 49.789499781382005,
+				"LONGITUDE" : -126.46122202313391,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Co-op Convenience Store Sayward",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.31224514902081,
+				"LONGITUDE" : -125.91870514958718,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Woss General Store",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.212889446607946,
+				"LONGITUDE" : -126.59478279082553,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" :  {
+				"NAME" : "Port McNeil IGA",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.58842124229241,
+				"LONGITUDE" : -127.08523384405397,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" :  {
+				"NAME" : "Telegraph Cove General Store",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.54497641743568,
+				"LONGITUDE" : -126.83264383579476,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "grocery",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" :  {
+				"NAME" : "Crossroads Restaurant",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.31436064134554,
+				"LONGITUDE" : -125.92015271883248,
+                "POI_CATEGORY" : "food",
+				"ICON_TYPE" : "restaurant",
+				"URL" : ""
+			}
+		},
+        {
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Night 5 - Bonanza South Rec Site",
+                "DESCRIPTION" : "Bonanza Lake is a fair sized lake southeast of Port McNeill. Stocked with rainbow trout, the lake offers two recreation sites. The 12 unit Bonanza Lake South sports sandy beaches and a better boat launch nestled in a grove of mature second growth cedar and hemlock. Access is from Highway 19. If coming from Port McNeill, make a left across from the Zeballos turnoff and keep left. Turn left again at the 14 km mark, which is marked by a camping sign.",
+                "LATITUDE" : 50.33999186426992,
+				"LONGITUDE" : -126.7432504771748,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Night 3 Camp - Atluck Lake Rec",
+                "DESCRIPTION" : "Like most sites on the shores of North Island lakes, this five unit semi-open site with a gravel beach and boat launch is popular with trout anglers. Despite the good road access, it is a reasonably remote site. Access to this site is from the Atluck Main which branches west of the main road to Zeballos that leads south from Highway 19.",
+                "LATITUDE" : 50.227666717413825,
+				"LONGITUDE" : -126.92887923777067,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Night 4 - Marble River Camp",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.52730574783409, 
+				"LONGITUDE" : -127.43326263771606,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Night 6 - Naka Creek Rec Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.477988611569465, 
+				"LONGITUDE" : -126.42727648749013,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Night 7 - Alder Grove Rec Site",
+                "DESCRIPTION" : "Found east of Port Alice along the Keogh (Benson) Main, this small, undeveloped day-use site provides little more than boat launch to access Iron Lake. Canoeing and fishing are the two main attractions here.",
+                "LATITUDE" : 50.27979401803466, 
+				"LONGITUDE" : -125.64756433986979,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "tent",
+				"URL" : ""
+			}
+		},
+
+
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Garrett Lake Rec Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 50.05906269125626,
+				"LONGITUDE" : -125.62417879614102,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Twaddle Lake Recreation Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.99519855908284,
+				"LONGITUDE" : -126.14470208326509,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Upana Caves Recreation Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.81950798365554,
+				"LONGITUDE" : -126.24388021348715,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Upana Caves Recreation Site",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.81950798365554,
+				"LONGITUDE" : -126.24388021348715,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : ""
+			}
+		}
+
+		 
+		 
+		
+		
+    ]
+}

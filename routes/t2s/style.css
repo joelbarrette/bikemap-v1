@@ -1,0 +1,98 @@
+
+  
+    .demo-card-wide > .mdl-card__title {
+      color: #fff;
+      height: 70px;
+    }
+    .demo-card-wide > .mdl-card__menu {
+      color: #fff;
+    }
+
+    .demo-card-wide > .mdl-card__supporting-text {
+      color: #fff;
+    }
+   
+    #elevation-div {
+      overflow: hidden;
+      margin-left: -10px;
+      margin-right: 10px;
+      color:rgb(0, 0, 0);
+      font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+
+
+  
+
+
+    #elevation-div > div > svg{
+        background-color:rgba(255,255,255,0.0);
+        color:rgba(255, 255, 255, 0.0);
+    }
+
+    .elevation-control .axis text{
+        fill:rgba(255, 255, 255, 1.00)
+    }
+    .elevation-control.elevation .grid .tick line {
+        stroke: rgba(255,255,255,0.5);
+    }
+
+    .custom-theme.elevation-control.elevation .area {
+      fill: rgba(255, 255, 255, 0.85);
+      stroke: rgba(231, 7, 7, 0.85);
+      stroke-width: 2.8;
+    }
+
+    .custom-theme.height-focus.circle-lower {
+      fill: #FF0;
+    }
+
+    .elevation-content.elevation-detached {
+      height: 3%;
+      font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+
+    .elevation-control.elevation .axis text, .elevation-control.elevation .point text{
+        fill:#fff;
+        stroke-width:0px;
+    }
+    .custom-theme.elevation-polyline {
+      stroke: #F00;
+      stroke-opacity: 1;
+      stroke-width: 2;
+    }
+
+    .custom-theme.elevation-control .legend text, .elevation-control .point text{
+        fill: #fff;
+        font-weight: 400;   
+        stroke:none;
+    }
+
+    .custom-theme.elevation-polyline-segments {
+      stroke: #FF0;
+      stroke-width: 2;
+      stroke-dasharray: 4;
+    }
+
+    .custom-theme.data-summary {
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      padding: 4px 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background-color: rgb(0, 0, 0);
+      color: #fff;
+    }
+
+    .data-summary .summaryvalue {
+      font-weight: bold;
+    }
+
+    #disqus_thread{
+   
+        margin-left: 10px;
+        margin-right: 15px;
+      top:5px;
+    }
