@@ -1,0 +1,1 @@
+This isn't the nicest ride but it does avoid most of the dangerous Langford stroads if you are just trying to get from Sooke Wilderness Trails to the Goose or vice versa.
