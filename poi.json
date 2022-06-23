@@ -1146,7 +1146,35 @@
 				"URL" : "https://www2.gov.bc.ca/gov/content/industry/natural-resource-use/resource-roads/local-road-safety-information/south-island-natural-resource-district-road-safety-information"
 			}
 		}
+		,
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Caycuse Main Washout",
+                "DESCRIPTION" : "Washout shown in OSM Layers, not confirmed or photographed",
+                "LATITUDE" : 48.82082,
+				"LONGITUDE" : -124.57963,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Bridge Out",
+                "DESCRIPTION" : "Potentially still passable bypassing by carrying bike, powered vehicles cannot pass here. Road conditions west of this are likely very overgrown due to lack of access.",
+                "LATITUDE" : 48.82607,
+				"LONGITUDE" : -124.50882,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : "https://tbrown.ca/blog/20170625-26-ride-with-steve-noon-renfrew-caycuse-exploration/"
+			}
+		}
 
+		
 		 
 		 
 		
