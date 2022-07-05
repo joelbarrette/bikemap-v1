@@ -1,0 +1,1 @@
+Champagne gravel with a decent climb near the end that takes good gears, climb is sustained but over quickly so walking may be required if you don't have sufficient gears. 
