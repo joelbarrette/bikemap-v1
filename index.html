@@ -36,6 +36,8 @@
     <script src="src/leaflet.edgebuffer.js"></script>
     <script src="src/L.switchBasemap.js"></script>
     <script src="src/L.Control.Locate.js" charset="utf-8"></script>
+    <script type="text/javascript" src="src/Leaflet.Permalink.js"></script>
+
 
     <!-- Assets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -179,10 +181,11 @@ $( window ).resize(function() {
 });
 
   //Initializing the Map
+  var mappos = L.Permalink.getMapLocation();
   var opts = {
       map: {
-        center: [49.252752, -123.161156],
-        zoom: 10,
+        center: mappos.center,
+        zoom: mappos.zoom,
         mapTypeId: 'topo',
         fullscreenControl: false,
         zoomControl: false,
@@ -215,6 +218,7 @@ $( window ).resize(function() {
     };
 
 	var map = L.map('map', opts.map);
+  L.Permalink.setup(map);
 
   /*var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -305,7 +309,9 @@ $( window ).resize(function() {
                     reload: true,
                     config: function() {
                         this.page.identifier = "clear";
-                        this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
+                        //this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
+                        var pageUrl = window.location.protocol + "//" + window.location.host  + '?' + window.location.search + "#!" + encodeURIComponent(gpx2.get_name())
+                        window.history.replaceState({path:pageUrl}, '', pageUrl);
                     }
                 });
                 var gpx2 = e.target;
@@ -352,7 +358,9 @@ $( window ).resize(function() {
                 
                 console.log(encodeURIComponent(gpx2.get_name()))
                 
-                window.location.hash = ('!' + encodeURIComponent(gpx2.get_name()));
+                //window.location.hash = ('!' + encodeURIComponent(gpx2.get_name()));
+                var pageUrl = window.location.protocol + "//" + window.location.host +  '?' + window.location.search + "#!" + encodeURIComponent(gpx2.get_name())
+                window.history.replaceState({path:pageUrl}, '', pageUrl);
                 //document.getElementById("info-card").style.visibility = "visible";
                 
                 
@@ -424,12 +432,16 @@ function loadDisqus(element, postTitle, postUrlTag) {
         el.clear();
         console.log(window.location.hash);
         window.location.hash = '';
+        var pageUrl = window.location.protocol + "//" + window.location.host + window.location.search 
+        window.history.replaceState({path:pageUrl}, '', pageUrl);
 
         DISQUS.reset({
                 reload: true,
                 config: function () {  
                   this.page.identifier = "clear";  
                   this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
+                  var pageUrl = window.location.protocol + "//" + window.location.host + "/" + encodeURIComponent(gpx2.get_name()) + window.location.search 
+                        window.history.replaceState({path:pageUrl}, '', pageUrl);
                 }});
  
     })
