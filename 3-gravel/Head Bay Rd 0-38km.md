@@ -7,3 +7,5 @@ The paved westbound climb coming out of Gold River, pavement only lasts a few KM
 
 ![Photo](resources/img/head-bay-rd-2.jpg)
 Some of the gravel after the pavement ends, nice and smooth.
+
+[June 2022 ride data](https://connect.garmin.com/modern/activity/9097362062)
