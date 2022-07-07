@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Kim Creek Main</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-07-06T23:59:59.000Z</time>
+  </metadata>
+  <trk>
+    <name>Kim Creek Main</name>
+    <trkseg>
+      <trkpt lat="50.36909580230713" lon="-126.15428924560547">
+        <ele>184.25745088028134</ele>
+        <time>2022-07-06T23:59:59.000Z</time>
+      </trkpt>
+      <trkpt lat="50.368709648028016" lon="-126.15319490432739">
+        <ele>174.99865401847205</ele>
+        <time>2022-07-06T23:59:59.013Z</time>
+      </trkpt>
+      <trkpt lat="50.36774396896362" lon="-126.15171432495117">
+        <ele>177.2733754333392</ele>
+        <time>2022-07-06T23:59:59.047Z</time>
+      </trkpt>
+      <trkpt lat="50.36632776260376" lon="-126.14993333816528">
+        <ele>179.86431465641186</ele>
+        <time>2022-07-06T23:59:59.111Z</time>
+      </trkpt>
+      <trkpt lat="50.364675521850586" lon="-126.14840984344482">
+        <ele>183.2613354134494</ele>
+        <time>2022-07-06T23:59:59.205Z</time>
+      </trkpt>
+      <trkpt lat="50.36330223083496" lon="-126.14744424819946">
+        <ele>186.66500544306098</ele>
+        <time>2022-07-06T23:59:59.323Z</time>
+      </trkpt>
+      <trkpt lat="50.36259412765503" lon="-126.14688634872437">
+        <ele>188.6509026978112</ele>
+        <time>2022-07-06T23:59:59.454Z</time>
+      </trkpt>
+      <trkpt lat="50.362422466278076" lon="-126.1465859413147">
+        <ele>188.96725739779944</ele>
+        <time>2022-07-06T23:59:59.589Z</time>
+      </trkpt>
+      <trkpt lat="50.362443923950195" lon="-126.14598512649536">
+        <ele>188.93547909450382</ele>
+        <time>2022-07-06T23:59:59.730Z</time>
+      </trkpt>
+      <trkpt lat="50.3627872467041" lon="-126.14422559738159">
+        <ele>190.61217104133632</ele>
+        <time>2022-07-06T23:59:59.890Z</time>
+      </trkpt>
+      <trkpt lat="50.362958908081055" lon="-126.14272356033325">
+        <ele>194.58859522747872</ele>
+        <time>2022-07-07T00:00:00.066Z</time>
+      </trkpt>
+      <trkpt lat="50.36261566914618" lon="-126.14231586456299">
+        <ele>198.56257854805318</ele>
+        <time>2022-07-07T00:00:00.249Z</time>
+      </trkpt>
+      <trkpt lat="50.36261558532715" lon="-126.14231586456299">
+        <ele>198.98570563625344</ele>
+        <time>2022-07-07T00:00:00.432Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
