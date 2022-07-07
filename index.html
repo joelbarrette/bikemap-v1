@@ -154,7 +154,7 @@
     </div>
   </div>
 
-
+  <div id="fullpage" onclick="this.style.display='none';"></div>
   
 <style>
 
@@ -331,6 +331,16 @@ $( window ).resize(function() {
                   });
                   loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
 
+                  const imgs = document.querySelectorAll('#sidebar-content > p > img');
+                  const fullPage = document.querySelector('#fullpage');
+
+                  imgs.forEach(img => {
+                    img.addEventListener('click', function() {
+                      fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                      fullPage.style.display = 'block';
+                    });
+                  });
+
                 }).fail((function(){ 
                   console.log("No Markdown entry found for " + e.target.get_name());
                   el.clear();
@@ -343,8 +353,19 @@ $( window ).resize(function() {
                     el.addData(e.line);
                   });
                   loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
-                  })
                   
+                  const imgs = document.querySelectorAll('#sidebar-content > p > img');
+                  const fullPage = document.querySelector('#fullpage');
+
+                  imgs.forEach(img => {
+                    img.addEventListener('click', function() {
+                      fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                      fullPage.style.display = 'block';
+                    });
+                  });  
+                
+                })
+                
                 );
                 
                 //Stops the map layer from also receiving a click request
@@ -359,7 +380,7 @@ $( window ).resize(function() {
                 console.log(encodeURIComponent(gpx2.get_name()))
                 
                 //window.location.hash = ('!' + encodeURIComponent(gpx2.get_name()));
-                var pageUrl = window.location.protocol + "//" + window.location.host +  '?' + window.location.search + "#!" + encodeURIComponent(gpx2.get_name())
+                var pageUrl = window.location.protocol + "//" + window.location.host + window.location.search + "#!" + encodeURIComponent(gpx2.get_name())
                 window.history.replaceState({path:pageUrl}, '', pageUrl);
                 //document.getElementById("info-card").style.visibility = "visible";
                 
