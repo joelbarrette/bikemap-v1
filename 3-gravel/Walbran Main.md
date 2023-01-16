@@ -5,3 +5,6 @@ At about the 20KM marker (on this gpx so about 10 km from the McClure intersecti
 It's worth the ride though since at the end you get to the Central Walbran Valley where there's a small shack setup for the caretakers right at the bridge across Walbran River. There's many activities and campsites here, such as the Emerald Loop and many longer day hikes into the park.
 
 There are outhouses here as well, just follow the signs but bring your own TP!
+
+![Photo](resources/img/walbran-valley-1.jpg)
+Map of the Walbran Camp/trails area. The end of this route drops you at "Base Camp"

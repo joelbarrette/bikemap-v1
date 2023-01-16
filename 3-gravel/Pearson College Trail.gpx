@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Pearson College Trail</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2023-01-16T00:14:16.000Z</time>
+  </metadata>
+  <trk>
+    <name>Pearson College Trail</name>
+    <trkseg>
+      <trkpt lat="48.35314750671387" lon="-123.56024972163141">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.000Z</time>
+      </trkpt>
+      <trkpt lat="48.35310459136963" lon="-123.56033563613892">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.001Z</time>
+      </trkpt>
+      <trkpt lat="48.35308313369751" lon="-123.56018543243408">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.004Z</time>
+      </trkpt>
+      <trkpt lat="48.35286864079535" lon="-123.55994939804077">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.011Z</time>
+      </trkpt>
+      <trkpt lat="48.35283829830587" lon="-123.55974823236465">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.020Z</time>
+      </trkpt>
+      <trkpt lat="48.3528383821249" lon="-123.55974873527884">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.029Z</time>
+      </trkpt>
+      <trkpt lat="48.35283846594393" lon="-123.55974890291691">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.038Z</time>
+      </trkpt>
+      <trkpt lat="48.35281156003475" lon="-123.55956978164613">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.049Z</time>
+      </trkpt>
+      <trkpt lat="48.352816086262465" lon="-123.55956852436066">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.060Z</time>
+      </trkpt>
+      <trkpt lat="48.35281156003475" lon="-123.55956986546516">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.071Z</time>
+      </trkpt>
+      <trkpt lat="48.35280418395996" lon="-123.55952024459839">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.083Z</time>
+      </trkpt>
+      <trkpt lat="48.35263252258301" lon="-123.55917692184448">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.099Z</time>
+      </trkpt>
+      <trkpt lat="48.352224826812744" lon="-123.55891942977905">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.123Z</time>
+      </trkpt>
+      <trkpt lat="48.35227050818503" lon="-123.55873628519475">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.149Z</time>
+      </trkpt>
+      <trkpt lat="48.35227067582309" lon="-123.55873620137572">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.175Z</time>
+      </trkpt>
+      <trkpt lat="48.35233219899237" lon="-123.55849027633667">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.203Z</time>
+      </trkpt>
+      <trkpt lat="48.3522891998291" lon="-123.5582971572876">
+        <ele>62.0</ele>
+        <time>2023-01-16T00:14:16.234Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

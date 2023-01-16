@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Pearson College Dr. Gravel Shortcut</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2023-01-16T00:16:56.000Z</time>
+  </metadata>
+  <trk>
+    <name>Pearson College Dr. Gravel Shortcut</name>
+    <trkseg>
+      <trkpt lat="48.35402727127075" lon="-123.54793310165405">
+        <ele>28.0</ele>
+        <time>2023-01-16T00:16:56.000Z</time>
+      </trkpt>
+      <trkpt lat="48.353726863861084" lon="-123.54816913604736">
+        <ele>31.0</ele>
+        <time>2023-01-16T00:16:56.005Z</time>
+      </trkpt>
+      <trkpt lat="48.35361957550049" lon="-123.54836225509644">
+        <ele>33.0</ele>
+        <time>2023-01-16T00:16:56.013Z</time>
+      </trkpt>
+      <trkpt lat="48.3532977104187" lon="-123.54917764663696">
+        <ele>36.0</ele>
+        <time>2023-01-16T00:16:56.031Z</time>
+      </trkpt>
+      <trkpt lat="48.352765711024404" lon="-123.55110892094672">
+        <ele>41.0</ele>
+        <time>2023-01-16T00:16:56.072Z</time>
+      </trkpt>
+      <trkpt lat="48.352765711024404" lon="-123.55110875330865">
+        <ele>44.0</ele>
+        <time>2023-01-16T00:16:56.113Z</time>
+      </trkpt>
+      <trkpt lat="48.352718353271484" lon="-123.55128049850464">
+        <ele>47.0</ele>
+        <time>2023-01-16T00:16:56.156Z</time>
+      </trkpt>
+      <trkpt lat="48.352439403533936" lon="-123.55310440063477">
+        <ele>51.0</ele>
+        <time>2023-01-16T00:16:56.218Z</time>
+      </trkpt>
+      <trkpt lat="48.35243529640138" lon="-123.55302745476365">
+        <ele>53.0</ele>
+        <time>2023-01-16T00:16:56.281Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

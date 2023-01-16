@@ -1172,11 +1172,116 @@
 				"ICON_TYPE" : "warning",
 				"URL" : "https://tbrown.ca/blog/20170625-26-ride-with-steve-noon-renfrew-caycuse-exploration/"
 			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Gordon River Pullout 1",
+                "DESCRIPTION" : "Small pullout on the river side of the road with a path heading down to the river.",
+                "LATITUDE" : 48.675057, 
+				"LONGITUDE" : -124.424372,
+                "POI_CATEGORY" : "camp",
+				"ICON_TYPE" : "bench",
+				"URL" : "https://tbrown.ca/blog/20170625-26-ride-with-steve-noon-renfrew-caycuse-exploration/"
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "CRD 3j Red Gate",
+                "DESCRIPTION" : "Access north is restricted",
+                "LATITUDE" : 48.44080,
+				"LONGITUDE" : -123.59072,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Flooding Area",
+                "DESCRIPTION" : "About 50m of road that easily floods from the crossing of South Charters River to the north. Avoiding this via the bypass is recommend during the early/wet season.",
+                "LATITUDE" : 48.43048,
+				"LONGITUDE" : -123.65559,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "River Crossing",
+                "DESCRIPTION" : "This is the deepest/most difficult crossing of the 5. Avoiding this via the bypass is recommend during the early/wet season.",
+                "LATITUDE" : 48.43181,
+				"LONGITUDE" : -123.65450,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Camp Thunderbird Boundary",
+                "DESCRIPTION" : "No Trespassing sign is present here.",
+                "LATITUDE" : 48.40711,
+				"LONGITUDE" : -123.63875,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "CRD Leechtown Red Gate",
+                "DESCRIPTION" : "Access to the North restricted due to CRD watershed.",
+                "LATITUDE" : 48.49969,
+				"LONGITUDE" : -123.70997,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Boneyard Main Red Gate",
+                "DESCRIPTION" : "Access to the North restricted due to CRD watershed.",
+                "LATITUDE" : 48.48512,
+				"LONGITUDE" : -123.71692,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
+		},
+		
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Gate",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 48.50542,
+				"LONGITUDE" : -123.93411,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
 		}
 
 		
-		 
-		 
+		
+		
 		
 		
     ]
