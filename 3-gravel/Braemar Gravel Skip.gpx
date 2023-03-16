@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Braemar Gravel Skip</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2023-03-14T17:33:59.000Z</time>
+  </metadata>
+  <trk>
+    <name>Braemar Gravel Skip</name>
+    <trkseg>
+      <trkpt lat="48.421714240685105" lon="-123.51485601626337">
+        <ele>181.0</ele>
+        <time>2023-03-14T17:33:59.000Z</time>
+      </trkpt>
+      <trkpt lat="48.42159681022167" lon="-123.51474336348474">
+        <ele>181.0</ele>
+        <time>2023-03-14T17:33:59.002Z</time>
+      </trkpt>
+      <trkpt lat="48.42147217132151" lon="-123.51472190581262">
+        <ele>180.0</ele>
+        <time>2023-03-14T17:33:59.006Z</time>
+      </trkpt>
+      <trkpt lat="48.42128701508045" lon="-123.51472727023065">
+        <ele>178.0</ele>
+        <time>2023-03-14T17:33:59.013Z</time>
+      </trkpt>
+      <trkpt lat="48.421101942658424" lon="-123.5148613806814">
+        <ele>177.0</ele>
+        <time>2023-03-14T17:33:59.023Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1277,6 +1277,20 @@
 				"ICON_TYPE" : "warning",
 				"URL" : ""
 			}
+		},
+		
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Rosewall Creek Crossing",
+                "DESCRIPTION" : "This is a difficult river crossing",
+                "LATITUDE" : 49.44255321652811,
+				"LONGITUDE" : -124.85180525426709,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
 		}
 
 		

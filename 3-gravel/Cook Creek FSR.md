@@ -1,0 +1,1 @@
+[Mark Aseltine 2021 ride history](https://www.strava.com/activities/5924309098/analysis)
