@@ -1291,10 +1291,37 @@
 				"ICON_TYPE" : "warning",
 				"URL" : ""
 			}
+		},
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Road Washout 1 @1.5km",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.975838091828976,
+				"LONGITUDE" : -117.2493641202469,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
+		},
+		
+		{
+			"type" : "poi",
+            "version" : "1.0",
+			"properties" : {
+				"NAME" : "Road Washout 1 @1.5km",
+                "DESCRIPTION" : "",
+                "LATITUDE" : 49.97911058527973,
+				"LONGITUDE" : -117.24808119489269,
+                "POI_CATEGORY" : "warning",
+				"ICON_TYPE" : "warning",
+				"URL" : ""
+			}
 		}
 
 		
-		
+		 
 		
 		
 		
