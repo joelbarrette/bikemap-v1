@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Lighthouse Fairedge Swamp Bypass</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2023-03-21T01:47:50.000Z</time>
+  </metadata>
+  <trk>
+    <name>Lighthouse Fairedge Swamp Bypass</name>
+    <trkseg>
+      <trkpt lat="48.474576473236084" lon="-123.49411725997925">
+        <ele>78.0</ele>
+        <time>2023-03-21T01:47:50.000Z</time>
+      </trkpt>
+      <trkpt lat="48.47442626953125" lon="-123.49572658538818">
+        <ele>80.0</ele>
+        <time>2023-03-21T01:47:50.017Z</time>
+      </trkpt>
+      <trkpt lat="48.474533557891846" lon="-123.49604845046997">
+        <ele>80.0</ele>
+        <time>2023-03-21T01:47:50.038Z</time>
+      </trkpt>
+      <trkpt lat="48.4745979309082" lon="-123.4961986541748">
+        <ele>81.0</ele>
+        <time>2023-03-21T01:47:50.061Z</time>
+      </trkpt>
+      <trkpt lat="48.47484058700502" lon="-123.49637199193239">
+        <ele>81.0</ele>
+        <time>2023-03-21T01:47:50.088Z</time>
+      </trkpt>
+      <trkpt lat="48.47489833831787" lon="-123.496413230896">
+        <ele>81.0</ele>
+        <time>2023-03-21T01:47:50.116Z</time>
+      </trkpt>
+      <trkpt lat="48.47498425282538" lon="-123.49656343460083">
+        <ele>81.0</ele>
+        <time>2023-03-21T01:47:50.146Z</time>
+      </trkpt>
+      <trkpt lat="48.47498416900635" lon="-123.49656343460083">
+        <ele>81.0</ele>
+        <time>2023-03-21T01:47:50.176Z</time>
+      </trkpt>
+      <trkpt lat="48.47541877068579" lon="-123.49638640880585">
+        <ele>80.0</ele>
+        <time>2023-03-21T01:47:50.214Z</time>
+      </trkpt>
+      <trkpt lat="48.475563526153564" lon="-123.49632740020752">
+        <ele>79.0</ele>
+        <time>2023-03-21T01:47:50.254Z</time>
+      </trkpt>
+      <trkpt lat="48.475778102874756" lon="-123.49615573883057">
+        <ele>78.0</ele>
+        <time>2023-03-21T01:47:50.298Z</time>
+      </trkpt>
+      <trkpt lat="48.475821018218994" lon="-123.4959626197815">
+        <ele>78.0</ele>
+        <time>2023-03-21T01:47:50.344Z</time>
+      </trkpt>
+      <trkpt lat="48.476014137268066" lon="-123.49591970443726">
+        <ele>77.0</ele>
+        <time>2023-03-21T01:47:50.393Z</time>
+      </trkpt>
+      <trkpt lat="48.476314544677734" lon="-123.49604845046997">
+        <ele>77.0</ele>
+        <time>2023-03-21T01:47:50.447Z</time>
+      </trkpt>
+      <trkpt lat="48.47673456184566" lon="-123.49602933973074">
+        <ele>76.0</ele>
+        <time>2023-03-21T01:47:50.508Z</time>
+      </trkpt>
+      <trkpt lat="48.476786613464355" lon="-123.49602699279785">
+        <ele>74.0</ele>
+        <time>2023-03-21T01:47:50.570Z</time>
+      </trkpt>
+      <trkpt lat="48.47721585072577" lon="-123.4956407546997">
+        <ele>73.0</ele>
+        <time>2023-03-21T01:47:50.640Z</time>
+      </trkpt>
+      <trkpt lat="48.47728022374213" lon="-123.49531888961792">
+        <ele>73.0</ele>
+        <time>2023-03-21T01:47:50.713Z</time>
+      </trkpt>
+      <trkpt lat="48.477323055267334" lon="-123.49482536315918">
+        <ele>72.0</ele>
+        <time>2023-03-21T01:47:50.792Z</time>
+      </trkpt>
+      <trkpt lat="48.4771728515625" lon="-123.49422454833984">
+        <ele>71.0</ele>
+        <time>2023-03-21T01:47:50.878Z</time>
+      </trkpt>
+      <trkpt lat="48.47712993621826" lon="-123.49364519119263">
+        <ele>70.0</ele>
+        <time>2023-03-21T01:47:50.970Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

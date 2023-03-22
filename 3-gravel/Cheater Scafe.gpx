@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Garmin Connect" version="1.1"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd"
+  xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+  <metadata>
+    <name>Cheater Scafe</name>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2023-03-21T01:50:50.000Z</time>
+  </metadata>
+  <trk>
+    <name>Cheater Scafe</name>
+    <trkseg>
+      <trkpt lat="48.49100357852876" lon="-123.49568727426231">
+        <ele>121.0</ele>
+        <time>2023-03-21T01:50:50.000Z</time>
+      </trkpt>
+      <trkpt lat="48.491034507751465" lon="-123.49570512771606">
+        <ele>122.0</ele>
+        <time>2023-03-21T01:50:50.001Z</time>
+      </trkpt>
+      <trkpt lat="48.491549491882324" lon="-123.49566221237183">
+        <ele>123.0</ele>
+        <time>2023-03-21T01:50:50.012Z</time>
+      </trkpt>
+      <trkpt lat="48.491764068603516" lon="-123.49549055099487">
+        <ele>125.0</ele>
+        <time>2023-03-21T01:50:50.028Z</time>
+      </trkpt>
+      <trkpt lat="48.49187705665827" lon="-123.4951798338443">
+        <ele>127.0</ele>
+        <time>2023-03-21T01:50:50.049Z</time>
+      </trkpt>
+      <trkpt lat="48.4921932220459" lon="-123.49431037902832">
+        <ele>132.0</ele>
+        <time>2023-03-21T01:50:50.083Z</time>
+      </trkpt>
+      <trkpt lat="48.49232196807861" lon="-123.49358081817627">
+        <ele>134.0</ele>
+        <time>2023-03-21T01:50:50.127Z</time>
+      </trkpt>
+      <trkpt lat="48.49234342575073" lon="-123.49306583404541">
+        <ele>135.0</ele>
+        <time>2023-03-21T01:50:50.178Z</time>
+      </trkpt>
+      <trkpt lat="48.49242925643921" lon="-123.4927225112915">
+        <ele>138.0</ele>
+        <time>2023-03-21T01:50:50.234Z</time>
+      </trkpt>
+      <trkpt lat="48.492536544799805" lon="-123.49252939224243">
+        <ele>140.0</ele>
+        <time>2023-03-21T01:50:50.293Z</time>
+      </trkpt>
+      <trkpt lat="48.49272966384888" lon="-123.49197149276733">
+        <ele>145.0</ele>
+        <time>2023-03-21T01:50:50.360Z</time>
+      </trkpt>
+      <trkpt lat="48.49277811124921" lon="-123.49190686829388">
+        <ele>148.0</ele>
+        <time>2023-03-21T01:50:50.429Z</time>
+      </trkpt>
+      <trkpt lat="48.49285840988159" lon="-123.49179983139038">
+        <ele>155.0</ele>
+        <time>2023-03-21T01:50:50.500Z</time>
+      </trkpt>
+      <trkpt lat="48.493051612749696" lon="-123.49164962768555">
+        <ele>159.0</ele>
+        <time>2023-03-21T01:50:50.575Z</time>
+      </trkpt>
+      <trkpt lat="48.49318027496338" lon="-123.4914779663086">
+        <ele>162.0</ele>
+        <time>2023-03-21T01:50:50.653Z</time>
+      </trkpt>
+      <trkpt lat="48.49313735961914" lon="-123.4912633895874">
+        <ele>165.0</ele>
+        <time>2023-03-21T01:50:50.734Z</time>
+      </trkpt>
+      <trkpt lat="48.49322319030762" lon="-123.49051237106323">
+        <ele>168.0</ele>
+        <time>2023-03-21T01:50:50.826Z</time>
+      </trkpt>
+      <trkpt lat="48.4931808616966" lon="-123.49021615460515">
+        <ele>171.0</ele>
+        <time>2023-03-21T01:50:50.922Z</time>
+      </trkpt>
+      <trkpt lat="48.49318027496338" lon="-123.49021196365356">
+        <ele>175.0</ele>
+        <time>2023-03-21T01:50:51.018Z</time>
+      </trkpt>
+      <trkpt lat="48.49322319030762" lon="-123.48993301391602">
+        <ele>176.0</ele>
+        <time>2023-03-21T01:50:51.118Z</time>
+      </trkpt>
+      <trkpt lat="48.49339485168457" lon="-123.48948240280151">
+        <ele>176.0</ele>
+        <time>2023-03-21T01:50:51.224Z</time>
+      </trkpt>
+      <trkpt lat="48.493781089782715" lon="-123.48875284194946">
+        <ele>175.0</ele>
+        <time>2023-03-21T01:50:51.343Z</time>
+      </trkpt>
+      <trkpt lat="48.49397420883179" lon="-123.48870992660522">
+        <ele>175.0</ele>
+        <time>2023-03-21T01:50:51.466Z</time>
+      </trkpt>
+      <trkpt lat="48.4942102432251" lon="-123.48888158798218">
+        <ele>174.0</ele>
+        <time>2023-03-21T01:50:51.594Z</time>
+      </trkpt>
+      <trkpt lat="48.494279477745295" lon="-123.48884009756148">
+        <ele>173.0</ele>
+        <time>2023-03-21T01:50:51.723Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
