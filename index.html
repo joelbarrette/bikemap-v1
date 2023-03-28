@@ -40,6 +40,7 @@
     <script type="text/javascript" src="src/leaflet.permalink.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/idb@7/build/umd.js"></script>
     <script src="src/leaflet-offline-bundle.js"></script>
+    <script src="src/SmoothWheelZoom.js"></script>
 
     <!-- Assets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -214,7 +215,9 @@ $( window ).resize(function() {
         loadingControl: true,
         disableDefaultUI: true,
         pegmanControl: false,
-        
+        scrollWheelZoom: false, // disable original zoom function
+        smoothWheelZoom: true,  // enable smooth zoom 
+        smoothSensitivity: 1,   // zoom speed. default is 1
       },
       points: {
         icon: {
@@ -711,39 +714,27 @@ function layerControl(layer){
   }
 }
 
+var token = 'sk.eyJ1Ijoiam9lbGJhcnJldHRlIiwiYSI6ImNsZnNsem5haTA3ZGUzZm11YXRzeDB4NWYifQ.0IOqSkHajWyyvpj16Adtmg'
 
 new L.basemapsSwitcher([
   {
-    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/dark-v10',
-    }).addTo(map), //DEFAULT MAP
+    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=' + token, {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', id: 'mapbox/dark-v10',
+      }).addTo(map), //DEFAULT MAP
     icon: 'resources/mapbox-dark.png',
     name: 'Mapbox Dark'
   },
   {
-    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/light-v10',
-    }),
+    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=' + token, {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', id: 'mapbox/light-v10',}),
     icon: 'resources/mapbox-light.png',
     name: 'Mapbox Light'
   },  
   {
-    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/satellite-streets-v11',
-    }),
+    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=' + token, {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', id: 'mapbox/satellite-streets-v11',}),
     icon: 'resources/mapbox-satellite-streets.png',
     name: 'Mapbox Satellite'
   },
   {
-    layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }),
+    layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }),
     icon: 'resources/osm.png',
     name: 'Open Street Map'
   },  
