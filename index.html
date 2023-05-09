@@ -348,6 +348,7 @@ $( window ).resize(function() {
                   sidebar.open('sidebar-info');
                   document.getElementById("sidebar-content").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
                   document.getElementById("sidebar-content").innerHTML += converter.makeHtml(result);
+                  document.getElementById("sidebar-content").innerHTML += '<a href="' + e.target._gpx + ' ">Download GPX</a>'
                   var g = new L.GPX(e.target._gpx, {async: true});
                   g.addTo(map);
                   g.on("addline", function(e) {
@@ -371,6 +372,8 @@ $( window ).resize(function() {
                   sidebar.open('sidebar-info');
                   document.getElementById("sidebar-content").innerHTML = "<h4>" + gpx2.get_name(); + "</h4>";
                   document.getElementById("sidebar-content").innerHTML += "<p>No Info</p>"
+                  document.getElementById("sidebar-content").innerHTML += '<a href="' + e.target._gpx + ' ">Download GPX</a>'
+                  console.log(e.target._gpx);
                   var g = new L.GPX(e.target._gpx, {async: true});
                   g.addTo(map);
                   g.on("addline", function(e) {
@@ -719,7 +722,7 @@ var token = 'sk.eyJ1Ijoiam9lbGJhcnJldHRlIiwiYSI6ImNsZnNsem5haTA3ZGUzZm11YXRzeDB4
 new L.basemapsSwitcher([
   {
     layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=' + token, {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', id: 'mapbox/dark-v10',
-      }).addTo(map), //DEFAULT MAP
+      }),
     icon: 'resources/mapbox-dark.png',
     name: 'Mapbox Dark'
   },
@@ -734,7 +737,8 @@ new L.basemapsSwitcher([
     name: 'Mapbox Satellite'
   },
   {
-    layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }),
+    layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' 
+  }).addTo(map), //DEFAULT MAP
     icon: 'resources/osm.png',
     name: 'Open Street Map'
   },  
