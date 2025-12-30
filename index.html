@@ -6,6 +6,8 @@
   <base target="_blank"/>
 	<meta charset="utf-8" />
 	<meta name="viewport">
+	<meta name="theme-color" content="#2196F3">
+	<meta name="description" content="Interactive map of cycling routes across British Columbia">
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
  
     <!-- CSS -->
@@ -18,7 +20,6 @@
     <link rel="stylesheet" href="css/leaflet-sidebar.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/L.Control.Locate.css" />
-    <link rel="stylesheet" href="css/L.switchBasemap.css" />
     
 
     <!-- JS-->
@@ -35,7 +36,6 @@
     <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="src/leaflet.edgebuffer.js"></script>
     
-    <script src="src/L.switchBasemap.js"></script>
     <script src="src/L.Control.Locate.js" charset="utf-8"></script>
     <script type="text/javascript" src="src/leaflet.permalink.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/idb@7/build/umd.js"></script>
@@ -67,6 +67,25 @@
   </div>
 
 </div>    
+
+<!-- Offline Mode Indicator -->
+<div id="offline-indicator" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ff9800;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+">
+  🔴 OFFLINE MODE - You're not connected to the internet. Showing cached data.
+</div>
+
 <div id="map"></div>
 
 
@@ -121,16 +140,16 @@
         </div> 
       </div><br>
       <hr style="width:92%;margin-left:4%;"><br>
-      <div id="disqus_thread"></div>
-      </div>
-      <div class="leaflet-sidebar-pane" id="sidebar-poi">
-        <h4>Overlays</h4>
-        <br>
-        <div>        <label class="switch">
-          <p>Recreation Sites BC</p>
-          <input type="checkbox" id="bcrec" onclick="layerControl('bcrec')">
-          <span class="slider round"></span>
-        </label></div>
+    </div>
+
+    <div class="leaflet-sidebar-pane" id="sidebar-poi">
+      <h4>Overlays</h4>
+      <br>
+      <div>        <label class="switch">
+        <p>Recreation Sites BC</p>
+        <input type="checkbox" id="bcrec" onclick="layerControl('bcrec')">
+        <span class="slider round"></span>
+      </label></div>
       <div style="display:none;">
         <label class="switch">
         <p>Food & Supplies</p>
@@ -140,30 +159,145 @@
       </div>
       <h4>Routes</h4>
       <a href="routes/t2s/index.html"> Tree to Sea 2022 </a>
-      <h4>Basemaps</h4>
-      <div id="basemap-control"></div>
-      </div>
-      <div class="leaflet-sidebar-pane" id="sidebar-offline">
-        <p>Offline Caching coming soon!</p>
-        <span id="storage"></span> 
-        <div id="progress-wrapper" class="collapse pb-2 show">
-          <div class="d-flex">
-            <div class="">Download Progress</div>
-            <div class="flex-grow-1 ml-2 my-1">
-              <div id="progress" class="progress">
-                <div id="progressbar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+    </div>
+
+    <div class="leaflet-sidebar-pane" id="sidebar-offline">
+        <h4>Offline Mode</h4>
+        <p>Download map tiles and routes to use Bikemap offline. The app will work without internet once cached.</p>
+        
+        <div id="service-worker-status" style="margin: 15px 0; padding: 10px; background: #e3f2fd; border-radius: 4px;">
+          <p style="color: #000;"><strong>Service Worker Status:</strong> <span id="sw-status" style="color: #1976d2;">Checking...</span></p>
+        </div>
+
+        <div id="gpx-cache-status" style="margin: 15px 0; padding: 10px; background: #f3e5f5; border-radius: 4px;">
+          <p style="color: #000;"><strong>GPX Routes Cached:</strong> <span id="gpx-status" style="color: #7b1fa2;">Loading...</span></p>
+          <p style="font-size: 0.85em; color: #666; margin: 5px 0;">Road & Connector routes auto-cached on install</p>
+        </div>
+
+        <div id="storage-info" style="margin: 15px 0;">
+          <p><strong>Map Tiles Cached:</strong> <span id="storage" style="font-weight: bold;">0</span> tiles</p>
+          <p id="storage-size" style="color: #666; font-size: 0.9em;"></p>
+        </div>
+
+        <div id="tile-controls" style="margin: 15px 0; padding: 10px; background: #f5f5f5; border-radius: 4px;">
+          <p style="color: #000;"><strong>Download Map Tiles</strong></p>
+          <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;">
+            Select a zoom level and click "Download" to cache tiles for offline use.
+          </p>
+          <div style="margin-bottom: 10px;">
+            <label for="zoom-level" style="color: #000;">Zoom Level (11-15):</label><br>
+            <input type="range" id="zoom-level" min="11" max="15" value="13" style="width: 100%;">
+            <span id="zoom-value">13</span>
+          </div>
+          <button id="download-tiles-btn" class="button" style="width: 48%; margin-right: 4%;">
+            <i class="fa fa-download"></i> Download
+          </button>
+          <button id="clear-tiles-btn" class="button" style="width: 48%; background: #d32f2f;">
+            <i class="fa fa-trash"></i> Clear
+          </button>
+        </div>
+
+        <div id="gravel-controls" style="margin: 15px 0; padding: 10px; background: #fff3e0; border-radius: 4px;">
+          <p style="color: #000;"><strong>Download Routes by Category</strong></p>
+          <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;">
+            Road & connector routes auto-cache on install. Download additional routes as needed.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
+            <button id="cache-gravel-btn" class="button" style="background: #8bc34a; font-size: 0.85em; padding: 8px;">
+              <i class="fa fa-download"></i> Gravel (~200)
+            </button>
+            <button id="cache-recon-btn" class="button" style="background: #ffc107; font-size: 0.85em; padding: 8px;">
+              <i class="fa fa-download"></i> Recon (~90)
+            </button>
+          </div>
+          
+          <button id="cache-all-gpx-btn" class="button" style="width: 100%; background: #ff6f00;">
+            <i class="fa fa-download"></i> Download All Routes (~500 files)
+          </button>
+          
+          <div id="gpx-progress-wrapper" style="display: none; margin-top: 10px;">
+            <div style="font-size: 0.9em; margin-bottom: 10px;">
+              <span id="gpx-progress-text">Caching routes...</span>
+              <span id="gpx-progress-count" style="float: right;">0/0</span>
+            </div>
+            <div style="background: #f0f0f0; border-radius: 4px; overflow: hidden;">
+              <div id="gpx-progressbar" style="
+                background: #ff6f00;
+                height: 20px;
+                width: 0%;
+                transition: width 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 0.75em;
+                font-weight: bold;
+              "></div>
             </div>
           </div>
         </div>
 
-      </div>
+        <div id="sync-controls" style="margin: 15px 0; padding: 10px; background: #e8f5e9; border-radius: 4px;">
+          <p style="color: #000;"><strong>Sync Routes</strong></p>
+          <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;">
+            After running build.py, sync to add new routes and remove deleted ones.
+          </p>
+          <div id="sync-status" style="font-size: 0.85em; color: #666; margin-bottom: 10px; display: none;">
+            <span id="sync-status-text"></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <button id="check-sync-btn" class="button" style="background: #2196f3; font-size: 0.85em; padding: 8px;">
+              <i class="fa fa-search"></i> Check Updates
+            </button>
+            <button id="sync-gpx-btn" class="button" style="background: #4caf50; font-size: 0.85em; padding: 8px;">
+              <i class="fa fa-refresh"></i> Sync Now
+            </button>
+          </div>
+          <div id="sync-details" style="display: none; margin-top: 10px; font-size: 0.8em; max-height: 150px; overflow-y: auto;">
+          </div>
+        </div>
 
-      <div class="leaflet-sidebar-pane" id="info">
-        <h4>What is this site?</h4>
-        <p>This site is a personal project of Joel Barrette, designed to help with route planning for bikepacking/gravel biking adventures. In it's current state it's being manually maintained as a kind of blog for all past trips as well as planned future trips. Some routes from other riders trip reports have been included but links to their posts are in the description if you want a full GPX or to read more about the specifc trip.
-        </p>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZM7uY1za4ZezMpsTQAfLDxXHZC8ewStKIBlW07lp4h-FCLw/viewform?embedded=true" width="100%" height="1000px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <div id="progress-wrapper" class="collapse pb-2" style="display: none; margin: 15px 0;">
+          <div>
+            <div style="font-size: 0.9em; margin-bottom: 10px;">
+              <span id="progress-text">Downloading...</span>
+              <span id="progress-count" style="float: right;">0/0</span>
+            </div>
+            <div style="background: #f0f0f0; border-radius: 4px; overflow: hidden;">
+              <div id="progressbar" style="
+                background: #4CAF50;
+                height: 20px;
+                width: 0%;
+                transition: width 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 0.75em;
+                font-weight: bold;
+              "></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="offline-info" style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd;">
+          <p><strong>How it works:</strong></p>
+          <ul style="font-size: 0.85em; padding-left: 20px">
+            <li>All road & connector routes auto-cache when Service Worker installs (~30 MB)</li>
+            <li>Gravel & recon routes can be cached on-demand to save space</li>
+            <li>Map tiles can be downloaded at specific zoom levels</li>
+            <li>The app works offline once data is cached</li>
+            <li>Each browser/device needs separate caching</li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="leaflet-sidebar-pane" id="info">
+      <h4>What is this site?</h4>
+      <p>This site is a personal project of Joel Barrette, designed to help with route planning for bikepacking/gravel biking adventures. In it's current state it's being manually maintained as a kind of blog for all past trips as well as planned future trips. Some routes from other riders trip reports have been included but links to their posts are in the description if you want a full GPX or to read more about the specifc trip.
+      </p>
+    <!--<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZM7uY1za4ZezMpsTQAfLDxXHZC8ewStKIBlW07lp4h-FCLw/viewform?embedded=true" width="100%" height="1000px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>-->    
       </div>
     </div>
   </div>
@@ -176,15 +310,106 @@
 </style>
 
 
-<script> 
+<script>
+// Offline Mode Indicator
+function updateOfflineStatus() {
+  const offlineIndicator = document.getElementById('offline-indicator');
+  const isOnline = navigator.onLine;
+  
+  if (isOnline) {
+    offlineIndicator.style.display = 'none';
+    document.body.style.paddingTop = '0';
+  } else {
+    offlineIndicator.style.display = 'block';
+    document.body.style.paddingTop = '50px';
+  }
+}
 
+// Check offline status on load and when connection changes
+window.addEventListener('online', updateOfflineStatus);
+window.addEventListener('offline', updateOfflineStatus);
+window.addEventListener('load', updateOfflineStatus);
 
-// Service Worker Load
-  //window.addEventListener("load", () => {
-  //  if ("serviceWorker" in navigator) {
-  //    navigator.serviceWorker.register("offline-cache2.js");
-  //  }
-  //});   
+// Service Worker Registration
+let swRegistration = null;
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        swRegistration = registration;
+        console.log('[App] Service Worker registered:', registration);
+        updateServiceWorkerStatus(); // Update status after registration
+        
+        // Check if this is a fresh install (no controller yet)
+        // If so, reload once SW is activated to enable offline caching
+        if (!navigator.serviceWorker.controller) {
+          console.log('[App] First visit - waiting for SW to activate...');
+          
+          // Listen for the SW to become active
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'activated') {
+                console.log('[App] SW activated - reloading for offline support...');
+                // Show a brief message before reload
+                showOfflineReadyBanner();
+              }
+            });
+          });
+        }
+        
+        // Check for updates periodically
+        setInterval(() => {
+          registration.update();
+        }, 60000); // Check every minute
+        
+        // Listen for updates (when SW is already controlling the page)
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              // New service worker ready, show update notification
+              console.log('[App] Update available');
+              // You can add a UI notification here
+            }
+          });
+        });
+      })
+      .catch((err) => {
+        console.error('[App] Service Worker registration failed:', err);
+        updateServiceWorkerStatus(); // Update status even on failure
+      });
+  });
+}
+
+// Show banner and auto-reload for offline support
+function showOfflineReadyBanner() {
+  const banner = document.createElement('div');
+  banner.id = 'offline-ready-banner';
+  banner.innerHTML = `
+    <div style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-weight: bold;
+      z-index: 10000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    ">
+      ✓ Offline mode ready! Reloading to enable...
+    </div>
+  `;
+  document.body.appendChild(banner);
+  
+  // Reload after a brief delay so user sees the message
+  setTimeout(() => {
+    window.location.reload();
+  }, 1500);
+}
 </script>
 
 
@@ -328,16 +553,7 @@ $( window ).resize(function() {
 
     //Callback function for when plot lines are selected
     gpx.on('click', function(e) {
-                //Disqus Reset 
-                DISQUS.reset({
-                    reload: true,
-                    config: function() {
-                        this.page.identifier = "clear";
-                        //this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
-                        var pageUrl = window.location.protocol + "//" + window.location.host  + '?' + window.location.search + "#!" + encodeURIComponent(gpx2.get_name())
-                        window.history.replaceState({path:pageUrl}, '', pageUrl);
-                    }
-                });
+                
                 var gpx2 = e.target;
                 var converter = new showdown.Converter() // Instantiate Showdown Markdown converter
                 var mdFilePath = e.target._gpx.substring(0, e.target._gpx.length-3) + "md" // Generate markdown file name hack 
@@ -354,7 +570,6 @@ $( window ).resize(function() {
                   g.on("addline", function(e) {
                     el.addData(e.line);
                   });
-                  loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
 
                   const imgs = document.querySelectorAll('#sidebar-content > p > img');
                   const fullPage = document.querySelector('#fullpage');
@@ -378,9 +593,7 @@ $( window ).resize(function() {
                   g.addTo(map);
                   g.on("addline", function(e) {
                     el.addData(e.line);
-                  });
-                  loadDisqus(document.getElementById("disqus_thread"), gpx2.get_name(), (encodeURIComponent(gpx2.get_name())))
-                  
+                  });                  
                   const imgs = document.querySelectorAll('#sidebar-content > p > img');
                   const fullPage = document.querySelector('#fullpage');
 
@@ -435,40 +648,7 @@ $( window ).resize(function() {
     }
 
 
-function loadDisqus(element, postTitle, postUrlTag) {
-  var identifier = postTitle;
 
-  // Including the hashbang ('/#!') is important.
-  var url = window.location.origin + '/#!' + postUrlTag;
-
-  var disqus_identifier = identifier;
-  var disqus_url = url;
-
-  if (window.DISQUS) {
-    // Horrible, but jQuery wasn't removing the div elements fully
-    $( ".comments-load" ).each(function() {
-      var len = this.childNodes.length;
-      for(var i = 0; i < len; i++)
-      {  
-        if (this.childNodes[i].tagName == "DIV") {
-          this.removeChild(this.childNodes[i]);
-        } 
-      }
-    });
-
-    $(element).append('<div class="disqus-thread" id="disqus_thread"></div>');
-
-    /** if Disqus exists, call it's reset method with new parameters **/
-    DISQUS.reset({
-      reload: true,
-      config: function () { 
-        //important to convert it to string
-        this.page.identifier = identifier.toString();    
-        this.page.url = url;
-      }
-    });
-  }
-};
 
 
    
@@ -482,16 +662,6 @@ function loadDisqus(element, postTitle, postUrlTag) {
         window.location.hash = '';
         var pageUrl = window.location.protocol + "//" + window.location.host + window.location.search 
         window.history.replaceState({path:pageUrl}, '', pageUrl);
-
-        DISQUS.reset({
-                reload: true,
-                config: function () {  
-                  this.page.identifier = "clear";  
-                  this.page.url = ("http://tripreport.tk/#!" + encodeURIComponent(gpx2.get_name()));
-                  var pageUrl = window.location.protocol + "//" + window.location.host + "/" + encodeURIComponent(gpx2.get_name()) + window.location.search 
-                        window.history.replaceState({path:pageUrl}, '', pageUrl);
-                }});
- 
     })
 
 
@@ -627,22 +797,7 @@ sidebar.addPanel({
 </script>
 
 <script>
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = 'https://bikemap-v1.disqus.com/embed.js';
-  s.async = "true";
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
+ 
 
   ///////////////////////
   // POI Layer Control
@@ -717,39 +872,10 @@ function layerControl(layer){
   }
 }
 
-var token = 'sk.eyJ1Ijoiam9lbGJhcnJldHRlIiwiYSI6ImNsZnNsem5haTA3ZGUzZm11YXRzeDB4NWYifQ.0IOqSkHajWyyvpj16Adtmg'
-
-new L.basemapsSwitcher([
-  {
-    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=' + token, {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', id: 'mapbox/dark-v10',
-      }),
-    icon: 'resources/mapbox-dark.png',
-    name: 'Mapbox Dark'
-  },
-  {
-    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=' + token, {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', id: 'mapbox/light-v10',}),
-    icon: 'resources/mapbox-light.png',
-    name: 'Mapbox Light'
-  },  
-  {
-    layer: L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=' + token, {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', id: 'mapbox/satellite-streets-v11',}),
-    icon: 'resources/mapbox-satellite-streets.png',
-    name: 'Mapbox Satellite'
-  },
-  {
-    layer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' 
-  }).addTo(map), //DEFAULT MAP
-    icon: 'resources/osm.png',
-    name: 'Open Street Map'
-  },  
-  {
-    layer: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.opentopomap.org/copyright">OpenTopoMap</a> contributors'
-    }),
-    icon: 'resources/otm.png',
-    name: 'Open Topo Map'
-  },
-], { position: 'bottomleft' }).addTo(map);
+// Add OpenStreetMap base layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 
 
@@ -810,10 +936,11 @@ function storageLayer(baseLayer, layerswitcher) {
 } 
 */
 
+// Note: The old leaflet-offline tile saving code has been replaced by Service Worker caching
+// The baseLayer and tile controls below are now commented out as the SW handles all offline caching
 
-
-
-  const control = L.control.savetiles(baseLayer, {
+/*
+const control = L.control.savetiles(baseLayer, {
   zoomlevels: [11, 12, 13, 14, 15], // optional zoomlevels to save, default current zoomlevel
   confirm(layer, successCallback) {
     // eslint-disable-next-line no-alert
@@ -840,10 +967,11 @@ const layerswitcher = L.control
   .addTo(map);
 
 storageLayer(baseLayer, layerswitcher);
+*/
 
 
-
-function debounce(func, wait, immediate){
+// Note: Old baseLayer event handlers commented out - using Service Worker instead
+/*
   var timeout, args, context, timestamp, result;
   if (null == wait) wait = 100;
 
@@ -870,6 +998,8 @@ const showProgress = debounce(() => {
   }
 }, 10);
 
+// Old baseLayer event handlers (commented out - using Service Worker instead)
+/*
 baseLayer.on('savestart', (e) => {
   progress = 0;
   total = e._tilesforSave.length;
@@ -880,9 +1010,391 @@ baseLayer.on('savetileend', () => {
   progress += 1;     
   showProgress();
 });
+*/
+
+// ===== OFFLINE UI HANDLERS =====
+
+// Update Service Worker status
+function updateServiceWorkerStatus() {
+  const statusEl = document.getElementById('sw-status');
+  if (!statusEl) return;
+  
+  if ('serviceWorker' in navigator) {
+    // First check if we already have a registration reference
+    if (swRegistration) {
+      statusEl.textContent = '✓ Active';
+      statusEl.style.color = '#4CAF50';
+      console.log('[Offline] SW status updated: Active');
+      return;
+    }
+    
+    // Otherwise query for existing registrations with timeout
+    let resolved = false;
+    const timeoutId = setTimeout(() => {
+      if (!resolved) {
+        console.warn('[Offline] SW status check timed out');
+        statusEl.textContent = '⊝ Registering...';
+        statusEl.style.color = '#ff9800';
+      }
+    }, 3000);
+    
+    navigator.serviceWorker.getRegistrations()
+      .then((registrations) => {
+        resolved = true;
+        clearTimeout(timeoutId);
+        if (registrations && registrations.length > 0) {
+          swRegistration = registrations[0];
+          statusEl.textContent = '✓ Active';
+          statusEl.style.color = '#4CAF50';
+          console.log('[Offline] SW status updated: Active');
+        } else {
+          statusEl.textContent = '⊝ Registering...';
+          statusEl.style.color = '#ff9800';
+          console.log('[Offline] SW status: Registering');
+        }
+      })
+      .catch((err) => {
+        resolved = true;
+        clearTimeout(timeoutId);
+        console.error('[Offline] SW getRegistrations failed:', err);
+        statusEl.textContent = '✗ Unavailable';
+        statusEl.style.color = '#d32f2f';
+      });
+  } else {
+    statusEl.textContent = '✗ Not supported';
+    statusEl.style.color = '#d32f2f';
+    console.log('[Offline] SW not supported');
+  }
+}
+
+// Update GPX cache status
+function updateGPXStatus() {
+  const statusEl = document.getElementById('gpx-status');
+  if (!statusEl) return;
+  
+  caches.open('bikemap-v1-2025-12-30-v10')
+    .then((cache) => {
+      return cache.keys()
+        .then((keys) => {
+          const gpxFiles = keys.filter(req => req.url.endsWith('.gpx'));
+          if (gpxFiles.length > 0) {
+            statusEl.textContent = `✓ ${gpxFiles.length} routes cached`;
+            statusEl.style.color = '#4CAF50';
+          } else {
+            statusEl.textContent = '○ No routes cached yet';
+            statusEl.style.color = '#999';
+          }
+        });
+    })
+    .catch(() => {
+      statusEl.textContent = '○ Not cached yet';
+      statusEl.style.color = '#999';
+    });
+}
+
+// Update tile cache status
+function updateTileStatus() {
+  const storageEl = document.getElementById('storage');
+  const storageSizeEl = document.getElementById('storage-size');
+  if (!storageEl) return;
+  
+  caches.open('bikemap-tiles-v1')
+    .then((cache) => {
+      return cache.keys()
+        .then((keys) => {
+          const tileFiles = keys.filter(req => {
+            // Match tile URL patterns
+            return /\/(\d+)\/(\d+)\/(\d+)\.(png|jpg|webp)($|\?)/i.test(new URL(req.url).pathname);
+          });
+          
+          if (tileFiles.length > 0) {
+            storageEl.textContent = tileFiles.length.toLocaleString();
+            
+            // Optionally estimate storage size (rough estimate: ~15KB per tile)
+            const estimatedMB = (tileFiles.length * 15) / 1024;
+            if (storageSizeEl && estimatedMB > 0.1) {
+              storageSizeEl.textContent = `~${estimatedMB.toFixed(1)} MB`;
+            }
+          } else {
+            storageEl.textContent = '0';
+            if (storageSizeEl) {
+              storageSizeEl.textContent = '';
+            }
+          }
+        });
+    })
+    .catch(() => {
+      storageEl.textContent = '0';
+      if (storageSizeEl) {
+        storageSizeEl.textContent = '';
+      }
+    });
+}
+
+// Function to cache GPX files by category
+async function cacheGPXByType(types, buttonText = 'routes') {
+  const progressWrapper = document.getElementById('gpx-progress-wrapper');
+  const progressBar = document.getElementById('gpx-progressbar');
+  const progressText = document.getElementById('gpx-progress-text');
+  const progressCount = document.getElementById('gpx-progress-count');
+  
+  try {
+    // Show progress UI
+    progressWrapper.style.display = 'block';
+    progressText.textContent = `Loading ${buttonText}...`;
+    progressBar.style.width = '0%';
+    
+    // Fetch folder.json to get all GPX files
+    const response = await fetch('/folder.json');
+    const allFiles = await response.json();
+    
+    // Filter by requested types
+    const filesToCache = allFiles.filter(file => types.includes(file.type));
+    
+    progressCount.textContent = `0/${filesToCache.length}`;
+    progressText.textContent = `Caching ${buttonText}...`;
+    
+    let cached = 0;
+    let failed = 0;
+    
+    // Cache files in batches to avoid overwhelming the browser
+    const batchSize = 5;
+    for (let i = 0; i < filesToCache.length; i += batchSize) {
+      const batch = filesToCache.slice(i, i + batchSize);
+      
+      await Promise.allSettled(
+        batch.map(file => {
+          // Use encodeURI to match how files are loaded by plotGPX
+          const encodedPath = encodeURI(file.path);
+          return fetch(encodedPath)
+            .then(res => {
+              if (res.ok) {
+                cached++;
+                return caches.open('bikemap-v1-2025-12-30-v8').then(cache => cache.put(encodedPath, res));
+              } else {
+                failed++;
+                return Promise.reject();
+              }
+            })
+            .catch(() => {
+              failed++;
+            });
+        })
+      );
+      
+      // Update progress
+      const totalProcessed = Math.min(i + batchSize, filesToCache.length);
+      const percent = (totalProcessed / filesToCache.length) * 100;
+      progressBar.style.width = `${percent}%`;
+      progressBar.textContent = `${Math.round(percent)}%`;
+      progressCount.textContent = `${totalProcessed}/${filesToCache.length}`;
+    }
+    
+    // Done
+    progressText.textContent = `✓ Complete! ${cached} cached, ${failed} failed`;
+    progressBar.style.background = '#4CAF50';
+    
+    setTimeout(() => {
+      progressWrapper.style.display = 'none';
+      progressBar.style.background = '#ff6f00';
+      updateGPXStatus();
+    }, 3000);
+    
+  } catch (err) {
+    console.error('[Offline] Error caching GPX files:', err);
+    progressText.textContent = '✗ Error: ' + err.message;
+    progressBar.style.background = '#d32f2f';
+  }
+}
+
+// Helper to communicate with service worker
+function sendMessageToSW(message) {
+  return new Promise((resolve, reject) => {
+    if (!navigator.serviceWorker.controller) {
+      reject(new Error('No service worker controller'));
+      return;
+    }
+    
+    const messageChannel = new MessageChannel();
+    messageChannel.port1.onmessage = (event) => {
+      if (event.data.success) {
+        resolve(event.data);
+      } else {
+        reject(new Error(event.data.error || 'Unknown error'));
+      }
+    };
+    
+    navigator.serviceWorker.controller.postMessage(message, [messageChannel.port2]);
+  });
+}
+
+// Check for sync updates
+async function checkSyncStatus() {
+  const statusDiv = document.getElementById('sync-status');
+  const statusText = document.getElementById('sync-status-text');
+  const detailsDiv = document.getElementById('sync-details');
+  
+  statusDiv.style.display = 'block';
+  statusText.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Checking...';
+  detailsDiv.style.display = 'none';
+  
+  try {
+    const status = await sendMessageToSW({ type: 'GET_SYNC_STATUS', types: ['0-route', '1-road', '2-connector', '3-gravel', '4-recon', '5-caution', 'routes'] });
+    
+    if (status.toAdd === 0 && status.toRemove === 0) {
+      statusText.innerHTML = '✓ <span style="color: #4caf50;">Cache is up to date!</span>';
+      detailsDiv.style.display = 'none';
+    } else {
+      statusText.innerHTML = `<span style="color: #ff9800;">Updates available:</span> +${status.toAdd} new, -${status.toRemove} removed`;
+      
+      // Show details
+      let detailsHtml = '';
+      if (status.newFiles.length > 0) {
+        detailsHtml += '<div style="color: #4caf50; margin-bottom: 5px;"><strong>New:</strong></div>';
+        detailsHtml += '<ul style="margin: 0 0 10px 15px; padding: 0;">';
+        status.newFiles.slice(0, 10).forEach(f => {
+          detailsHtml += `<li style="color: #4caf50;">${f}</li>`;
+        });
+        if (status.newFiles.length > 10) {
+          detailsHtml += `<li style="color: #666;">...and ${status.newFiles.length - 10} more</li>`;
+        }
+        detailsHtml += '</ul>';
+      }
+      if (status.removedFiles.length > 0) {
+        detailsHtml += '<div style="color: #d32f2f; margin-bottom: 5px;"><strong>Removed:</strong></div>';
+        detailsHtml += '<ul style="margin: 0 0 10px 15px; padding: 0;">';
+        status.removedFiles.slice(0, 10).forEach(f => {
+          detailsHtml += `<li style="color: #d32f2f;">${f}</li>`;
+        });
+        if (status.removedFiles.length > 10) {
+          detailsHtml += `<li style="color: #666;">...and ${status.removedFiles.length - 10} more</li>`;
+        }
+        detailsHtml += '</ul>';
+      }
+      detailsDiv.innerHTML = detailsHtml;
+      detailsDiv.style.display = 'block';
+    }
+  } catch (err) {
+    statusText.innerHTML = `<span style="color: #d32f2f;">✗ Error: ${err.message}</span>`;
+    console.error('[Sync] Check failed:', err);
+  }
+}
+
+// Perform sync
+async function performSync() {
+  const statusDiv = document.getElementById('sync-status');
+  const statusText = document.getElementById('sync-status-text');
+  const detailsDiv = document.getElementById('sync-details');
+  const syncBtn = document.getElementById('sync-gpx-btn');
+  
+  statusDiv.style.display = 'block';
+  statusText.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Syncing...';
+  detailsDiv.style.display = 'none';
+  syncBtn.disabled = true;
+  
+  try {
+    const result = await sendMessageToSW({ type: 'SYNC_GPX', types: ['0-route', '1-road', '2-connector', '3-gravel', '4-recon', '5-caution', 'routes'] });
+    
+    statusText.innerHTML = `<span style="color: #4caf50;">✓ Sync complete!</span> Added: ${result.added}, Removed: ${result.removed}`;
+    
+    // Refresh GPX status
+    updateGPXStatus();
+    
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+      statusDiv.style.display = 'none';
+    }, 5000);
+    
+  } catch (err) {
+    statusText.innerHTML = `<span style="color: #d32f2f;">✗ Sync failed: ${err.message}</span>`;
+    console.error('[Sync] Failed:', err);
+  } finally {
+    syncBtn.disabled = false;
+  }
+}
+
+// Button handlers
+document.addEventListener('DOMContentLoaded', () => {
+  // Cache all routes button
+  const cacheAllBtn = document.getElementById('cache-all-gpx-btn');
+  if (cacheAllBtn) {
+    cacheAllBtn.addEventListener('click', () => {
+      cacheGPXByType(['0-route', '1-road', '2-connector', '3-gravel', '4-recon', '5-caution', 'routes'], 'all routes');
+    });
+  }
+  
+  // Cache gravel routes button
+  const cacheGravelBtn = document.getElementById('cache-gravel-btn');
+  if (cacheGravelBtn) {
+    cacheGravelBtn.addEventListener('click', () => {
+      cacheGPXByType(['3-gravel'], 'gravel routes');
+    });
+  }
+  
+  // Cache recon routes button
+  const cacheReconBtn = document.getElementById('cache-recon-btn');
+  if (cacheReconBtn) {
+    cacheReconBtn.addEventListener('click', () => {
+      cacheGPXByType(['4-recon'], 'recon routes');
+    });
+  }
+  
+  // Check sync button
+  const checkSyncBtn = document.getElementById('check-sync-btn');
+  if (checkSyncBtn) {
+    checkSyncBtn.addEventListener('click', checkSyncStatus);
+  }
+  
+  // Sync now button
+  const syncGpxBtn = document.getElementById('sync-gpx-btn');
+  if (syncGpxBtn) {
+    syncGpxBtn.addEventListener('click', performSync);
+  }
+});
+
+
+    
+   
+
+
+
+
+// Update displays on load
+window.addEventListener('load', () => {
+  // Service worker status will be updated after registration completes
+  // (called in the registration .then() handler)
+  
+  updateGPXStatus();
+  updateTileStatus();
+  
+  // Update tile status every 5 seconds (tiles are cached as map is panned)
+  setInterval(updateTileStatus, 5000);
+  
+  // Update GPX status every 10 seconds
+  setInterval(updateGPXStatus, 10000);
+});
+
+// Old baseLayer event handlers (commented out - using Service Worker instead)
+/*
+// Update storage when tiles are saved
+if (typeof baseLayer !== 'undefined' && baseLayer.on) {
+  baseLayer.on('saveend', () => {
+    console.log('[Offline] Save complete');
+    document.getElementById('progress-wrapper').style.display = 'none';
+    updateStorageDisplay();
+  });
+  
+  baseLayer.on('savetileend', () => {
+    const count = document.getElementById('progress-count');
+    if (count && count.textContent) {
+      const [current, total] = count.textContent.split('/').map(Number);
+      count.textContent = `${current + 1}/${total}`;
+    }
+  });
+}
+*/
 
 </script>
 
-<script id="dsq-count-scr" src="bikemap-v1.disqus.com/count.js" async></script>
 </body>
 </html>
