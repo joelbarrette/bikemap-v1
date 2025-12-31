@@ -47,7 +47,11 @@ def main():
             }
             b.append(a)
          
-    print(json.dumps(b))
+    # Write to folder.json
+    with open('folder.json', 'w', encoding='utf-8') as f:
+        json.dump(b, f)
+    
+    print(f'Successfully wrote {len(b)} GPX entries to folder.json')
         
         
         
