@@ -1,0 +1,493 @@
+/* ==========================================================================
+   Mobile-First Responsive Styles for Bikemap
+   Implements bottom sheet UI and bottom navigation for mobile devices
+   ========================================================================== */
+
+/* ==========================================================================
+   Mobile Detection & Base Responsive Styles
+   ========================================================================== */
+
+/* Hide desktop sidebar tabs on mobile */
+@media (max-width: 767px) {
+  /* Hide the desktop sidebar completely on mobile */
+  .leaflet-sidebar {
+    display: none !important;
+  }
+
+  /* Show mobile-specific UI */
+  .mobile-bottom-nav,
+  .mobile-bottom-sheet {
+    display: flex !important;
+  }
+
+  /* Adjust map controls for mobile */
+  .leaflet-control-container .leaflet-left {
+    left: 10px !important;
+  }
+
+  .leaflet-control-container .leaflet-right {
+    right: 10px !important;
+  }
+
+  /* Move zoom controls up to avoid bottom nav */
+  .leaflet-control-zoom {
+    margin-bottom: 80px !important;
+  }
+
+  /* Move locate control up */
+  .leaflet-control-locate {
+    margin-bottom: 80px !important;
+  }
+
+  /* Adjust map height to account for bottom nav */
+  #map {
+    height: calc(100vh - 60px) !important;
+    height: calc(100dvh - 60px) !important;
+  }
+
+  /* Disclaimer box mobile adjustments */
+  #disclaimer-box {
+    width: 90% !important;
+    padding: 2vh !important;
+    font-size: 16px !important;
+  }
+
+  #disclaimer-box .button {
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+    width: 80% !important;
+    margin: 8px 10% !important;
+  }
+
+  /* Offline indicator adjustment */
+  #offline-indicator {
+    padding: 8px 15px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* ==========================================================================
+   Mobile Bottom Navigation Bar
+   ========================================================================== */
+
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: rgba(43, 42, 39, 0.98);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2001;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.mobile-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #4685d6;
+  font-size: 11px;
+  padding: 8px 12px;
+  min-width: 60px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-btn i {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.mobile-nav-btn span {
+  font-weight: 500;
+}
+
+.mobile-nav-btn:active,
+.mobile-nav-btn.active {
+  color: #fff;
+  background-color: rgba(70, 133, 214, 0.2);
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   Mobile Bottom Sheet
+   ========================================================================== */
+
+.mobile-bottom-sheet {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 60px; /* Above the nav bar */
+  bottom: calc(60px + env(safe-area-inset-bottom, 0));
+  max-height: 70vh;
+  max-height: 70dvh;
+  background-color: rgba(43, 42, 39, 0.98);
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.mobile-bottom-sheet.open {
+  transform: translateY(0);
+}
+
+.mobile-bottom-sheet.expanded {
+  max-height: 85vh;
+  max-height: 85dvh;
+}
+
+/* Bottom sheet drag handle */
+.sheet-handle {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0 8px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.sheet-handle::before {
+  content: '';
+  width: 40px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.sheet-handle:active {
+  cursor: grabbing;
+}
+
+/* Bottom sheet header */
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sheet-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sheet-close-btn {
+  background: none;
+  border: none;
+  color: #4685d6;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Bottom sheet content */
+.sheet-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px;
+  color: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sheet-content h4 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.sheet-content p {
+  line-height: 1.6;
+}
+
+.sheet-content a {
+  color: #4685d6;
+}
+
+.sheet-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+/* Elevation chart mobile adjustments */
+#mobile-elevation-container {
+  margin: 12px 0;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 120px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#mobile-elevation-container svg {
+  width: 100% !important;
+  height: 120px !important;
+  max-height: 120px !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+#mobile-elevation-container svg .area path {
+  fill: rgba(73, 73, 73, 0.95) !important;
+  stroke: rgba(255, 255, 255, 0.5) !important;
+}
+
+#mobile-elevation-container svg .axis text {
+  font-size: 8px !important;
+  fill: rgba(255, 255, 255, 0.7) !important;
+}
+
+#mobile-elevation-container svg .axis line,
+#mobile-elevation-container svg .axis path {
+  stroke: rgba(255, 255, 255, 0.3) !important;
+}
+
+#mobile-elevation-container svg .grid line {
+  stroke: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Hide data summary inside elevation - we show our own stats */
+#mobile-elevation-container .data-summary {
+  display: none !important;
+}
+
+.sheet-content .data-summary {
+  font-size: 11px;
+  margin-left: 0;
+}
+
+.sheet-content .data-row {
+  margin-bottom: 1em;
+}
+
+/* ==========================================================================
+   Sheet Tab Content Panels
+   ========================================================================== */
+
+.sheet-panel {
+  display: none;
+}
+
+.sheet-panel.active {
+  display: block;
+}
+
+/* Info panel specific styles */
+#mobile-panel-info .route-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+#mobile-panel-info .stat-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+#mobile-panel-info .stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#mobile-panel-info .stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 4px;
+}
+
+/* Overlays panel */
+#mobile-panel-overlays .overlay-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#mobile-panel-overlays .overlay-item:last-child {
+  border-bottom: none;
+}
+
+#mobile-panel-overlays .switch {
+  width: 50px;
+  height: 28px;
+}
+
+#mobile-panel-overlays .switch .slider:before {
+  height: 20px;
+  width: 20px;
+}
+
+/* Offline panel mobile adjustments */
+#mobile-panel-offline .button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  font-size: 14px;
+}
+
+#mobile-panel-offline .grid-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+#mobile-panel-offline .grid-buttons .button {
+  width: 100%;
+  margin: 0;
+  font-size: 12px;
+  padding: 10px 8px;
+}
+
+/* ==========================================================================
+   Touch-Friendly Adjustments
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* Larger touch targets */
+  .button, 
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+
+  /* Better spacing for form elements */
+  input[type="range"] {
+    height: 44px;
+  }
+
+  /* Checkbox/toggle improvements */
+  .switch {
+    min-width: 52px;
+    min-height: 32px;
+  }
+
+  /* Better scrolling behavior */
+  .sheet-content {
+    overscroll-behavior: contain;
+  }
+
+  /* Popup adjustments */
+  .leaflet-popup-content {
+    font-size: 14px;
+    max-width: 250px;
+  }
+
+  .leaflet-popup-content-wrapper {
+    padding: 8px;
+  }
+}
+
+/* ==========================================================================
+   Landscape Mobile Adjustments
+   ========================================================================== */
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .mobile-bottom-sheet {
+    max-height: 60vh;
+  }
+
+  .mobile-bottom-sheet.expanded {
+    max-height: 80vh;
+  }
+
+  .mobile-bottom-nav {
+    height: 50px;
+  }
+
+  .mobile-nav-btn {
+    padding: 6px 10px;
+  }
+
+  .mobile-nav-btn i {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  .mobile-nav-btn span {
+    font-size: 10px;
+  }
+}
+
+/* ==========================================================================
+   iOS Safe Area Support
+   ========================================================================== */
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  @media (max-width: 767px) {
+    .mobile-bottom-nav {
+      padding-bottom: env(safe-area-inset-bottom);
+      height: calc(60px + env(safe-area-inset-bottom));
+    }
+
+    #map {
+      height: calc(100vh - 60px - env(safe-area-inset-bottom)) !important;
+      height: calc(100dvh - 60px - env(safe-area-inset-bottom)) !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Dark Mode Enhancements (already dark, but enhance contrast)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  .mobile-bottom-nav {
+    background-color: rgba(30, 30, 28, 0.98);
+  }
+
+  .mobile-bottom-sheet {
+    background-color: rgba(30, 30, 28, 0.98);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-bottom-sheet {
+    transition: none;
+  }
+
+  .mobile-nav-btn {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Print Styles - Hide mobile UI
+   ========================================================================== */
+
+@media print {
+  .mobile-bottom-nav,
+  .mobile-bottom-sheet {
+    display: none !important;
+  }
+}
